@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe5e4d2aed74a645969d75d271b3805, type: 3}
+  m_Name: Iksbat
+  m_EditorClassIdentifier: 
+  pokemonName: Iksbat
+  solutionSprite: {fileID: 21300000, guid: 576f4eadf85531a4e9277392d57d6a69, type: 3}
+  featureSprites:
+  - {fileID: 21300000, guid: de792263ee8c21246ba3c5e6e1a9510d, type: 3}
+  - {fileID: 21300000, guid: d0897fabf05df0346bba39c25700c7f5, type: 3}
+  - {fileID: 21300000, guid: 69895b82fccf7e041b9c628390e2b21d, type: 3}

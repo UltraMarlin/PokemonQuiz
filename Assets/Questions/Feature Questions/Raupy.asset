@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe5e4d2aed74a645969d75d271b3805, type: 3}
+  m_Name: Raupy
+  m_EditorClassIdentifier: 
+  pokemonName: Raupy
+  solutionSprite: {fileID: 21300000, guid: 7e1a7bcbb5f7b934091403ea825bf6fb, type: 3}
+  featureSprites:
+  - {fileID: 21300000, guid: 1973e83c9a695bc4aaa58a8a63734d05, type: 3}
+  - {fileID: 21300000, guid: 2c4d7c3453586634ebae0e848b3eddcb, type: 3}
+  - {fileID: 21300000, guid: 8a6f73b1a58e74947a9bfcad31ccc980, type: 3}
