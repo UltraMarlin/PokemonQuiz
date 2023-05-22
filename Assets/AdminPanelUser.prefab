@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9158229839861300614}
   m_Layer: 0
   m_Name: AdminPanelUser
-  m_TagString: Untagged
+  m_TagString: AdminPanelUser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

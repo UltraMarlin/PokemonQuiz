@@ -17,9 +17,27 @@ public class AdminPanelUser : NetworkBehaviour
     }
 
     [ServerRpc]
-    public void AddPointServerRpc()
+    public void CorrectAnswerServerRpc(int playerId)
     {
-        QuizSession.instance.AddPoint();
+        QuizSession.instance.CorrectAnswerFrom(playerId);
+    }
+
+    [ServerRpc]
+    public void WrongAnswerServerRpc(int playerId)
+    {
+        QuizSession.instance.WrongAnswerFrom(playerId);
+    }
+
+    [ServerRpc]
+    public void AddPointServerRpc(int playerId)
+    {
+        QuizSession.instance.AddPointsToPlayer(playerId, 1);
+    }
+
+    [ServerRpc]
+    public void SubtractPointServerRpc(int playerId)
+    {
+        QuizSession.instance.AddPointsToPlayer(playerId, -1);
     }
 
     [ClientRpc]

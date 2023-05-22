@@ -7,6 +7,6 @@ public class ShinyQuestion : ScriptableObject
 {
     public string pokemonName;
     public Sprite solutionSprite;
-    public Sprite fakeSprite1;
-    public Sprite fakeSprite2;
+    public List<Sprite> fakeSprites;
+    public Sprite originalSprite;
 }

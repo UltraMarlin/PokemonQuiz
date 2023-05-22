@@ -7,7 +7,15 @@ using UnityEngine.UI;
 public class AdminPanelController : MonoBehaviour
 {
     public static AdminPanelController instance;
-    private AdminPanelUser adminPanelUser;
+    public AdminPanelUser adminPanelUser;
+
+    [SerializeField] private QuizSettings settings;
+
+    [SerializeField] private GameObject playerControlPanels;
+    [SerializeField] private GameObject playerControlPanelPrefab;
+
+    [SerializeField] private FeatureQuestionDB featureQuestionDB;
+    [SerializeField] private ShinyQuestionDB shinyQuestionDB;
 
     [SerializeField] private Image solutionImage;
     public Sprite testSprite;
@@ -21,20 +29,17 @@ public class AdminPanelController : MonoBehaviour
     {
         Screen.SetResolution(1920, 300, FullScreenMode.Windowed);
         NetworkManager.Singleton.StartClient();
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void AddPoint()
-    {
-        if (adminPanelUser != null)
+        for (int i = 0; i < settings.quiz.players.Count; i++)
         {
-            adminPanelUser.AddPointServerRpc();
+            Player player = settings.quiz.players[i];
+            GameObject playerControlPanel = Instantiate(playerControlPanelPrefab, playerControlPanels.transform);
+            PlayerControlPanel pcpComponent = playerControlPanel.GetComponent<PlayerControlPanel>();
+            pcpComponent.playerID = i;
+            pcpComponent.SetPlayerName(player.name);
         }
+
+        playerControlPanels.GetComponent<HorizontalLayoutGroup>().spacing = QuizSession.SpacingFromPlayerCount(settings.quiz.players.Count);
     }
 
     public void RegisterAdminPanelUser(AdminPanelUser user)
