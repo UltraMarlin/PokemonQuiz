@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,9 @@ public interface IQuestionController {
 public class QuizSession : MonoBehaviour
 {
     public static QuizSession instance;
+
+    public Dictionary<QuestionType, List<IQuestion>> questionsDict;
+
     private AdminPanelUser adminPanelUser;
 
     [SerializeField] private QuizSettings settings;
@@ -42,12 +46,16 @@ public class QuizSession : MonoBehaviour
 
     private List<PlayerPanelController> playerPanelControllers = new();
     private List<int> playerPoints = new();
-
-    private QuestionType currentQuestionType;
-    private int currentQuestionIndex;
-    private List<int> questionOrder = new();
+    
     private List<IQuestion> questions = new();
+    public Dictionary<QuestionType, int> currentQuestionIndices;
+    private List<int> questionOrder = new();
+
+    // TODO
+    private QuestionType selectedCategory = 0;
+    private QuestionType currentQuestionType;
     private IQuestionController currentQuestionController;
+
 
     private void Awake()
     {
@@ -57,6 +65,12 @@ public class QuizSession : MonoBehaviour
     void Start()
     {
         NetworkManager.Singleton.StartServer();
+
+        questionsDict = new()
+        {
+            { QuestionType.Feature, featureQuestionDB.questions.ToList().ConvertAll(x => (IQuestion)x) },
+            { QuestionType.Shiny, shinyQuestionDB.questions.ToList().ConvertAll(x => (IQuestion)x) }
+        };
 
         for (int i = 0; i < settings.quiz.players.Count; i++)
         {
@@ -77,38 +91,45 @@ public class QuizSession : MonoBehaviour
     {
         int totalQuestionAmount = 0;
 
-        List<FeatureQuestion> featureQuestionList = featureQuestionDB.questions.ToList();
-        int featureQuestionAmount = Mathf.Min(featureQuestionList.Count, settings.quiz.questionTypeSettingsList.Find(x => x.type == QuestionType.Feature).questionAmount);
-        foreach (FeatureQuestion featureQuestion in featureQuestionList.OrderBy(x => Random.value).Take(featureQuestionAmount))
+        foreach (QuestionType questionType in Enum.GetValues(typeof(QuestionType)))
         {
-            questions.Add(featureQuestion);
-        }
-        totalQuestionAmount += featureQuestionAmount;
+            currentQuestionIndices.Add(questionType, totalQuestionAmount - 1);
 
+            int featureQuestionAmount = questionsDict[questionType].Count;
+            if (!settings.quiz.infiniteMode)
+            {
+                featureQuestionAmount = Mathf.Min(featureQuestionAmount, settings.quiz.questionTypeSettingsList.Find(x => x.type == questionType).questionAmount);
+            }
+
+            foreach (IQuestion featureQuestion in questionsDict[questionType].OrderBy(x => UnityEngine.Random.value).Take(featureQuestionAmount))
+            {
+                questions.Add(featureQuestion);
+            }
+            totalQuestionAmount += featureQuestionAmount;
+        }
 
         for (int i = 0; i < totalQuestionAmount; i++)
         {
             questionOrder.Add(questionOrder.Count);
         }
-        
+
         if (settings.quiz.shuffleCategories)
         {
-            questionOrder.OrderBy(x => Random.value);
+            questionOrder.OrderBy(x => UnityEngine.Random.value);
         }
-
-        currentQuestionIndex = -1;
         NextQuestion();
     }
 
     public void NextQuestion()
     {
-        if (currentQuestionIndex + 1 >= questionOrder.Count) return;
+        if (currentQuestionIndices[0] + 1 >= questionOrder.Count) return;
 
-        currentQuestionIndex++;
-        int realIndex = questionOrder[currentQuestionIndex];
+        currentQuestionIndices[0]++;
+        int realIndex = questionOrder[currentQuestionIndices[0]];
         IQuestion question = questions[realIndex];
         if (question.GetType() == typeof(FeatureQuestion))
         {
+            currentQuestionType = QuestionType.Feature;
             DisplayFeatureQuestion(question as FeatureQuestion);
         }
     }

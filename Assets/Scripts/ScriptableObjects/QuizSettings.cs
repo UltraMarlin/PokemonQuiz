@@ -81,6 +81,7 @@ public class Quiz
     // TODO: category order if not shuffle
 
     public bool shuffleCategories;
+    public bool infiniteMode;
 
     public Quiz() {
         questionTypeSettingsList = new List<QuestionTypeSettings>();
