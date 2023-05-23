@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.Netcode;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,6 +12,15 @@ public enum QuestionType
 {
     Feature,
     Shiny
+}
+
+public interface IQuestion { }
+
+public interface IQuestionController {
+    void StartQuestion();
+    void NextQuestionStep();
+    void ShowSolution();
+    void ResetDisplay();
 }
 
 public class QuizSession : MonoBehaviour
@@ -33,6 +44,10 @@ public class QuizSession : MonoBehaviour
     private List<int> playerPoints = new();
 
     private QuestionType currentQuestionType;
+    private int currentQuestionIndex;
+    private List<int> questionOrder = new();
+    private List<IQuestion> questions = new();
+    private IQuestionController currentQuestionController;
 
     private void Awake()
     {
@@ -60,7 +75,71 @@ public class QuizSession : MonoBehaviour
 
     public void PrepareQuiz()
     {
+        int totalQuestionAmount = 0;
 
+        List<FeatureQuestion> featureQuestionList = featureQuestionDB.questions.ToList();
+        int featureQuestionAmount = Mathf.Min(featureQuestionList.Count, settings.quiz.questionTypeSettingsList.Find(x => x.type == QuestionType.Feature).questionAmount);
+        foreach (FeatureQuestion featureQuestion in featureQuestionList.OrderBy(x => Random.value).Take(featureQuestionAmount))
+        {
+            questions.Add(featureQuestion);
+        }
+        totalQuestionAmount += featureQuestionAmount;
+
+
+        for (int i = 0; i < totalQuestionAmount; i++)
+        {
+            questionOrder.Add(questionOrder.Count);
+        }
+        
+        if (settings.quiz.shuffleCategories)
+        {
+            questionOrder.OrderBy(x => Random.value);
+        }
+
+        currentQuestionIndex = -1;
+        NextQuestion();
+    }
+
+    public void NextQuestion()
+    {
+        if (currentQuestionIndex + 1 >= questionOrder.Count) return;
+
+        currentQuestionIndex++;
+        int realIndex = questionOrder[currentQuestionIndex];
+        IQuestion question = questions[realIndex];
+        if (question.GetType() == typeof(FeatureQuestion))
+        {
+            DisplayFeatureQuestion(question as FeatureQuestion);
+        }
+    }
+
+    public void NextQuestionStep()
+    {
+        currentQuestionController.NextQuestionStep();
+    }
+
+    public void ShowSolution()
+    {
+        currentQuestionController.ResetDisplay();
+        currentQuestionController.ShowSolution();
+    }
+
+    public void ClearQuestionContainer()
+    {
+        foreach (Transform transform in questionContainer.transform)
+        {
+            Destroy(transform.gameObject);
+        }
+    }
+
+    public void DisplayFeatureQuestion(FeatureQuestion featureQuestion)
+    {
+        ClearQuestionContainer();
+        GameObject featureQuestionObject = Instantiate(featureQuestionPrefab, questionContainer.transform);
+        FeatureQuestionController fqc = featureQuestionObject.GetComponent<FeatureQuestionController>();
+        fqc.SetData(featureQuestion);
+        fqc.StartQuestion();
+        currentQuestionController = fqc;
     }
 
     public static int SpacingFromPlayerCount(int playerCount)

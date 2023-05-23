@@ -63,4 +63,17 @@ public class AdminPanelController : MonoBehaviour
     {
         SetSolutionImage(testSprite);
     }
+
+    public void NextQuestion()
+    {
+        adminPanelUser.NextQuestionServerRpc();
+    }
+    public void NextQuestionStep()
+    {
+        adminPanelUser.NextQuestionStepServerRpc();
+    }
+    public void ShowSolution()
+    {
+        adminPanelUser.ShowSolutionServerRpc();
+    }
 }

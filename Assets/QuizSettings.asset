@@ -30,6 +30,6 @@ MonoBehaviour:
       wrongPointsOther: 1
     - type: 1
       questionAmount: 10
-      correctPoints: 2
-      wrongPointsOther: 1
+      correctPoints: 3
+      wrongPointsOther: 2
     shuffleCategories: 0

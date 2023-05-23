@@ -17,6 +17,24 @@ public class AdminPanelUser : NetworkBehaviour
     }
 
     [ServerRpc]
+    public void NextQuestionServerRpc()
+    {
+        QuizSession.instance.NextQuestion();
+    }
+
+    [ServerRpc]
+    public void NextQuestionStepServerRpc()
+    {
+        QuizSession.instance.NextQuestionStep();
+    }
+
+    [ServerRpc]
+    public void ShowSolutionServerRpc()
+    {
+        QuizSession.instance.ShowSolution();
+    }
+
+    [ServerRpc]
     public void CorrectAnswerServerRpc(int playerId)
     {
         QuizSession.instance.CorrectAnswerFrom(playerId);

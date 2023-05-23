@@ -9,6 +9,7 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         Screen.SetResolution(1600, 900, FullScreenMode.Windowed);
+        Application.targetFrameRate = 60;
     }
 
     // Update is called once per frame

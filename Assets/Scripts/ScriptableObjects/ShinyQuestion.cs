@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "ShinyQuestion", menuName = "QuestionTypes/Shiny", order = 2)]
-public class ShinyQuestion : ScriptableObject
+public class ShinyQuestion : ScriptableObject, IQuestion
 {
     public string pokemonName;
     public Sprite solutionSprite;
