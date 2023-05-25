@@ -6,6 +6,7 @@ using Unity.Netcode;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Profiling.Memory.Experimental;
 using UnityEngine.UI;
 
 [System.Serializable]
@@ -18,6 +19,7 @@ public enum QuestionType
 public interface IQuestion { }
 
 public interface IQuestionController {
+    void SetData(IQuestion questionData);
     void StartQuestion();
     void NextQuestionStep();
     void ShowSolution();
@@ -44,18 +46,22 @@ public class QuizSession : MonoBehaviour
     [SerializeField] private FeatureQuestionDB featureQuestionDB;
     [SerializeField] private ShinyQuestionDB shinyQuestionDB;
 
+    private int numberOfQuestionTypes;
+
     private List<PlayerPanelController> playerPanelControllers = new();
     private List<int> playerPoints = new();
     
-    private List<IQuestion> questions = new();
-    public Dictionary<QuestionType, int> currentQuestionIndices;
+    private List<IQuestion> allQuestions = new();
+    private int INF_currentQuestionInedx;
+    private Dictionary<QuestionType, int> NOINF_currentQuestionIndices = new();
+    private Dictionary<QuestionType, int> lastQuestionIndices = new();
     private List<int> questionOrder = new();
 
-    // TODO
     private QuestionType selectedCategory = 0;
     private QuestionType currentQuestionType;
     private IQuestionController currentQuestionController;
 
+    private bool quizDone = false;
 
     private void Awake()
     {
@@ -90,22 +96,27 @@ public class QuizSession : MonoBehaviour
     public void PrepareQuiz()
     {
         int totalQuestionAmount = 0;
+        INF_currentQuestionInedx = -1;
 
         foreach (QuestionType questionType in Enum.GetValues(typeof(QuestionType)))
         {
-            currentQuestionIndices.Add(questionType, totalQuestionAmount - 1);
+            numberOfQuestionTypes++;
+            NOINF_currentQuestionIndices.Add(questionType, -1);
 
-            int featureQuestionAmount = questionsDict[questionType].Count;
+            int questionTypeAmount = questionsDict[questionType].Count;
             if (!settings.quiz.infiniteMode)
             {
-                featureQuestionAmount = Mathf.Min(featureQuestionAmount, settings.quiz.questionTypeSettingsList.Find(x => x.type == questionType).questionAmount);
+                questionTypeAmount = Mathf.Min(questionTypeAmount, settings.quiz.questionTypeSettingsList.Find(x => x.type == questionType).questionAmount);
             }
 
-            foreach (IQuestion featureQuestion in questionsDict[questionType].OrderBy(x => UnityEngine.Random.value).Take(featureQuestionAmount))
+            foreach (IQuestion featureQuestion in questionsDict[questionType].OrderBy(x => UnityEngine.Random.value).Take(questionTypeAmount))
             {
-                questions.Add(featureQuestion);
+                allQuestions.Add(featureQuestion);
             }
-            totalQuestionAmount += featureQuestionAmount;
+
+            totalQuestionAmount += questionTypeAmount;
+
+            lastQuestionIndices.Add(questionType, totalQuestionAmount - 1);
         }
 
         for (int i = 0; i < totalQuestionAmount; i++)
@@ -122,15 +133,34 @@ public class QuizSession : MonoBehaviour
 
     public void NextQuestion()
     {
-        if (currentQuestionIndices[0] + 1 >= questionOrder.Count) return;
+        if (!settings.quiz.shuffleCategories)
+        {
+            int counter = 0;
+            while (NOINF_currentQuestionIndices[selectedCategory] == lastQuestionIndices[selectedCategory])
+            {
+                selectedCategory = selectedCategory + 1 % numberOfQuestionTypes;
+                if (counter > numberOfQuestionTypes)
+                {
+                    Debug.Log("Every question has been played!");
+                    quizDone = true;
+                    return;
+                }
+                counter++;
+            }
+        }
 
-        currentQuestionIndices[0]++;
-        int realIndex = questionOrder[currentQuestionIndices[0]];
-        IQuestion question = questions[realIndex];
+        NOINF_currentQuestionIndices[selectedCategory]++;
+        int realIndex = questionOrder[NOINF_currentQuestionIndices[0]];
+        IQuestion question = allQuestions[realIndex];
         if (question.GetType() == typeof(FeatureQuestion))
         {
             currentQuestionType = QuestionType.Feature;
             DisplayFeatureQuestion(question as FeatureQuestion);
+        }
+        else if (question.GetType() == typeof(ShinyQuestion))
+        {
+            currentQuestionType = QuestionType.Shiny;
+            DisplayShinyQuestion(question as ShinyQuestion);
         }
     }
 
@@ -153,14 +183,27 @@ public class QuizSession : MonoBehaviour
         }
     }
 
-    public void DisplayFeatureQuestion(FeatureQuestion featureQuestion)
+    public void DisplayFeatureQuestion(FeatureQuestion questionData)
     {
         ClearQuestionContainer();
-        GameObject featureQuestionObject = Instantiate(featureQuestionPrefab, questionContainer.transform);
-        FeatureQuestionController fqc = featureQuestionObject.GetComponent<FeatureQuestionController>();
-        fqc.SetData(featureQuestion);
-        fqc.StartQuestion();
-        currentQuestionController = fqc;
+        GameObject questionObject = Instantiate(featureQuestionPrefab, questionContainer.transform);
+        FeatureQuestionController questionController = questionObject.GetComponent<FeatureQuestionController>();
+        StartQuestionController(questionData, questionController);
+    }
+
+    public void DisplayShinyQuestion(ShinyQuestion questionData)
+    {
+        ClearQuestionContainer();
+        GameObject questionObject = Instantiate(shinyQuestionPrefab, questionContainer.transform);
+        ShinyQuestionController questionController = questionObject.GetComponent<ShinyQuestionController>();
+        StartQuestionController(questionData, questionController);
+    }
+
+    public void StartQuestionController(IQuestion questionData, IQuestionController questionController)
+    {
+        questionController.SetData(questionData);
+        questionController.StartQuestion();
+        currentQuestionController = questionController;
     }
 
     public static int SpacingFromPlayerCount(int playerCount)

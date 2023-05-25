@@ -11,9 +11,9 @@ public class FeatureQuestionController : MonoBehaviour, IQuestionController
     public FeatureQuestion featureQuestionData;
     private int currentFeatureIndex = 0;
 
-    public void SetData(FeatureQuestion questionData)
+    public void SetData(IQuestion questionData)
     {
-        featureQuestionData = questionData;
+        featureQuestionData = questionData as FeatureQuestion;
     }
 
     public void StartQuestion()
