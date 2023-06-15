@@ -3,10 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.Netcode;
-using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.Profiling.Memory.Experimental;
 using UnityEngine.UI;
 
 [System.Serializable]
@@ -52,7 +49,6 @@ public class QuizSession : MonoBehaviour
     private List<int> playerPoints = new();
     
     private List<IQuestion> allQuestions = new();
-    private int INF_currentQuestionInedx;
     private Dictionary<QuestionType, int> NOINF_currentQuestionIndices = new();
     private Dictionary<QuestionType, int> lastQuestionIndices = new();
     private List<int> questionOrder = new();
@@ -93,10 +89,25 @@ public class QuizSession : MonoBehaviour
         PrepareQuiz();
     }
 
+    private void Update()
+    {
+        if (Input.GetButtonDown("NextQuestion"))
+        {
+            NextQuestion();
+        }
+        if (Input.GetButtonDown("NextQuestionStep"))
+        {
+            NextQuestionStep();
+        }
+        if (Input.GetButtonDown("ShowSolution"))
+        {
+            ShowSolution();
+        }
+    }
+
     public void PrepareQuiz()
     {
         int totalQuestionAmount = 0;
-        INF_currentQuestionInedx = -1;
 
         foreach (QuestionType questionType in Enum.GetValues(typeof(QuestionType)))
         {
@@ -138,7 +149,8 @@ public class QuizSession : MonoBehaviour
             int counter = 0;
             while (NOINF_currentQuestionIndices[selectedCategory] == lastQuestionIndices[selectedCategory])
             {
-                selectedCategory = selectedCategory + 1 % numberOfQuestionTypes;
+                int currentCategoryInt = (int)(selectedCategory + 1) % numberOfQuestionTypes;
+                selectedCategory = (QuestionType)currentCategoryInt;
                 if (counter > numberOfQuestionTypes)
                 {
                     Debug.Log("Every question has been played!");
@@ -152,6 +164,11 @@ public class QuizSession : MonoBehaviour
         NOINF_currentQuestionIndices[selectedCategory]++;
         int realIndex = questionOrder[NOINF_currentQuestionIndices[0]];
         IQuestion question = allQuestions[realIndex];
+        DisplayQuestion(question);
+    }
+
+    private void DisplayQuestion(IQuestion question)
+    {
         if (question.GetType() == typeof(FeatureQuestion))
         {
             currentQuestionType = QuestionType.Feature;
@@ -161,25 +178,6 @@ public class QuizSession : MonoBehaviour
         {
             currentQuestionType = QuestionType.Shiny;
             DisplayShinyQuestion(question as ShinyQuestion);
-        }
-    }
-
-    public void NextQuestionStep()
-    {
-        currentQuestionController.NextQuestionStep();
-    }
-
-    public void ShowSolution()
-    {
-        currentQuestionController.ResetDisplay();
-        currentQuestionController.ShowSolution();
-    }
-
-    public void ClearQuestionContainer()
-    {
-        foreach (Transform transform in questionContainer.transform)
-        {
-            Destroy(transform.gameObject);
         }
     }
 
@@ -204,6 +202,31 @@ public class QuizSession : MonoBehaviour
         questionController.SetData(questionData);
         questionController.StartQuestion();
         currentQuestionController = questionController;
+    }
+
+    public void NextQuestionFromCategory(QuestionType category)
+    {
+        selectedCategory = category;
+        NextQuestion();
+    }
+
+    public void NextQuestionStep()
+    {
+        currentQuestionController.NextQuestionStep();
+    }
+
+    public void ShowSolution()
+    {
+        currentQuestionController.ResetDisplay();
+        currentQuestionController.ShowSolution();
+    }
+
+    public void ClearQuestionContainer()
+    {
+        foreach (Transform transform in questionContainer.transform)
+        {
+            Destroy(transform.gameObject);
+        }
     }
 
     public static int SpacingFromPlayerCount(int playerCount)
