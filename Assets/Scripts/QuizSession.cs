@@ -5,6 +5,7 @@ using System.Linq;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
 [System.Serializable]
 public enum QuestionType
@@ -28,6 +29,8 @@ public class QuizSession : MonoBehaviour
     public static QuizSession instance;
 
     public Dictionary<QuestionType, List<IQuestion>> questionsDict;
+    private Dictionary<QuestionType, int> currentQuestionIndices = new();
+    private QuestionType selectedCategory = 0;
 
     private AdminPanelUser adminPanelUser;
 
@@ -47,13 +50,12 @@ public class QuizSession : MonoBehaviour
 
     private List<PlayerPanelController> playerPanelControllers = new();
     private List<int> playerPoints = new();
-    
+
+    private bool singleQuestionList;
     private List<IQuestion> allQuestions = new();
-    private Dictionary<QuestionType, int> NOINF_currentQuestionIndices = new();
-    private Dictionary<QuestionType, int> lastQuestionIndices = new();
+    private int currentQuestionIndex;
     private List<int> questionOrder = new();
 
-    private QuestionType selectedCategory = 0;
     private QuestionType currentQuestionType;
     private IQuestionController currentQuestionController;
 
@@ -107,64 +109,97 @@ public class QuizSession : MonoBehaviour
 
     public void PrepareQuiz()
     {
-        int totalQuestionAmount = 0;
+        singleQuestionList = !settings.quiz.infiniteMode || settings.quiz.shuffleCategories;
 
-        foreach (QuestionType questionType in Enum.GetValues(typeof(QuestionType)))
+        var questionTypes = Enum.GetValues(typeof(QuestionType));
+        numberOfQuestionTypes = questionTypes.Length;
+
+        if (!singleQuestionList)
         {
-            numberOfQuestionTypes++;
-            NOINF_currentQuestionIndices.Add(questionType, -1);
-
-            int questionTypeAmount = questionsDict[questionType].Count;
-            if (!settings.quiz.infiniteMode)
+            foreach (QuestionType questionType in questionTypes)
             {
-                questionTypeAmount = Mathf.Min(questionTypeAmount, settings.quiz.questionTypeSettingsList.Find(x => x.type == questionType).questionAmount);
+                currentQuestionIndices.Add(questionType, -1);
+            }
+        }
+        else
+        {
+            foreach (QuestionType questionType in questionTypes)
+            {
+                currentQuestionIndex = -1;
+
+                int questionTypeAmount = questionsDict[questionType].Count;
+
+                if (!settings.quiz.infiniteMode)
+                    questionTypeAmount = Mathf.Min(questionTypeAmount, settings.quiz.questionTypeSettingsList.Find(x => x.type == questionType).questionAmount);
+
+                foreach (IQuestion question in questionsDict[questionType].OrderBy(x => UnityEngine.Random.value).Take(questionTypeAmount))
+                {
+                    allQuestions.Add(question);
+                }
             }
 
-            foreach (IQuestion featureQuestion in questionsDict[questionType].OrderBy(x => UnityEngine.Random.value).Take(questionTypeAmount))
+            for (int i = 0; i < allQuestions.Count; i++)
             {
-                allQuestions.Add(featureQuestion);
+                questionOrder.Add(questionOrder.Count);
             }
 
-            totalQuestionAmount += questionTypeAmount;
-
-            lastQuestionIndices.Add(questionType, totalQuestionAmount - 1);
+            if (settings.quiz.shuffleCategories)
+            {
+                questionOrder = questionOrder.OrderBy(x => UnityEngine.Random.value).ToList();
+            }
         }
 
-        for (int i = 0; i < totalQuestionAmount; i++)
+        if (singleQuestionList)
         {
-            questionOrder.Add(questionOrder.Count);
-        }
-
-        if (settings.quiz.shuffleCategories)
+            Debug.Log($"Prepared Quiz with {allQuestions.Count} questions in queue.");
+        } else
         {
-            questionOrder.OrderBy(x => UnityEngine.Random.value);
+            Debug.Log("Prepared Quiz with category switch controls enabled.");
         }
         NextQuestion();
     }
 
     public void NextQuestion()
     {
-        if (!settings.quiz.shuffleCategories)
+        IQuestion question = null;
+
+        if (singleQuestionList)
+        {
+            if (currentQuestionIndex >= allQuestions.Count - 1)
+            {
+                OnQuizFinished();
+                return;
+            }
+            currentQuestionIndex++;
+            int index = questionOrder[currentQuestionIndex];
+            question = allQuestions[index];
+        }
+        else
         {
             int counter = 0;
-            while (NOINF_currentQuestionIndices[selectedCategory] == lastQuestionIndices[selectedCategory])
+            while (currentQuestionIndices[selectedCategory] >= questionsDict[selectedCategory].Count - 1)
             {
                 int currentCategoryInt = (int)(selectedCategory + 1) % numberOfQuestionTypes;
                 selectedCategory = (QuestionType)currentCategoryInt;
                 if (counter > numberOfQuestionTypes)
                 {
-                    Debug.Log("Every question has been played!");
-                    quizDone = true;
+                    OnQuizFinished();
                     return;
                 }
                 counter++;
             }
+            currentQuestionIndices[selectedCategory]++;
+            int index = currentQuestionIndices[selectedCategory];
+            question = questionsDict[selectedCategory][index];
         }
 
-        NOINF_currentQuestionIndices[selectedCategory]++;
-        int realIndex = questionOrder[NOINF_currentQuestionIndices[0]];
-        IQuestion question = allQuestions[realIndex];
         DisplayQuestion(question);
+    }
+
+    private void OnQuizFinished()
+    {
+        Debug.Log("Every question has been played!");
+        quizDone = true;
     }
 
     private void DisplayQuestion(IQuestion question)
@@ -183,6 +218,7 @@ public class QuizSession : MonoBehaviour
 
     public void DisplayFeatureQuestion(FeatureQuestion questionData)
     {
+        Debug.Log("Displaying Feature Question.");
         ClearQuestionContainer();
         GameObject questionObject = Instantiate(featureQuestionPrefab, questionContainer.transform);
         FeatureQuestionController questionController = questionObject.GetComponent<FeatureQuestionController>();
@@ -191,6 +227,7 @@ public class QuizSession : MonoBehaviour
 
     public void DisplayShinyQuestion(ShinyQuestion questionData)
     {
+        Debug.Log("Displaying Shiny Question.");
         ClearQuestionContainer();
         GameObject questionObject = Instantiate(shinyQuestionPrefab, questionContainer.transform);
         ShinyQuestionController questionController = questionObject.GetComponent<ShinyQuestionController>();
