@@ -25,12 +25,20 @@ MonoBehaviour:
       color: 6
     questionTypeSettingsList:
     - type: 0
-      questionAmount: 99999
+      questionAmount: 5
       correctPoints: 5
       wrongPointsOther: 1
     - type: 1
-      questionAmount: 99999
+      questionAmount: 3
       correctPoints: 3
       wrongPointsOther: 2
+    - type: 2
+      questionAmount: 5
+      correctPoints: 5
+      wrongPointsOther: 1
+    - type: 3
+      questionAmount: 4
+      correctPoints: 3
+      wrongPointsOther: 1
     shuffleCategories: 1
     infiniteMode: 0

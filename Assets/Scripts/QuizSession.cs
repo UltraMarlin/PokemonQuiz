@@ -5,13 +5,14 @@ using System.Linq;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
 [System.Serializable]
 public enum QuestionType
 {
     Feature,
-    Shiny
+    Shiny,
+    Blur,
+    Anagram
 }
 
 public interface IQuestion { }
@@ -42,9 +43,13 @@ public class QuizSession : MonoBehaviour
     [SerializeField] private GameObject questionContainer;
     [SerializeField] private GameObject featureQuestionPrefab;
     [SerializeField] private GameObject shinyQuestionPrefab;
+    [SerializeField] private GameObject blurQuestionPrefab;
+    [SerializeField] private GameObject anagramQuestionPrefab;
 
     [SerializeField] private FeatureQuestionDB featureQuestionDB;
     [SerializeField] private ShinyQuestionDB shinyQuestionDB;
+    [SerializeField] private BlurQuestionDB blurQuestionDB;
+    [SerializeField] private AnagramQuestionDB anagramQuestionDB;
 
     private int numberOfQuestionTypes;
 
@@ -74,7 +79,9 @@ public class QuizSession : MonoBehaviour
         questionsDict = new()
         {
             { QuestionType.Feature, featureQuestionDB.questions.ToList().ConvertAll(x => (IQuestion)x) },
-            { QuestionType.Shiny, shinyQuestionDB.questions.ToList().ConvertAll(x => (IQuestion)x) }
+            { QuestionType.Shiny, shinyQuestionDB.questions.ToList().ConvertAll(x => (IQuestion)x) },
+            { QuestionType.Blur, blurQuestionDB.questions.ToList().ConvertAll(x => (IQuestion)x) },
+            { QuestionType.Anagram, anagramQuestionDB.questions.ToList().ConvertAll(x => (IQuestion)x) }
         };
 
         for (int i = 0; i < settings.quiz.players.Count; i++)
@@ -215,6 +222,16 @@ public class QuizSession : MonoBehaviour
             currentQuestionType = QuestionType.Shiny;
             DisplayShinyQuestion(question as ShinyQuestion);
         }
+        else if (question.GetType() == typeof(BlurQuestion))
+        {
+            currentQuestionType = QuestionType.Blur;
+            DisplayBlurQuestion(question as BlurQuestion);
+        }
+        else if (question.GetType() == typeof(AnagramQuestion))
+        {
+            currentQuestionType = QuestionType.Anagram;
+            DisplayAnagramQuestion(question as AnagramQuestion);
+        }
     }
 
     public void DisplayFeatureQuestion(FeatureQuestion questionData)
@@ -232,6 +249,24 @@ public class QuizSession : MonoBehaviour
         ClearQuestionContainer();
         GameObject questionObject = Instantiate(shinyQuestionPrefab, questionContainer.transform);
         ShinyQuestionController questionController = questionObject.GetComponent<ShinyQuestionController>();
+        StartQuestionController(questionData, questionController);
+    }
+
+    public void DisplayBlurQuestion(BlurQuestion questionData)
+    {
+        Debug.Log("Displaying Blur Question.");
+        ClearQuestionContainer();
+        GameObject questionObject = Instantiate(blurQuestionPrefab, questionContainer.transform);
+        BlurQuestionController questionController = questionObject.GetComponent<BlurQuestionController>();
+        StartQuestionController(questionData, questionController);
+    }
+
+    public void DisplayAnagramQuestion(AnagramQuestion questionData)
+    {
+        Debug.Log("Displaying Anagram Question.");
+        ClearQuestionContainer();
+        GameObject questionObject = Instantiate(anagramQuestionPrefab, questionContainer.transform);
+        AnagramQuestionController questionController = questionObject.GetComponent<AnagramQuestionController>();
         StartQuestionController(questionData, questionController);
     }
 

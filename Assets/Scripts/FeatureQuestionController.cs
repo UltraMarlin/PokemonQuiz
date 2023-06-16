@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +8,7 @@ public class FeatureQuestionController : MonoBehaviour, IQuestionController
 {
     [SerializeField] private GameObject imageContainer;
     [SerializeField] private GameObject stretchImagePrefab;
+    [SerializeField] private TextMeshProUGUI solutionText;
 
     public FeatureQuestion featureQuestionData;
     private int currentFeatureIndex = 0;
@@ -32,6 +34,7 @@ public class FeatureQuestionController : MonoBehaviour, IQuestionController
     public void ShowSolution()
     {
         AddSpriteToContainer(featureQuestionData.solutionSprite);
+        solutionText.text = featureQuestionData.pokemonName;
     }
 
     public void ResetDisplay()
