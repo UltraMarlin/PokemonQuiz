@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pokemonName: Katapuldra
   solutionSprite: {fileID: 21300000, guid: f94dd9ce8eb5a934d941d1e578fded90, type: 3}
-  featureSprites: []
+  featureSprites:
+  - {fileID: 21300000, guid: c3d81f980c7075e4da82731d12be1a62, type: 3}
+  - {fileID: 21300000, guid: c3073b77c1e672249825ebc0248b4afd, type: 3}
+  - {fileID: 21300000, guid: ba70b85b05c275b44a9864be1bbb640c, type: 3}
+  - {fileID: 21300000, guid: caa8b7941343ab44e993c2db31b2e314, type: 3}

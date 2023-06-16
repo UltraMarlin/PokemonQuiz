@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pokemonName: Togetic
   solutionSprite: {fileID: 21300000, guid: dd869dbe752cf0d4ca8d1ade42d2bc2c, type: 3}
-  featureSprites: []
+  featureSprites:
+  - {fileID: 21300000, guid: 990342b3093c7e3419d2cdac702b7369, type: 3}
+  - {fileID: 21300000, guid: bd6571902037fda45a14d834c9c807e5, type: 3}
+  - {fileID: 21300000, guid: 1a54ecce9cad8384389bc75296a10e0e, type: 3}
+  - {fileID: 21300000, guid: 484e884fa09fff049b0d13f81122172a, type: 3}

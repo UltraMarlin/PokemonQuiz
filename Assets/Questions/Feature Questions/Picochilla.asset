@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pokemonName: Picochilla
   solutionSprite: {fileID: 21300000, guid: f3ecd865ae28e24488390e4bebc36281, type: 3}
-  featureSprites: []
+  featureSprites:
+  - {fileID: 21300000, guid: 54e3dc1c88fdf904084b66a93693fc60, type: 3}
+  - {fileID: 21300000, guid: bd967fcd1d50f9349b29b4be676fb071, type: 3}
+  - {fileID: 21300000, guid: e5e6782225c247d4d9c7a8861c0f381f, type: 3}
+  - {fileID: 21300000, guid: 3167784d1ddfec54cb45559ee3fb0a5f, type: 3}

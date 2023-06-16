@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pokemonName: Panferno
   solutionSprite: {fileID: 21300000, guid: 13653d5519e3af040b96555ebe6e1fe6, type: 3}
-  featureSprites: []
+  featureSprites:
+  - {fileID: 21300000, guid: ef6fd5b3541c19f44b266710e476be81, type: 3}
+  - {fileID: 21300000, guid: b8a306183a076e044a2fa8be25608276, type: 3}
+  - {fileID: 21300000, guid: 2471921f0768b3c4296e1a40f591e125, type: 3}
+  - {fileID: 21300000, guid: a2489a696876de442a31ae421e9e842e, type: 3}

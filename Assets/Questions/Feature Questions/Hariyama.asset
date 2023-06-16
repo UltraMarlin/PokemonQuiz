@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pokemonName: Hariyama
   solutionSprite: {fileID: 21300000, guid: 4d7764c08a59c8c44abd94655241c3aa, type: 3}
-  featureSprites: []
+  featureSprites:
+  - {fileID: 21300000, guid: 733f5dc1b3e0a224287b5fac0520af93, type: 3}
+  - {fileID: 21300000, guid: aec2e3bdf80314c4994302c09b7d1c90, type: 3}
+  - {fileID: 21300000, guid: 369595f70163b0640a06acc85a67ed50, type: 3}
+  - {fileID: 21300000, guid: fa2bdfe0fa496a74abb6d6a0da4ff55c, type: 3}

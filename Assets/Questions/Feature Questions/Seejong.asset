@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pokemonName: Seejong
   solutionSprite: {fileID: 21300000, guid: 2ad6f306e99e6d14da69a74d76bf9678, type: 3}
-  featureSprites: []
+  featureSprites:
+  - {fileID: 21300000, guid: 085e3c9376bf5e5409b3bb3a6f2ee07a, type: 3}
+  - {fileID: 21300000, guid: 374de202f84fa27499428167f08413fc, type: 3}
+  - {fileID: 21300000, guid: 861fce043ed58ed42ad143fa38779f24, type: 3}
+  - {fileID: 21300000, guid: e4c90ea4c73916f419fbdbeddd7bcca1, type: 3}

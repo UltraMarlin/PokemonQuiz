@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pokemonName: Regice
   solutionSprite: {fileID: 21300000, guid: 7cdbee964ea25784195acabfd1a272a2, type: 3}
-  featureSprites: []
+  featureSprites:
+  - {fileID: 21300000, guid: 24f67a50fa54de04d8a3d96a504736b5, type: 3}
+  - {fileID: 21300000, guid: 5cc363b17cbe0a0478f600d99f188ace, type: 3}
+  - {fileID: 21300000, guid: 48d9ae55d27a48445b54ecbe234b140d, type: 3}
+  - {fileID: 21300000, guid: a1506888781203e47988f1b27e8a5628, type: 3}

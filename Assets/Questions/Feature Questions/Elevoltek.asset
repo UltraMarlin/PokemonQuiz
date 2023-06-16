@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pokemonName: Elevoltek
   solutionSprite: {fileID: 21300000, guid: afdc21c2916032044aad69ce81d50d7a, type: 3}
-  featureSprites: []
+  featureSprites:
+  - {fileID: 21300000, guid: b49d6f7d019f6e2429f7d216cb6befab, type: 3}
+  - {fileID: 21300000, guid: 6496d58e5f878134ca3869e12dfb41d3, type: 3}
+  - {fileID: 21300000, guid: 43fea9b9b95cb974ca54227781439bf3, type: 3}
+  - {fileID: 21300000, guid: 5ca45f1558a83cb48ae51baf7d82dab9, type: 3}

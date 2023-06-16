@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pokemonName: Gorgasonn
   solutionSprite: {fileID: 21300000, guid: 2a6a18bc350a6e042966ed8cc38be784, type: 3}
-  featureSprites: []
+  featureSprites:
+  - {fileID: 21300000, guid: 78835c381d8cecf45bc7a38c91392649, type: 3}
+  - {fileID: 21300000, guid: 3cdc50aff700c0a48ae118d6e97b43bb, type: 3}
+  - {fileID: 21300000, guid: 697bf6fef8ecbc14296d5cdd6cdaa0ed, type: 3}
+  - {fileID: 21300000, guid: 9c6b915aa8078a24cad27b8d66ae00b7, type: 3}

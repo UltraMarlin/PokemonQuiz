@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pokemonName: Tangoloss
   solutionSprite: {fileID: 21300000, guid: 6b0566ef640ddef4caae36d939364494, type: 3}
-  featureSprites: []
+  featureSprites:
+  - {fileID: 21300000, guid: 44279f74f60c4434fb66fdd31b4b42e0, type: 3}
+  - {fileID: 21300000, guid: ac2bb55bf3d440b4fb764348fc82a936, type: 3}
+  - {fileID: 21300000, guid: aa8a519689ddd8e44b6d9b17821a5a8f, type: 3}
+  - {fileID: 21300000, guid: c5ea89028e912b24688d3d9c016d02bb, type: 3}

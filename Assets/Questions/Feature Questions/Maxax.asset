@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pokemonName: Maxax
   solutionSprite: {fileID: 21300000, guid: 579f5ec1c4d08b54f9fd502fbbbb25b4, type: 3}
-  featureSprites: []
+  featureSprites:
+  - {fileID: 21300000, guid: 12c4c5d3e26a0674dafb4c4885beba7b, type: 3}
+  - {fileID: 21300000, guid: f04cf3c907571ac48a13235d351555f1, type: 3}
+  - {fileID: 21300000, guid: 15a52b9249fd2a14cb441ca4e556a5d3, type: 3}
+  - {fileID: 21300000, guid: 5e4af1bc97592724d8912b8b7aba867d, type: 3}

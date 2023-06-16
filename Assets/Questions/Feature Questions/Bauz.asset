@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pokemonName: Bauz
   solutionSprite: {fileID: 21300000, guid: 74480f8468b6042478667f6ce871ea9f, type: 3}
-  featureSprites: []
+  featureSprites:
+  - {fileID: 21300000, guid: edd664e3df52f3d4f8432af206403005, type: 3}
+  - {fileID: 21300000, guid: 4fba7e95f54d6a24a8de8b8fb2fe7cea, type: 3}
+  - {fileID: 21300000, guid: 4f883bf828dbcb1489799b46253d4dd1, type: 3}
+  - {fileID: 21300000, guid: c47ff306096109847babc89f75f84dae, type: 3}

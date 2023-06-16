@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pokemonName: Felori
   solutionSprite: {fileID: 21300000, guid: 89627018f6f1bd7489b5bd85bade24b6, type: 3}
-  featureSprites: []
+  featureSprites:
+  - {fileID: 21300000, guid: 18ed5c22a59438345afca84de226ca45, type: 3}
+  - {fileID: 21300000, guid: bbf82ae37d4a15c4aa9bd07a6a1fd9aa, type: 3}
+  - {fileID: 21300000, guid: 2fd0079c246e23647a4f1dad07304319, type: 3}
+  - {fileID: 21300000, guid: 1d69391b2d0c953469ce985f1802fb94, type: 3}

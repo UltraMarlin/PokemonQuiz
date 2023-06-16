@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pokemonName: Kryppuk
   solutionSprite: {fileID: 21300000, guid: f58f904c55e6a194883d0faa49c7d978, type: 3}
-  featureSprites: []
+  featureSprites:
+  - {fileID: 21300000, guid: b1fd10047053bf74abfeb685a82bc68a, type: 3}
+  - {fileID: 21300000, guid: 02e06e2405f788b4a92419eac5387c96, type: 3}
+  - {fileID: 21300000, guid: 6c4c5a1c5bbfbdb4bb944527b421a93c, type: 3}
+  - {fileID: 21300000, guid: 6f2710f0c20b17e4da2e8cdaeb5c648e, type: 3}

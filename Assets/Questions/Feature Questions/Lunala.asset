@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pokemonName: Lunala
   solutionSprite: {fileID: 21300000, guid: 08ffaacd0677fb942b20871fdb1299fd, type: 3}
-  featureSprites: []
+  featureSprites:
+  - {fileID: 21300000, guid: 75586026505fc6b4f9b334df4af87889, type: 3}
+  - {fileID: 21300000, guid: fbd8b92c2aa055047b2b2c2df08ebe59, type: 3}
+  - {fileID: 21300000, guid: 98034ee588dee5d4793c193c284aaca7, type: 3}
+  - {fileID: 21300000, guid: e9b3d5a610245d64e853b304ba6389f4, type: 3}

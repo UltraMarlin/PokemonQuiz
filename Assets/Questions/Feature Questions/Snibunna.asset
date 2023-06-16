@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pokemonName: Snibunna
   solutionSprite: {fileID: 21300000, guid: 3619a1bc1f7cd61429bc0a37f4a99229, type: 3}
-  featureSprites: []
+  featureSprites:
+  - {fileID: 21300000, guid: 21c9f7d675fa05247b0e91913e222291, type: 3}
+  - {fileID: 21300000, guid: 0dde96c69074a43478a07dfd1a145427, type: 3}
+  - {fileID: 21300000, guid: 5d35f733148dd7043b76fed6890da7ab, type: 3}
+  - {fileID: 21300000, guid: f2229865849a08e47aff4750a0c95f6e, type: 3}

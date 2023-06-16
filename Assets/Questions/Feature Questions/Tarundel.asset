@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pokemonName: Tarundel
   solutionSprite: {fileID: 21300000, guid: 02ce4e186e84ed9459de855f574923ac, type: 3}
-  featureSprites: []
+  featureSprites:
+  - {fileID: 21300000, guid: c448f30849e520d419bc4eaa55fed553, type: 3}
+  - {fileID: 21300000, guid: 7962e1e03da19544aa68b91bce9275c5, type: 3}
+  - {fileID: 21300000, guid: af0af285db5423643a99471f00614dfd, type: 3}
+  - {fileID: 21300000, guid: aae441cb1f5611e4bbf86134a60cb6e8, type: 3}

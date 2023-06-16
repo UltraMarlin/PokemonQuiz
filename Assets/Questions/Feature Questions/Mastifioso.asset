@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pokemonName: Mastifioso
   solutionSprite: {fileID: 21300000, guid: 27e8556a4f5184143bd79dbafa22a73a, type: 3}
-  featureSprites: []
+  featureSprites:
+  - {fileID: 21300000, guid: 79b619052f85b9e479d0c7d2657ffa17, type: 3}
+  - {fileID: 21300000, guid: b956d9e6b175dfa4893bab10eb4d5166, type: 3}
+  - {fileID: 21300000, guid: d3582c8ec27e52f488c29e4f33352d32, type: 3}
+  - {fileID: 21300000, guid: 62364fe696c433c4b842f771933e3812, type: 3}

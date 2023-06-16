@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pokemonName: Nachtara
   solutionSprite: {fileID: 21300000, guid: 94ca90cbd454330448cf206a03ebc647, type: 3}
-  featureSprites: []
+  featureSprites:
+  - {fileID: 21300000, guid: ecad3318b0ec4bc488191db8e89abba9, type: 3}
+  - {fileID: 21300000, guid: 2c2a0d713d48e1f459a00a02a4f38f34, type: 3}
+  - {fileID: 21300000, guid: 1979df6c1c7b2f34d9bf87b6df01ec1d, type: 3}
+  - {fileID: 21300000, guid: fc5b2ab4c5026e84193b516ee3f2d432, type: 3}

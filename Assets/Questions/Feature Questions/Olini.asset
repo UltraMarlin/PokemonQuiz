@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pokemonName: Olini
   solutionSprite: {fileID: 21300000, guid: 0dd391754846eab42a932e6e3d7f2748, type: 3}
-  featureSprites: []
+  featureSprites:
+  - {fileID: 21300000, guid: 62f54550cb25e3e4d8648df2e24ac880, type: 3}
+  - {fileID: 21300000, guid: a92135778d4985d47a14de16588a43ca, type: 3}
+  - {fileID: 21300000, guid: 57a397decd10934479e3c72ef55eb19e, type: 3}
+  - {fileID: 21300000, guid: 4e8ae7537cff53944aaadfab6d0cfbb6, type: 3}

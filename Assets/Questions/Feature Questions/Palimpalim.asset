@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pokemonName: Palimpalim
   solutionSprite: {fileID: 21300000, guid: ac94c5227b4a4364a84ecd685bdfa9d4, type: 3}
-  featureSprites: []
+  featureSprites:
+  - {fileID: 21300000, guid: 48c518edd5f94f04fa50c56aea49111d, type: 3}
+  - {fileID: 21300000, guid: 5e0bd25ad9c4eeb4890ada79e882da9c, type: 3}
+  - {fileID: 21300000, guid: 30bf555efd815d54abf5132e67225a8e, type: 3}
+  - {fileID: 21300000, guid: e17c1103ba67d2a4dbaa0ff04e213640, type: 3}

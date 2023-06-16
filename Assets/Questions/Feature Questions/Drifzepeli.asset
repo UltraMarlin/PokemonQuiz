@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pokemonName: Drifzepeli
   solutionSprite: {fileID: 21300000, guid: d406511e82fb8744fae9321501356b77, type: 3}
-  featureSprites: []
+  featureSprites:
+  - {fileID: 21300000, guid: 685c9ba0314fbd740bb0347475f9d802, type: 3}
+  - {fileID: 21300000, guid: 71221cf3f2e45e24bb23df18b4897884, type: 3}
+  - {fileID: 21300000, guid: 6c42442ef73de334388deb8a25164d3b, type: 3}
+  - {fileID: 21300000, guid: c8fc5b1e1af1a2342828664cbb44bb74, type: 3}

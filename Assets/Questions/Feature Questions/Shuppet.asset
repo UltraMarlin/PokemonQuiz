@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pokemonName: Shuppet
   solutionSprite: {fileID: 21300000, guid: 2154897b900848944a5b70ff12a9b987, type: 3}
-  featureSprites: []
+  featureSprites:
+  - {fileID: 21300000, guid: cd307c3018848fe44917fddb35eb9f68, type: 3}
+  - {fileID: 21300000, guid: f3aec9a9b72da044f86a32045c25ae96, type: 3}
+  - {fileID: 21300000, guid: 0c95cdd5ee00c21498bb6be459ec98e0, type: 3}
+  - {fileID: 21300000, guid: e30b7ff228cf6dc43956ab3fae8b9a7a, type: 3}

@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pokemonName: Welsar
   solutionSprite: {fileID: 21300000, guid: 6e09ab6cfb217e141a889eb429e90b8d, type: 3}
-  featureSprites: []
+  featureSprites:
+  - {fileID: 21300000, guid: 82f9a9a683b850e459d38db33b9e93e3, type: 3}
+  - {fileID: 21300000, guid: b060371945a6a3142b9279c700cda0e8, type: 3}
+  - {fileID: 21300000, guid: b5270dc8f3301c54db78eb0380292599, type: 3}
+  - {fileID: 21300000, guid: 4e5b825d747dce74f8c9997a653d4365, type: 3}

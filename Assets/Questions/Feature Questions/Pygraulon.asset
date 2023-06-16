@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pokemonName: Pygraulon
   solutionSprite: {fileID: 21300000, guid: 4b17da7a7f5615f4ba72f2c188bf4524, type: 3}
-  featureSprites: []
+  featureSprites:
+  - {fileID: 21300000, guid: 3859e870709e3c34f91be2ce6a07acb8, type: 3}
+  - {fileID: 21300000, guid: 6b6071cdd7efa484aacf9869fa03002a, type: 3}
+  - {fileID: 21300000, guid: bd3b6d03dc6e7df40805cc5f339d3a3b, type: 3}
+  - {fileID: 21300000, guid: af5b19d963041694bb53a4b260cb8046, type: 3}
