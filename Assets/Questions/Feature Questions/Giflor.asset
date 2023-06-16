@@ -16,5 +16,6 @@ MonoBehaviour:
   solutionSprite: {fileID: 21300000, guid: bc41f94df5d6c2b438a6b2caffc62a6c, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: 2dd418716ae133746b2b108e72c4940c, type: 3}
+  - {fileID: 21300000, guid: 9b952d67ff82d32479849a5f674284da, type: 3}
   - {fileID: 21300000, guid: 6546dd0f53f70db4cb5f56898aa41a70, type: 3}
   - {fileID: 21300000, guid: 5c2d1be48d67146408938edae2f13722, type: 3}

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe5e4d2aed74a645969d75d271b3805, type: 3}
+  m_Name: Sandan
+  m_EditorClassIdentifier: 
+  pokemonName: Sandan
+  solutionSprite: {fileID: 21300000, guid: b52e140ca7b44714e93f4b30e08d343e, type: 3}
+  featureSprites:
+  - {fileID: 21300000, guid: 749e96bcb300fd04e909682b0bb26d12, type: 3}
+  - {fileID: 21300000, guid: deebe9906d7411c43b86813cdb149703, type: 3}
+  - {fileID: 21300000, guid: 891c26b32b1b670448cbcbb1af6e9ce5, type: 3}
+  - {fileID: 21300000, guid: b06f4065569efe94bb7022a41a7fecaf, type: 3}

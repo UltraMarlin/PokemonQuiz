@@ -12,15 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc35597079d495e49aaf3db3ec6ac336, type: 3}
   m_Name: FeatureQuestionDB
   m_EditorClassIdentifier: 
-  questions:
-  - {fileID: 11400000, guid: 9c8381a9d50e7854fa366b871aba2cd4, type: 2}
-  - {fileID: 11400000, guid: 5e2b1a08bf600114ca5ebd1c4a6c1b0d, type: 2}
-  - {fileID: 11400000, guid: bf11c2859928cd140ba090bb8009f03c, type: 2}
-  - {fileID: 11400000, guid: ba431043cb99e7740b16632c90868319, type: 2}
-  - {fileID: 11400000, guid: ed61b2ce15d5838499b1f03be7fd1ecd, type: 2}
-  - {fileID: 11400000, guid: 6599676d7f9851047a30e4b6d690f8cc, type: 2}
-  - {fileID: 11400000, guid: 27a8f9ecdcb46fb4e8a9914f1434a0d8, type: 2}
-  - {fileID: 11400000, guid: 617e46ac98c1df340b2c0235a21b5f2e, type: 2}
-  - {fileID: 11400000, guid: cc3ec98b1f059664fbcd1ee82da51f39, type: 2}
-  - {fileID: 11400000, guid: 319fdd95388222644a0929353f5b6fd1, type: 2}
-  - {fileID: 11400000, guid: af21b45380b8ca948ab09d90a04c5f17, type: 2}
+  questions: []

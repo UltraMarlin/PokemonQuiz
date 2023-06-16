@@ -70,6 +70,7 @@ public class QuizSession : MonoBehaviour
     {
         NetworkManager.Singleton.StartServer();
 
+        //TODO: Randomize here instead of later
         questionsDict = new()
         {
             { QuestionType.Feature, featureQuestionDB.questions.ToList().ConvertAll(x => (IQuestion)x) },

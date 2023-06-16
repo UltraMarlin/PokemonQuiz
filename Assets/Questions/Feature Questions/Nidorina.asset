@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe5e4d2aed74a645969d75d271b3805, type: 3}
+  m_Name: Nidorina
+  m_EditorClassIdentifier: 
+  pokemonName: Nidorina
+  solutionSprite: {fileID: 21300000, guid: 62ad7be786dd8404097fb13df51f510a, type: 3}
+  featureSprites:
+  - {fileID: 21300000, guid: f4d083df561955c4d8baf39bf070cb45, type: 3}
+  - {fileID: 21300000, guid: 0fe5698f298722045b72a395bdbc9690, type: 3}
+  - {fileID: 21300000, guid: 9fdf3f9ff7e14ce45b35ab9e5e47296e, type: 3}
+  - {fileID: 21300000, guid: 3529adb3b572c9e47b7fd023e00ddfa5, type: 3}

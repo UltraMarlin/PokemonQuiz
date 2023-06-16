@@ -14,7 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pokemonName: Robball
   solutionSprite: {fileID: 21300000, guid: 2b21dcb114d904a4c917367cb782f7b5, type: 3}
-  featureSprites:
-  - {fileID: 21300000, guid: 51a2974341991a9428d433d5e47f2f04, type: 3}
-  - {fileID: 21300000, guid: 28639c20bf5814145ba11e4d55145c9b, type: 3}
-  - {fileID: 21300000, guid: fcbf21f531cb52042867167d25317031, type: 3}
+  featureSprites: []

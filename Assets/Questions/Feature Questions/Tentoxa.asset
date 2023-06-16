@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe5e4d2aed74a645969d75d271b3805, type: 3}
+  m_Name: Tentoxa
+  m_EditorClassIdentifier: 
+  pokemonName: Tentoxa
+  solutionSprite: {fileID: 21300000, guid: 291a6b8b5179be641bbd431550a0b434, type: 3}
+  featureSprites:
+  - {fileID: 21300000, guid: e84b4b2421407594db870764d8e8928c, type: 3}
+  - {fileID: 21300000, guid: 6b32c56e6b1e4f440bac2c3885e7a055, type: 3}
+  - {fileID: 21300000, guid: 438b45724e73be245bd1cc18ad6f3a6c, type: 3}
+  - {fileID: 21300000, guid: 4600b9e37709f5345a05b2ecc5ca0bf6, type: 3}

@@ -14,7 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pokemonName: Volbeat
   solutionSprite: {fileID: 21300000, guid: aef2a6463db9ed44abdf2fdc407dca50, type: 3}
-  featureSprites:
-  - {fileID: 21300000, guid: 7d472db3362b79f4cbc234701772c9eb, type: 3}
-  - {fileID: 21300000, guid: 47d7243e2e4debe43995a6b1bba985c4, type: 3}
-  - {fileID: 21300000, guid: cfdbfc80ef29f1d4aa3740ad0f9c59f3, type: 3}
+  featureSprites: []

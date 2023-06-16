@@ -14,7 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pokemonName: Puppance
   solutionSprite: {fileID: 21300000, guid: 1d7462f5e5810e548bcd7ec9a7302470, type: 3}
-  featureSprites:
-  - {fileID: 21300000, guid: e9560be3807b1f944bb329ecd5f99945, type: 3}
-  - {fileID: 21300000, guid: 6a938ed9c37249948a24f79bbf9e8ec9, type: 3}
-  - {fileID: 21300000, guid: 9c70f7c3bb043164abf52e12232e2b70, type: 3}
+  featureSprites: []

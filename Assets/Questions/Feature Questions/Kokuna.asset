@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe5e4d2aed74a645969d75d271b3805, type: 3}
+  m_Name: Kokuna
+  m_EditorClassIdentifier: 
+  pokemonName: Kokuna
+  solutionSprite: {fileID: 21300000, guid: f225cb3fd7737b04ab9c7cf9a4b244c5, type: 3}
+  featureSprites:
+  - {fileID: 21300000, guid: ca2339fbc81d6b044ac7a26d6d661672, type: 3}
+  - {fileID: 21300000, guid: 693ba1edb1fcae04cb7f57c569fa4308, type: 3}
+  - {fileID: 21300000, guid: 12dd58cb776f1ab40ba3ca3818959e06, type: 3}
+  - {fileID: 21300000, guid: 53be1085f1129bb4eb9d5e215db236d1, type: 3}

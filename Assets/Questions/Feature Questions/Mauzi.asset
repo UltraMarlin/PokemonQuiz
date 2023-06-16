@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe5e4d2aed74a645969d75d271b3805, type: 3}
+  m_Name: Mauzi
+  m_EditorClassIdentifier: 
+  pokemonName: Mauzi
+  solutionSprite: {fileID: 21300000, guid: 9a8f337f39b30934d8fc56afc5527c1a, type: 3}
+  featureSprites:
+  - {fileID: 21300000, guid: 997ec162e151ac44cae80f5b3052700a, type: 3}
+  - {fileID: 21300000, guid: fad72a8f0a7540445a0691f40223711d, type: 3}
+  - {fileID: 21300000, guid: 34d54f5c2c552554b94f0aab4ab37834, type: 3}
+  - {fileID: 21300000, guid: a075170f770727f45bd9c39839c9aaa6, type: 3}

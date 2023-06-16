@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe5e4d2aed74a645969d75d271b3805, type: 3}
+  m_Name: Vulpix
+  m_EditorClassIdentifier: 
+  pokemonName: Vulpix
+  solutionSprite: {fileID: 21300000, guid: 140f866d8ed93d847879c3bbe1dead29, type: 3}
+  featureSprites:
+  - {fileID: 21300000, guid: 98410ba28eb8ba24987bc80060b331bc, type: 3}
+  - {fileID: 21300000, guid: 0a40c2135f01e984989dee12619acd51, type: 3}
+  - {fileID: 21300000, guid: 6615325ea1c22ff46b813f911b42fdf8, type: 3}
+  - {fileID: 21300000, guid: 51af576375fb16646acbdc7c0d4a1980, type: 3}

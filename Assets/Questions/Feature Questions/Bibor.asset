@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe5e4d2aed74a645969d75d271b3805, type: 3}
+  m_Name: Bibor
+  m_EditorClassIdentifier: 
+  pokemonName: Bibor
+  solutionSprite: {fileID: 21300000, guid: 5d5ec5295b543ed4685b36aa3fc1b34c, type: 3}
+  featureSprites:
+  - {fileID: 21300000, guid: 2daef5844d1af8744a6d62d498982f8b, type: 3}
+  - {fileID: 21300000, guid: dd122192bae35694aa2c7308de4b1e9d, type: 3}
+  - {fileID: 21300000, guid: 205f4533cda65e142a7bc77d5beff933, type: 3}
+  - {fileID: 21300000, guid: a176ad2f5e5f4534b9d25b10c4cdd298, type: 3}
