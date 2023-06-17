@@ -6,11 +6,9 @@ using UnityEngine.UI;
 
 public class DrawQuestionController : MonoBehaviour, IQuestionController
 {
-    [SerializeField] private GameObject imageContainer;
-    [SerializeField] private GameObject stretchImagePrefab;
+    [SerializeField] private GameObject videoContainer;
+    [SerializeField] private GameObject stretchVideoPrefab;
     [SerializeField] private TextMeshProUGUI solutionText;
-
-    private Image drawImageComponent;
 
     public DrawQuestion drawQuestionData;
 

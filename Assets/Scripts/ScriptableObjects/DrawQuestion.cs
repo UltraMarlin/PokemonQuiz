@@ -1,11 +1,10 @@
 using UnityEditor;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "AnagramQuestion", menuName = "QuestionTypes/Anagram", order = 4)]
-public class AnagramQuestion : IQuestion
+[CreateAssetMenu(fileName = "DrawQuestion", menuName = "QuestionTypes/Draw", order = 5)]
+public class DrawQuestion : IQuestion
 {
     public string pokemonName;
-    public string anagramString;
     public Sprite sprite;
 
     public void OnValidate()

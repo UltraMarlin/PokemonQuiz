@@ -10,7 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2792c75c1cf2969468ef62873fff0dfd, type: 3}
-  m_Name: AnagramQuestionDB
+  m_Name: DrawQuestionDB
   m_EditorClassIdentifier: 
-  questions:
-  - {fileID: 11400000, guid: 4b26825c71bed7549b37a39434e6ddce, type: 2}
+  questions: []

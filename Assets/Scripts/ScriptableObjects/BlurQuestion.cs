@@ -2,7 +2,7 @@ using UnityEditor;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "BlurQuestion", menuName = "QuestionTypes/Blur", order = 3)]
-public class BlurQuestion : ScriptableObject, IQuestion
+public class BlurQuestion : IQuestion
 {
     public string pokemonName;
     public Sprite sprite;

@@ -21,7 +21,7 @@ public class QuizUtils
     public static bool validateQuestionObjects = false;
 }
 
-public interface IQuestion { }
+public class IQuestion : ScriptableObject { }
 
 public interface IQuestionController {
     void SetData(IQuestion questionData);
