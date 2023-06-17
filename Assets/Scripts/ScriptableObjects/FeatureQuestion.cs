@@ -13,6 +13,7 @@ public class FeatureQuestion : ScriptableObject, IQuestion
 
     public void OnValidate()
     {
+        if (!QuizUtils.validateQuestionObjects) return;
         if (solutionSprite != null)
         {
             pokemonName = solutionSprite.name.Split("_")[1];

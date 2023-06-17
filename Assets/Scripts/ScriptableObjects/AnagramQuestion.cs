@@ -10,6 +10,7 @@ public class AnagramQuestion : ScriptableObject, IQuestion
 
     public void OnValidate()
     {
+        if (!QuizUtils.validateQuestionObjects) return;
         if (sprite != null)
         {
             pokemonName = sprite.name.Split("_")[1];

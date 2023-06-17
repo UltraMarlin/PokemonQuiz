@@ -15,6 +15,11 @@ public enum QuestionType
     Anagram
 }
 
+public class QuizUtils
+{
+    public static bool validateQuestionObjects = false;
+}
+
 public interface IQuestion { }
 
 public interface IQuestionController {
