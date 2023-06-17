@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2792c75c1cf2969468ef62873fff0dfd, type: 3}
-  m_Name: DrawQuestionDB
+  m_Script: {fileID: 11500000, guid: bfbc244f4a40c704087f2013a9809da4, type: 3}
+  m_Name: Celebi
   m_EditorClassIdentifier: 
-  questions:
-  - {fileID: 11400000, guid: db0c12fd8ab036144a00be59109740df, type: 2}
+  pokemonName: Celebi
+  drawerName: Jessi
+  videoClip: {fileID: 32900000, guid: feac3713245b33d4e8421f1c62ad3057, type: 3}
