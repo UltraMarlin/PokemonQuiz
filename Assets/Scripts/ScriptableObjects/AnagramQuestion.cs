@@ -4,7 +4,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "AnagramQuestion", menuName = "QuestionTypes/Anagram", order = 4)]
 public class AnagramQuestion : IQuestion
 {
-    public string pokemonName;
     public string anagramString;
     public Sprite sprite;
 

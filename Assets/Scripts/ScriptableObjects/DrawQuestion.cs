@@ -5,13 +5,12 @@ using UnityEngine.Video;
 [CreateAssetMenu(fileName = "DrawQuestion", menuName = "QuestionTypes/Draw", order = 5)]
 public class DrawQuestion : IQuestion
 {
-    public string pokemonName;
     public string drawerName;
     public VideoClip videoClip;
 
     public void OnValidate()
     {
-        //if (!QuizUtils.validateQuestionObjects) return;
+        if (!QuizUtils.validateQuestionObjects) return;
         if (videoClip != null)
         {
             pokemonName = videoClip.name.Split('_')[0];

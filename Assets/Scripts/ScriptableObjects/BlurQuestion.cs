@@ -4,7 +4,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "BlurQuestion", menuName = "QuestionTypes/Blur", order = 3)]
 public class BlurQuestion : IQuestion
 {
-    public string pokemonName;
     public Sprite sprite;
 
     public void OnValidate()

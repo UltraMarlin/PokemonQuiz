@@ -16,12 +16,30 @@ public enum QuestionType
     Draw
 }
 
+[System.Serializable]
+public enum PokemonGen
+{
+    GEN1,
+    GEN2,
+    GEN3,
+    GEN4,
+    GEN5,
+    GEN6,
+    GEN7,
+    GEN8,
+    GEN9
+}
+
 public class QuizUtils
 {
     public static bool validateQuestionObjects = false;
 }
 
-public class IQuestion : ScriptableObject { }
+public class IQuestion : ScriptableObject
+{
+    public string pokemonName;
+    public PokemonGen pokemonGen;
+}
 
 public interface IQuestionController {
     void SetData(IQuestion questionData);
