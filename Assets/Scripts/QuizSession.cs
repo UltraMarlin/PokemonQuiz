@@ -12,7 +12,8 @@ public enum QuestionType
     Feature,
     Shiny,
     Blur,
-    Anagram
+    Anagram,
+    Draw
 }
 
 public class QuizUtils
@@ -46,15 +47,18 @@ public class QuizSession : MonoBehaviour
     [SerializeField] private GameObject playerPanelPrefab;
 
     [SerializeField] private GameObject questionContainer;
+
     [SerializeField] private GameObject featureQuestionPrefab;
     [SerializeField] private GameObject shinyQuestionPrefab;
     [SerializeField] private GameObject blurQuestionPrefab;
     [SerializeField] private GameObject anagramQuestionPrefab;
+    [SerializeField] private GameObject drawQuestionPrefab;
 
-    [SerializeField] private FeatureQuestionDB featureQuestionDB;
-    [SerializeField] private ShinyQuestionDB shinyQuestionDB;
-    [SerializeField] private BlurQuestionDB blurQuestionDB;
-    [SerializeField] private AnagramQuestionDB anagramQuestionDB;
+    [SerializeField] private QuestionDB featureQuestionDB;
+    [SerializeField] private QuestionDB shinyQuestionDB;
+    [SerializeField] private QuestionDB blurQuestionDB;
+    [SerializeField] private QuestionDB anagramQuestionDB;
+    [SerializeField] private QuestionDB drawQuestionDB;
 
     private int numberOfQuestionTypes;
 
@@ -86,7 +90,8 @@ public class QuizSession : MonoBehaviour
             { QuestionType.Feature, featureQuestionDB.questions.ToList().ConvertAll(x => (IQuestion)x) },
             { QuestionType.Shiny, shinyQuestionDB.questions.ToList().ConvertAll(x => (IQuestion)x) },
             { QuestionType.Blur, blurQuestionDB.questions.ToList().ConvertAll(x => (IQuestion)x) },
-            { QuestionType.Anagram, anagramQuestionDB.questions.ToList().ConvertAll(x => (IQuestion)x) }
+            { QuestionType.Anagram, anagramQuestionDB.questions.ToList().ConvertAll(x => (IQuestion)x) },
+            { QuestionType.Draw, drawQuestionDB.questions.ToList().ConvertAll(x => (IQuestion)x) }
         };
 
         for (int i = 0; i < settings.quiz.players.Count; i++)
@@ -237,6 +242,11 @@ public class QuizSession : MonoBehaviour
             currentQuestionType = QuestionType.Anagram;
             DisplayAnagramQuestion(question as AnagramQuestion);
         }
+        else if (question.GetType() == typeof(DrawQuestion))
+        {
+            currentQuestionType = QuestionType.Draw;
+            DisplayDrawQuestion(question as DrawQuestion);
+        }
     }
 
     public void DisplayFeatureQuestion(FeatureQuestion questionData)
@@ -272,6 +282,15 @@ public class QuizSession : MonoBehaviour
         ClearQuestionContainer();
         GameObject questionObject = Instantiate(anagramQuestionPrefab, questionContainer.transform);
         AnagramQuestionController questionController = questionObject.GetComponent<AnagramQuestionController>();
+        StartQuestionController(questionData, questionController);
+    }
+
+    public void DisplayDrawQuestion(DrawQuestion questionData)
+    {
+        Debug.Log("Displaying Draw Question.");
+        ClearQuestionContainer();
+        GameObject questionObject = Instantiate(drawQuestionPrefab, questionContainer.transform);
+        DrawQuestionController questionController = questionObject.GetComponent<DrawQuestionController>();
         StartQuestionController(questionData, questionController);
     }
 

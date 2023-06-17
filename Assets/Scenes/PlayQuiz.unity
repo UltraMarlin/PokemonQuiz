@@ -584,10 +584,12 @@ MonoBehaviour:
   shinyQuestionPrefab: {fileID: 3529269227914904280, guid: cf7ef809a08cdf14082da2d5791f1c2e, type: 3}
   blurQuestionPrefab: {fileID: 3529269227914904280, guid: a083d9d95cf1e9c479358ad6e2b2451d, type: 3}
   anagramQuestionPrefab: {fileID: 3529269227914904280, guid: 4f45980f00c380948b9d6b0505a0c6fd, type: 3}
-  featureQuestionDB: {fileID: 11400000, guid: 8f9c2f24560de554f92a85e1a994ebbd, type: 2}
+  drawQuestionPrefab: {fileID: 0}
+  featureQuestionDB: {fileID: 0}
   shinyQuestionDB: {fileID: 11400000, guid: 0cd33eda68e188049ad24bdd945cba8e, type: 2}
   blurQuestionDB: {fileID: 11400000, guid: d2083ee084df01c4b9b6e4286d967ccf, type: 2}
   anagramQuestionDB: {fileID: 11400000, guid: 212814b0b311c0941ac59b8175178b4c, type: 2}
+  drawQuestionDB: {fileID: 0}
 --- !u!4 &1485359137
 Transform:
   m_ObjectHideFlags: 0

@@ -14,9 +14,6 @@ public class AdminPanelController : MonoBehaviour
     [SerializeField] private GameObject playerControlPanels;
     [SerializeField] private GameObject playerControlPanelPrefab;
 
-    [SerializeField] private FeatureQuestionDB featureQuestionDB;
-    [SerializeField] private ShinyQuestionDB shinyQuestionDB;
-
     [SerializeField] private Image solutionImage;
     public Sprite testSprite;
 
