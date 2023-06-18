@@ -44,5 +44,5 @@ MonoBehaviour:
       questionAmount: 1
       correctPoints: 5
       wrongPointsOther: 1
-    shuffleCategories: 0
-    infiniteMode: 0
+    shuffleCategories: 1
+    infiniteMode: 1
