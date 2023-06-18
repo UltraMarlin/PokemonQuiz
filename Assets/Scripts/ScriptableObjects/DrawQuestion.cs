@@ -14,7 +14,8 @@ public class DrawQuestion : IQuestion
         if (videoClip != null)
         {
             pokemonName = videoClip.name.Split('_')[0];
-            drawerName = videoClip.name.Split('_')[1];
+            string tmp = videoClip.name.Split('_')[1];
+            drawerName = tmp[0].ToString().ToUpper() + tmp.Substring(1);
         }
 
         if (pokemonName.Length > 0)

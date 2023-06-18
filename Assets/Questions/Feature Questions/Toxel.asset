@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe5e4d2aed74a645969d75d271b3805, type: 3}
+  m_Name: Toxel
+  m_EditorClassIdentifier: 
+  pokemonName: Toxel
+  pokemonGen: 0
+  solutionSprite: {fileID: 21300000, guid: 4b865d0d8ea1f4340b76cd0a2f2a3c9b, type: 3}
+  featureSprites:
+  - {fileID: 21300000, guid: 0f2c42806e078cc468abbd0dca9dae38, type: 3}
+  - {fileID: 21300000, guid: 0a35099022123c144b4894412319e511, type: 3}
+  - {fileID: 21300000, guid: d000cbeb1579c7042832bf11cea91d27, type: 3}
+  - {fileID: 21300000, guid: f2b7f2f8a67ed4f4dbd72f36c498a71e, type: 3}

@@ -12,7 +12,7 @@ public class AnagramQuestion : IQuestion
         if (!QuizUtils.validateQuestionObjects) return;
         if (sprite != null)
         {
-            pokemonName = sprite.name.Split("_")[1];
+            pokemonName = sprite.name;
         }
 
         if (pokemonName.Length > 0)

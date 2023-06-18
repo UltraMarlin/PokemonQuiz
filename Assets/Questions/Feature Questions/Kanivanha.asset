@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe5e4d2aed74a645969d75d271b3805, type: 3}
+  m_Name: Kanivanha
+  m_EditorClassIdentifier: 
+  pokemonName: Kanivanha
+  pokemonGen: 0
+  solutionSprite: {fileID: 21300000, guid: 328e77244f6dd6b4fad3cfa0f3c9a354, type: 3}
+  featureSprites:
+  - {fileID: 21300000, guid: 06cfcbac97abaaa4f8e4151689910e42, type: 3}
+  - {fileID: 21300000, guid: 95c120f7228fb2d4da26271e60732122, type: 3}
+  - {fileID: 21300000, guid: c67812274421a8a4b8dc53ade68f54ba, type: 3}
+  - {fileID: 21300000, guid: 90253ba1ccf801546beef26881a18c43, type: 3}

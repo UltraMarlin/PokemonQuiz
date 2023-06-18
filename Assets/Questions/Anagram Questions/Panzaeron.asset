@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d42913e2bb49e9409a3555f7d5e60ea, type: 3}
+  m_Name: Panzaeron
+  m_EditorClassIdentifier: 
+  pokemonName: Panzaeron
+  pokemonGen: 0
+  anagramString: Ranzen Opa
+  sprite: {fileID: 21300000, guid: b27c7f570884ea54695cfa0ea2b14d81, type: 3}

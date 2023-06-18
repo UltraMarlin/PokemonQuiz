@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe5e4d2aed74a645969d75d271b3805, type: 3}
+  m_Name: Relicanth
+  m_EditorClassIdentifier: 
+  pokemonName: Relicanth
+  pokemonGen: 0
+  solutionSprite: {fileID: 21300000, guid: 877b90db2966f1648b284a70f9bc5564, type: 3}
+  featureSprites:
+  - {fileID: 21300000, guid: 369a7b3ad00644a44ab57f2cf1b4e88c, type: 3}
+  - {fileID: 21300000, guid: c08ee3a17b4aab741bde84923756acfa, type: 3}
+  - {fileID: 21300000, guid: 8158ebf63766fe846845bad680411e35, type: 3}
+  - {fileID: 21300000, guid: d6ee27fbdecfb8141bd116304ecaaa9d, type: 3}

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe5e4d2aed74a645969d75d271b3805, type: 3}
+  m_Name: Tobutz
+  m_EditorClassIdentifier: 
+  pokemonName: Tobutz
+  pokemonGen: 0
+  solutionSprite: {fileID: 21300000, guid: 4e814ba21a48d3e41a886be5fad8eea9, type: 3}
+  featureSprites:
+  - {fileID: 21300000, guid: 508a7395379610f42be92129202f1d3a, type: 3}
+  - {fileID: 21300000, guid: a86495a3dffc902449026102cc409619, type: 3}
+  - {fileID: 21300000, guid: 7cf0a500fd4b98645912d2132ca10c69, type: 3}
+  - {fileID: 21300000, guid: 5daaeb0d3e782df47b36209b7cddb2ba, type: 3}

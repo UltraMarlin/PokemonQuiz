@@ -32,7 +32,7 @@ public enum PokemonGen
 
 public class QuizUtils
 {
-    public static bool validateQuestionObjects = false;
+    public static bool validateQuestionObjects = true;
 }
 
 public class IQuestion : ScriptableObject
@@ -90,8 +90,6 @@ public class QuizSession : MonoBehaviour
 
     private QuestionType currentQuestionType;
     private IQuestionController currentQuestionController;
-
-    private bool quizDone = false;
 
     private void Awake()
     {
@@ -235,7 +233,6 @@ public class QuizSession : MonoBehaviour
     private void OnQuizFinished()
     {
         Debug.Log("Every question has been played!");
-        quizDone = true;
     }
 
     private void DisplayQuestion(IQuestion question)

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d42913e2bb49e9409a3555f7d5e60ea, type: 3}
+  m_Name: Smettbo
+  m_EditorClassIdentifier: 
+  pokemonName: Smettbo
+  pokemonGen: 0
+  anagramString: Obst Met
+  sprite: {fileID: 21300000, guid: 13e3fb3cf6700ad4c800689d328dd586, type: 3}

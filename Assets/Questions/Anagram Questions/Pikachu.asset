@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Pikachu
   m_EditorClassIdentifier: 
   pokemonName: Pikachu
-  anagramString: Chu kipa
-  sprite: {fileID: 21300000, guid: 959cf52899bba264fb71c7e163bb2865, type: 3}
+  pokemonGen: 0
+  anagramString: Kau Chip
+  sprite: {fileID: 21300000, guid: 802606b3496814945aa58da74d4b9553, type: 3}
