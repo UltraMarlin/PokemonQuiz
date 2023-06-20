@@ -32,7 +32,7 @@ public enum PokemonGen
 
 public class QuizUtils
 {
-    public static bool validateQuestionObjects = true;
+    public static bool validateQuestionObjects = false;
 }
 
 public class IQuestion : ScriptableObject
