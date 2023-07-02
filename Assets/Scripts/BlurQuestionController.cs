@@ -15,6 +15,7 @@ public class BlurQuestionController : MonoBehaviour, IQuestionController
 
     private RawImage blurImageComponent;
     private bool distortionActive;
+    private bool distortionPaused;
     private Material distortionMaterial;
     private int passCount;
 
@@ -40,13 +41,14 @@ public class BlurQuestionController : MonoBehaviour, IQuestionController
 
     public void NextQuestionStep()
     {
-        return;
+        distortionPaused = !distortionPaused;
+        Debug.Log("Paused: " + distortionPaused);
     }
 
     public void ShowSolution()
     {
         distortionActive = false;
-        blurImageComponent.texture = blurQuestionData.sprite.texture;
+        distortionPaused = false;
         solutionText.text = blurQuestionData.pokemonName;
     }
 
@@ -61,6 +63,10 @@ public class BlurQuestionController : MonoBehaviour, IQuestionController
         currentDistortion = 1.0f;
         while (currentDistortion > 0.0f && distortionActive)
         {
+            while (distortionPaused)
+            {
+                yield return null;
+            }
             elapsedTime += Time.deltaTime;
             currentDistortion = Mathf.Lerp(initialStrength, finalStrength, elapsedTime / duration);
             distortionMaterial.SetFloat("_DistortionAmount", currentDistortion);
@@ -92,5 +98,6 @@ public class BlurQuestionController : MonoBehaviour, IQuestionController
             yield return new WaitForFixedUpdate();
         }
         distortionActive = false;
+        blurImageComponent.texture = blurQuestionData.sprite.texture;
     }
 }

@@ -33,15 +33,15 @@ MonoBehaviour:
       correctPoints: 3
       wrongPointsOther: 2
     - type: 2
-      questionAmount: 20
+      questionAmount: 0
       correctPoints: 5
       wrongPointsOther: 1
     - type: 3
-      questionAmount: 4
+      questionAmount: 0
       correctPoints: 3
       wrongPointsOther: 1
     - type: 4
-      questionAmount: 4
+      questionAmount: 30
       correctPoints: 5
       wrongPointsOther: 1
     shuffleCategories: 0

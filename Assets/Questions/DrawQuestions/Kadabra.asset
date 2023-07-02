@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d42913e2bb49e9409a3555f7d5e60ea, type: 3}
-  m_Name: Spoink_Knospi
+  m_Script: {fileID: 11500000, guid: bfbc244f4a40c704087f2013a9809da4, type: 3}
+  m_Name: Kadabra
   m_EditorClassIdentifier: 
-  pokemonName: Spoink_Knospi
+  pokemonName: Kadabra
   pokemonGen: 0
-  anagramString: so pink
-  sprite: {fileID: 21300000, guid: 27b38bc6565949f4a9b8813c084bf091, type: 3}
+  drawerName: Jessi
+  videoClip: {fileID: 32900000, guid: d09b65bf8131005459657e6a37c59e38, type: 3}

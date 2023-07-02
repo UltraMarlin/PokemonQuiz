@@ -193,6 +193,8 @@ MonoBehaviour:
   solutionText: {fileID: 6603898049475381097}
   drawerTitle: {fileID: 8785809398306437177}
   drawerText: {fileID: 7616937281786010353}
+  blankSquare: {fileID: 7482667652216324306, guid: 5322b13254836a441a9e916e2d156656, type: 3}
+  videoRenderTexture: {fileID: 8400000, guid: d97bea8326e6fe744a1a393ac5324b9b, type: 2}
   drawQuestionData: {fileID: 0}
 --- !u!1 &3615572887035116187
 GameObject:
