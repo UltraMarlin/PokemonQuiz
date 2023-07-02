@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.VersionControl;
 using UnityEditor;
 using UnityEngine;
 
@@ -10,6 +9,7 @@ public class FeatureQuestion : IQuestion
     public Sprite solutionSprite;
     public List<Sprite> featureSprites;
 
+#if UNITY_EDITOR
     public void OnValidate()
     {
         if (!QuizUtils.validateQuestionObjects) return;
@@ -24,6 +24,7 @@ public class FeatureQuestion : IQuestion
             AssetDatabase.RenameAsset(assetPath, pokemonName);
         }
     }
+#endif
 }
 
 

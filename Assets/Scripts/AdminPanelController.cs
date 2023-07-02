@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,7 +16,13 @@ public class AdminPanelController : MonoBehaviour
     [SerializeField] private GameObject playerControlPanelPrefab;
 
     [SerializeField] private Image solutionImage;
+    [SerializeField] private TextMeshProUGUI nextButtonStepText;
+
     public Sprite testSprite;
+
+    private QuestionType currentQuestionType;
+    private bool lastQuestionReached = false;
+    private int nextButtonStepTextId;
 
     private void Awake()
     {
@@ -65,12 +72,32 @@ public class AdminPanelController : MonoBehaviour
     {
         adminPanelUser.NextQuestionServerRpc();
     }
+
+    public void SetNextStepButtonText(int textid)
+    {
+        string[] textStrings = {"Next Step", "Pausieren", "Abspielen", ""};
+        nextButtonStepText.text = textStrings[textid];
+    }
+
     public void NextQuestionStep()
     {
         adminPanelUser.NextQuestionStepServerRpc();
     }
+
     public void ShowSolution()
     {
         adminPanelUser.ShowSolutionServerRpc();
+    }
+
+    public void SetCurrentQuestionType(int questionType)
+    {
+        if (questionType == -1)
+        {
+            lastQuestionReached = true;
+        } else
+        {
+            currentQuestionType = (QuestionType)questionType;
+        }
+        Debug.Log("AdminControlPanel: " + currentQuestionType);
     }
 }

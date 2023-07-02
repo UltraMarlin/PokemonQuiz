@@ -190,19 +190,19 @@ public class QuizSession : MonoBehaviour
         {
             Debug.Log("Prepared Quiz with category switch controls enabled.");
         }
-        NextQuestion();
     }
 
-    public void NextQuestion()
+    public int NextQuestion()
     {
         IQuestion question = null;
+        SetNextStepButtonTextId(0);
 
         if (singleQuestionList)
         {
             if (currentQuestionIndex >= allQuestions.Count - 1)
             {
                 OnQuizFinished();
-                return;
+                return -1;
             }
             currentQuestionIndex++;
             int index = questionOrder[currentQuestionIndex];
@@ -218,7 +218,7 @@ public class QuizSession : MonoBehaviour
                 if (counter > numberOfQuestionTypes)
                 {
                     OnQuizFinished();
-                    return;
+                    return -1;
                 }
                 counter++;
             }
@@ -228,6 +228,7 @@ public class QuizSession : MonoBehaviour
         }
 
         DisplayQuestion(question);
+        return (int)currentQuestionType;
     }
 
     private void OnQuizFinished()
@@ -237,6 +238,7 @@ public class QuizSession : MonoBehaviour
 
     private void DisplayQuestion(IQuestion question)
     {
+        ClearQuestionContainer();
         if (question.GetType() == typeof(FeatureQuestion))
         {
             currentQuestionType = QuestionType.Feature;
@@ -266,8 +268,6 @@ public class QuizSession : MonoBehaviour
 
     public void DisplayFeatureQuestion(FeatureQuestion questionData)
     {
-        Debug.Log("Displaying Feature Question.");
-        ClearQuestionContainer();
         GameObject questionObject = Instantiate(featureQuestionPrefab, questionContainer.transform);
         FeatureQuestionController questionController = questionObject.GetComponent<FeatureQuestionController>();
         StartQuestionController(questionData, questionController);
@@ -275,8 +275,6 @@ public class QuizSession : MonoBehaviour
 
     public void DisplayShinyQuestion(ShinyQuestion questionData)
     {
-        Debug.Log("Displaying Shiny Question.");
-        ClearQuestionContainer();
         GameObject questionObject = Instantiate(shinyQuestionPrefab, questionContainer.transform);
         ShinyQuestionController questionController = questionObject.GetComponent<ShinyQuestionController>();
         StartQuestionController(questionData, questionController);
@@ -284,8 +282,6 @@ public class QuizSession : MonoBehaviour
 
     public void DisplayBlurQuestion(BlurQuestion questionData)
     {
-        Debug.Log("Displaying Blur Question.");
-        ClearQuestionContainer();
         GameObject questionObject = Instantiate(blurQuestionPrefab, questionContainer.transform);
         BlurQuestionController questionController = questionObject.GetComponent<BlurQuestionController>();
         StartQuestionController(questionData, questionController);
@@ -293,8 +289,6 @@ public class QuizSession : MonoBehaviour
 
     public void DisplayAnagramQuestion(AnagramQuestion questionData)
     {
-        Debug.Log("Displaying Anagram Question.");
-        ClearQuestionContainer();
         GameObject questionObject = Instantiate(anagramQuestionPrefab, questionContainer.transform);
         AnagramQuestionController questionController = questionObject.GetComponent<AnagramQuestionController>();
         StartQuestionController(questionData, questionController);
@@ -302,8 +296,6 @@ public class QuizSession : MonoBehaviour
 
     public void DisplayDrawQuestion(DrawQuestion questionData)
     {
-        Debug.Log("Displaying Draw Question.");
-        ClearQuestionContainer();
         GameObject questionObject = Instantiate(drawQuestionPrefab, questionContainer.transform);
         DrawQuestionController questionController = questionObject.GetComponent<DrawQuestionController>();
         StartQuestionController(questionData, questionController);
@@ -380,6 +372,17 @@ public class QuizSession : MonoBehaviour
 
     public void DisplayAdminSolution()
     {
-        adminPanelUser.ShowSolutionClientRpc();
+        if (adminPanelUser != null)
+        {
+            adminPanelUser.ShowSolutionClientRpc();
+        }
+    }
+
+    public void SetNextStepButtonTextId(int id)
+    {
+        if (adminPanelUser != null)
+        {
+            adminPanelUser.SetNextStepButtonTextClientRpc(id);
+        }
     }
 }

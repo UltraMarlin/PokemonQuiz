@@ -6,6 +6,7 @@ public class BlurQuestion : IQuestion
 {
     public Sprite sprite;
 
+#if UNITY_EDITOR
     public void OnValidate()
     {
         if (!QuizUtils.validateQuestionObjects) return;
@@ -20,4 +21,5 @@ public class BlurQuestion : IQuestion
             AssetDatabase.RenameAsset(assetPath, pokemonName);
         }
     }
+#endif
 }

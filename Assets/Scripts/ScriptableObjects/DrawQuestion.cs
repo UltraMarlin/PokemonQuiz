@@ -8,6 +8,7 @@ public class DrawQuestion : IQuestion
     public string drawerName;
     public VideoClip videoClip;
 
+#if UNITY_EDITOR
     public void OnValidate()
     {
         if (!QuizUtils.validateQuestionObjects) return;
@@ -24,4 +25,5 @@ public class DrawQuestion : IQuestion
             AssetDatabase.RenameAsset(assetPath, pokemonName);
         }
     }
+#endif
 }

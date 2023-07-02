@@ -29,10 +29,10 @@ public class DrawQuestionController : MonoBehaviour, IQuestionController
     {
         if (videoDonePlaying) return;
         long framesLeft = (long)drawVideoPlayerComponent.frameCount - drawVideoPlayerComponent.frame;
-        Debug.Log(framesLeft);
         if (framesLeft < 5 && !drawVideoPlayerComponent.isPlaying)
         {
             videoDonePlaying = true;
+            QuizSession.instance.SetNextStepButtonTextId(3);
             drawVideoPlayerComponent.Play();
         }
     }
@@ -46,6 +46,7 @@ public class DrawQuestionController : MonoBehaviour, IQuestionController
         rawImageComponent = drawVideo.GetComponent<RawImage>();
         drawVideoPlayerComponent.waitForFirstFrame = true;
         drawVideoPlayerComponent.clip = drawQuestionData.videoClip;
+        QuizSession.instance.SetNextStepButtonTextId(1);
         Graphics.Blit(blankSquare.texture, videoRenderTexture);
     }
 
@@ -57,10 +58,12 @@ public class DrawQuestionController : MonoBehaviour, IQuestionController
         if (drawVideoPlayerComponent.isPlaying)
         {
             Debug.Log("Now Paused");
+            QuizSession.instance.SetNextStepButtonTextId(2);
             drawVideoPlayerComponent.Pause();
         } else
         {
             Debug.Log("Now Playing");
+            QuizSession.instance.SetNextStepButtonTextId(1);
             drawVideoPlayerComponent.Play();
         }
     }
@@ -73,6 +76,7 @@ public class DrawQuestionController : MonoBehaviour, IQuestionController
 
         if (videoDonePlaying) return;
         videoDonePlaying = true;
+        QuizSession.instance.SetNextStepButtonTextId(3);
 
         drawVideoPlayerComponent.frame = (long)drawVideoPlayerComponent.frameCount;
         if (!drawVideoPlayerComponent.isPlaying) drawVideoPlayerComponent.Play();

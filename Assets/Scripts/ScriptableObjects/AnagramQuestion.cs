@@ -7,6 +7,7 @@ public class AnagramQuestion : IQuestion
     public string anagramString;
     public Sprite sprite;
 
+#if UNITY_EDITOR
     public void OnValidate()
     {
         if (!QuizUtils.validateQuestionObjects) return;
@@ -21,4 +22,5 @@ public class AnagramQuestion : IQuestion
             AssetDatabase.RenameAsset(assetPath, pokemonName);
         }
     }
+#endif
 }

@@ -5,11 +5,14 @@ using UnityEngine;
 
 public class AdminPanelUser : NetworkBehaviour
 {
+    private NetworkVariable<int> nwv_CurrentQuestionType = new NetworkVariable<int>();
+
     public override void OnNetworkSpawn()
     {
         if (IsClient)
         {
             AdminPanelController.instance.RegisterAdminPanelUser(this);
+            nwv_CurrentQuestionType.OnValueChanged += OnQuestionTypeChange;
         } else if (IsServer)
         {
             QuizSession.instance.RegisterAdminPanelUser(this);
@@ -19,7 +22,7 @@ public class AdminPanelUser : NetworkBehaviour
     [ServerRpc]
     public void NextQuestionServerRpc()
     {
-        QuizSession.instance.NextQuestion();
+        nwv_CurrentQuestionType.Value = QuizSession.instance.NextQuestion();
     }
 
     [ServerRpc]
@@ -62,5 +65,19 @@ public class AdminPanelUser : NetworkBehaviour
     public void ShowSolutionClientRpc()
     {
         AdminPanelController.instance.SetSolutionImageTest();
+    }
+
+    public void OnQuestionTypeChange(int previous, int current)
+    {
+        if (IsClient)
+        {
+            AdminPanelController.instance.SetCurrentQuestionType(current);
+        }
+    }
+
+    [ClientRpc]
+    public void SetNextStepButtonTextClientRpc(int id)
+    {
+        AdminPanelController.instance.SetNextStepButtonText(id);
     }
 }
