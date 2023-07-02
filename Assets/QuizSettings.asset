@@ -25,7 +25,7 @@ MonoBehaviour:
       color: 6
     questionTypeSettingsList:
     - type: 0
-      questionAmount: 0
+      questionAmount: 4
       correctPoints: 5
       wrongPointsOther: 1
     - type: 1
