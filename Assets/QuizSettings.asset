@@ -19,9 +19,9 @@ MonoBehaviour:
       color: 0
     - name: Marlin
       color: 1
-    - name: Florentin
-      color: 5
     - name: Lars
+      color: 5
+    - name: Florentin
       color: 6
     questionTypeSettingsList:
     - type: 0

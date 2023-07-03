@@ -335,7 +335,7 @@ public class QuizSession : MonoBehaviour
 
     public static int SpacingFromPlayerCount(int playerCount)
     {
-        return Mathf.FloorToInt((3.63095f * playerCount * playerCount) - (77.2024f * playerCount) + 420);
+        return Mathf.FloorToInt((3.32f * playerCount * playerCount) - (77.2f * playerCount) + 364);
     }
 
     public void RegisterAdminPanelUser(AdminPanelUser user)

@@ -1,0 +1,191 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!181963792 &2655988077585873504
+Preset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: QuizSettings8P
+  m_TargetType:
+    m_NativeTypeID: 114
+    m_ManagedTypePPtr: {fileID: 11500000, guid: 8facac630b8d1c246b6cc2942293b3dc, type: 3}
+    m_ManagedTypeFallback: 
+  m_Properties:
+  - target: {fileID: 0}
+    propertyPath: m_Enabled
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorHideFlags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorClassIdentifier
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: quiz.presetName
+    value: TestQuiz
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: quiz.players.Array.size
+    value: 8
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: quiz.players.Array.data[0].name
+    value: Bina
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: quiz.players.Array.data[0].color
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: quiz.players.Array.data[1].name
+    value: Marlin
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: quiz.players.Array.data[1].color
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: quiz.players.Array.data[2].name
+    value: Lars
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: quiz.players.Array.data[2].color
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: quiz.players.Array.data[3].name
+    value: Florentin
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: quiz.players.Array.data[3].color
+    value: 6
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: quiz.players.Array.data[4].name
+    value: Lars
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: quiz.players.Array.data[4].color
+    value: 7
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: quiz.players.Array.data[5].name
+    value: Lars
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: quiz.players.Array.data[5].color
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: quiz.players.Array.data[6].name
+    value: Lars
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: quiz.players.Array.data[6].color
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: quiz.players.Array.data[7].name
+    value: Lars
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: quiz.players.Array.data[7].color
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: quiz.questionTypeSettingsList.Array.size
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: quiz.questionTypeSettingsList.Array.data[0].type
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: quiz.questionTypeSettingsList.Array.data[0].questionAmount
+    value: 7
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: quiz.questionTypeSettingsList.Array.data[0].correctPoints
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: quiz.questionTypeSettingsList.Array.data[0].wrongPointsOther
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: quiz.questionTypeSettingsList.Array.data[1].type
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: quiz.questionTypeSettingsList.Array.data[1].questionAmount
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: quiz.questionTypeSettingsList.Array.data[1].correctPoints
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: quiz.questionTypeSettingsList.Array.data[1].wrongPointsOther
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: quiz.questionTypeSettingsList.Array.data[2].type
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: quiz.questionTypeSettingsList.Array.data[2].questionAmount
+    value: 6
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: quiz.questionTypeSettingsList.Array.data[2].correctPoints
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: quiz.questionTypeSettingsList.Array.data[2].wrongPointsOther
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: quiz.questionTypeSettingsList.Array.data[3].type
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: quiz.questionTypeSettingsList.Array.data[3].questionAmount
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: quiz.questionTypeSettingsList.Array.data[3].correctPoints
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: quiz.questionTypeSettingsList.Array.data[3].wrongPointsOther
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: quiz.questionTypeSettingsList.Array.data[4].type
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: quiz.questionTypeSettingsList.Array.data[4].questionAmount
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: quiz.questionTypeSettingsList.Array.data[4].correctPoints
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: quiz.questionTypeSettingsList.Array.data[4].wrongPointsOther
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: quiz.shuffleCategories
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: quiz.infiniteMode
+    value: 0
+    objectReference: {fileID: 0}
+  m_ExcludedProperties: []
