@@ -19,10 +19,18 @@ MonoBehaviour:
       color: 0
     - name: Marlin
       color: 1
-    - name: Lars
+    - name: Pia
+      color: 2
+    - name: Gum
+      color: 3
+    - name: Isi
+      color: 4
+    - name: Nisl
       color: 5
-    - name: Florentin
+    - name: Luca
       color: 6
+    - name: Amy
+      color: 7
     questionTypeSettingsList:
     - type: 0
       questionAmount: 7
