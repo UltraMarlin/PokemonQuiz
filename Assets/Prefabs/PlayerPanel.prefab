@@ -331,22 +331,22 @@ MonoBehaviour:
   playerNameText: {fileID: 3786510782342257187}
   pointsText: {fileID: 4848868105842333066}
   playerPanelSprites:
-  - {fileID: 21300000, guid: 5f46e7de28aa49743b029e218d10ff6d, type: 3}
-  - {fileID: 21300000, guid: 053f89f42c3459e4a8b2560518a55185, type: 3}
-  - {fileID: 21300000, guid: db913472694e2e149afa602c18cb0c40, type: 3}
-  - {fileID: 21300000, guid: 1d87db6cf7494d646afffdd047481aad, type: 3}
-  - {fileID: 21300000, guid: 93d102b9d29c3134db0fa9f3139fbf27, type: 3}
-  - {fileID: 21300000, guid: 77a0e9e065fae9f44842abbb295ae59b, type: 3}
-  - {fileID: 21300000, guid: aae054ca6072df64786af5d2cd554268, type: 3}
-  - {fileID: 21300000, guid: 5d2beedb366a2c54ba32fa9783404bdf, type: 3}
-  - {fileID: 21300000, guid: 5186d0ede03234e448418f3d22ef928a, type: 3}
-  - {fileID: 21300000, guid: 6d994a4090ab3fb4787afe60f201c693, type: 3}
-  - {fileID: 21300000, guid: ec2d4e82d6e1c0748a7bee6c25ef57ad, type: 3}
-  - {fileID: 21300000, guid: ce4fcb6012ebe374891fdcc1770c3616, type: 3}
-  - {fileID: 21300000, guid: c3dd7ac2d5e57994bad5578bd3478fbb, type: 3}
-  - {fileID: 21300000, guid: 1bc1b4400948a7c4f8fd79679ccce6d2, type: 3}
-  - {fileID: 21300000, guid: cfa159320335a3e4d9696cd81c83a168, type: 3}
-  - {fileID: 21300000, guid: 4e21b74cf91d4a140adf3d6755dde689, type: 3}
+  - {fileID: 21300000, guid: a8b08bf0c047ed9429c89fbbfa1c8495, type: 3}
+  - {fileID: 21300000, guid: 2c5bf55a1d033694aa924b66eb03fd57, type: 3}
+  - {fileID: 21300000, guid: 547e58974401c154d95db19f698a5426, type: 3}
+  - {fileID: 21300000, guid: 6cc469c0ccd65ce408bf9a5d38f458d8, type: 3}
+  - {fileID: 21300000, guid: 5a3dd27ac57dd8848bf6730a200e3c42, type: 3}
+  - {fileID: 21300000, guid: fd5d609639709d94ebcd687ffee9787f, type: 3}
+  - {fileID: 21300000, guid: 461ae4e35a34c104fb5c2d8256905286, type: 3}
+  - {fileID: 21300000, guid: 315f1973cf465c143a840b0371448c4c, type: 3}
+  - {fileID: 21300000, guid: 8a4af96b62fb0d246acb297d59e57fd0, type: 3}
+  - {fileID: 21300000, guid: 8d88684e237179444931a871609a923e, type: 3}
+  - {fileID: 21300000, guid: 6dc2f680ebc60894b9b7a3ba884ee0a9, type: 3}
+  - {fileID: 21300000, guid: 46e42539e9ddde24283fb25d3972f867, type: 3}
+  - {fileID: 21300000, guid: f74564c3b96a6334b9d0c7522b0d575e, type: 3}
+  - {fileID: 21300000, guid: 7e0f264aac7332e48af65bea057539a8, type: 3}
+  - {fileID: 21300000, guid: 8938f95840d3d414aad9d778e4012352, type: 3}
+  - {fileID: 21300000, guid: af37243cec5f2e148a4b78f0e90b2f84, type: 3}
   playerTextColors:
   - {r: 0.65882355, g: 0.3254902, b: 0, a: 1}
   - {r: 0.69803923, g: 0.27450982, b: 0, a: 1}
