@@ -6,7 +6,7 @@ Preset:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: QuizSettings8P
+  m_Name: QuizSettings4P
   m_TargetType:
     m_NativeTypeID: 114
     m_ManagedTypePPtr: {fileID: 11500000, guid: 8facac630b8d1c246b6cc2942293b3dc, type: 3}
@@ -26,11 +26,11 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: quiz.presetName
-    value: TestQuiz8P
+    value: TestQuiz4P
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: quiz.players.Array.size
-    value: 8
+    value: 4
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: quiz.players.Array.data[0].name
@@ -63,38 +63,6 @@ Preset:
   - target: {fileID: 0}
     propertyPath: quiz.players.Array.data[3].color
     value: 6
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: quiz.players.Array.data[4].name
-    value: Lars
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: quiz.players.Array.data[4].color
-    value: 7
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: quiz.players.Array.data[5].name
-    value: Lars
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: quiz.players.Array.data[5].color
-    value: 2
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: quiz.players.Array.data[6].name
-    value: Lars
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: quiz.players.Array.data[6].color
-    value: 3
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: quiz.players.Array.data[7].name
-    value: Lars
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: quiz.players.Array.data[7].color
-    value: 4
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: quiz.questionTypeSettingsList.Array.size
@@ -222,7 +190,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: quiz.shuffleCategories
-    value: 1
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: quiz.infiniteMode
@@ -230,6 +198,6 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: quiz.explainRules
-    value: 0
+    value: 1
     objectReference: {fileID: 0}
   m_ExcludedProperties: []
