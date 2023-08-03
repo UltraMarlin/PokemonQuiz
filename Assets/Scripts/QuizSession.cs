@@ -56,7 +56,7 @@ public class QuizSession : MonoBehaviour
 
     public Dictionary<QuestionType, List<IQuestion>> questionsDict;
     private Dictionary<QuestionType, int> currentQuestionIndices = new();
-    private QuestionType selectedCategory = 0;
+    private QuestionType selectedCategory = QuestionType.Feature;
 
     private AdminPanelUser adminPanelUser;
 
@@ -239,7 +239,8 @@ public class QuizSession : MonoBehaviour
 
     public void SwitchToQuestionType(int questionIndex)
     {
-        currentQuestionType = (QuestionType)questionIndex;
+        Debug.Log("Switch To: " + (QuestionType)questionIndex);
+        selectedCategory = (QuestionType)questionIndex;
     }
 
     private void DisplayQuestion(IQuestion question)
@@ -322,11 +323,13 @@ public class QuizSession : MonoBehaviour
 
     public void NextQuestionStep()
     {
+        if (currentQuestionController == null) return;
         currentQuestionController.NextQuestionStep();
     }
 
     public void ShowSolution()
     {
+        if (currentQuestionController == null) return;
         currentQuestionController.ResetDisplay();
         currentQuestionController.ShowSolution();
     }

@@ -70,8 +70,7 @@ public class AdminPanelUser : NetworkBehaviour
     [ServerRpc]
     public void SendCategorySwitchServerRpc(int categoryType)
     {
-        if (nwv_CurrentQuestionType.Value != categoryType)
-            nwv_CurrentQuestionType.Value = categoryType;
+        QuizSession.instance.SwitchToQuestionType(categoryType);
     }
 
     public void OnQuestionTypeChange(int previous, int current)
@@ -79,9 +78,6 @@ public class AdminPanelUser : NetworkBehaviour
         if (IsClient)
         {
             AdminPanelController.instance.SetCurrentQuestionType(current);
-        } else if (IsServer)
-        {
-            QuizSession.instance.SwitchToQuestionType(current);
         }
     }
 
