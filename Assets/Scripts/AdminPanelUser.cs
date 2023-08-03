@@ -67,11 +67,21 @@ public class AdminPanelUser : NetworkBehaviour
         AdminPanelController.instance.SetSolutionImageTest();
     }
 
+    [ServerRpc]
+    public void SendCategorySwitchServerRpc(int categoryType)
+    {
+        if (nwv_CurrentQuestionType.Value != categoryType)
+            nwv_CurrentQuestionType.Value = categoryType;
+    }
+
     public void OnQuestionTypeChange(int previous, int current)
     {
         if (IsClient)
         {
             AdminPanelController.instance.SetCurrentQuestionType(current);
+        } else if (IsServer)
+        {
+            QuizSession.instance.SwitchToQuestionType(current);
         }
     }
 

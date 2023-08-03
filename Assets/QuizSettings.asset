@@ -25,7 +25,7 @@ MonoBehaviour:
       color: 6
     questionTypeSettingsList:
     - type: 0
-      questionAmount: 7
+      questionAmount: 15
       correctPoints: 5
       wrongPointsOther: 1
       includedGensList: 
@@ -37,23 +37,23 @@ MonoBehaviour:
       includedGensList: 
       includeAllGens: 1
     - type: 2
-      questionAmount: 6
+      questionAmount: 15
       correctPoints: 5
       wrongPointsOther: 1
       includedGensList: 
       includeAllGens: 1
     - type: 3
-      questionAmount: 5
+      questionAmount: 15
       correctPoints: 3
       wrongPointsOther: 1
       includedGensList: 
       includeAllGens: 1
     - type: 4
-      questionAmount: 5
+      questionAmount: 15
       correctPoints: 5
       wrongPointsOther: 1
       includedGensList: 
       includeAllGens: 1
     shuffleCategories: 0
-    infiniteMode: 0
-    explainRules: 1
+    infiniteMode: 1
+    explainRules: 0

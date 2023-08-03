@@ -18,6 +18,8 @@ public class AdminPanelController : MonoBehaviour
     [SerializeField] private Image solutionImage;
     [SerializeField] private TextMeshProUGUI nextButtonStepText;
 
+    [SerializeField] private CategorySelector categorySelector;
+
     public Sprite testSprite;
 
     private QuestionType currentQuestionType;
@@ -98,6 +100,7 @@ public class AdminPanelController : MonoBehaviour
         {
             currentQuestionType = (QuestionType)questionType;
         }
+        categorySelector.SetActiveCategoryLabel(questionType);
         Debug.Log("AdminControlPanel: " + currentQuestionType);
     }
 }

@@ -33,6 +33,7 @@ public enum PokemonGen
 public class QuizUtils
 {
     public static bool validateQuestionObjects = false;
+    public static int[] pokemonGenCutoffs = new int[] { 151, 251, 386, 493, 649, 721, 809, 905, 1018 };
 }
 
 public class IQuestion : ScriptableObject
@@ -234,6 +235,11 @@ public class QuizSession : MonoBehaviour
     private void OnQuizFinished()
     {
         Debug.Log("Every question has been played!");
+    }
+
+    public void SwitchToQuestionType(int questionIndex)
+    {
+        currentQuestionType = (QuestionType)questionIndex;
     }
 
     private void DisplayQuestion(IQuestion question)

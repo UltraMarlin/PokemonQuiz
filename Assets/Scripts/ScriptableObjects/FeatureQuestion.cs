@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.U2D;
 
 [CreateAssetMenu(fileName = "FeatureQuestion", menuName = "QuestionTypes/Feature", order = 1)]
 public class FeatureQuestion : IQuestion
@@ -13,9 +14,20 @@ public class FeatureQuestion : IQuestion
     public void OnValidate()
     {
         if (!QuizUtils.validateQuestionObjects) return;
+        int pokemonNumber = 0;
         if (solutionSprite != null)
         {
-            pokemonName = solutionSprite.name.Split("_")[1];
+            string[] nameSplit = solutionSprite.name.Split("_");
+            if (int.TryParse(nameSplit[0], out pokemonNumber))
+            {
+                int pokemonGenIndex = 0;
+                while (pokemonGenIndex < QuizUtils.pokemonGenCutoffs.Length && pokemonNumber > QuizUtils.pokemonGenCutoffs[pokemonGenIndex])
+                {
+                    pokemonGenIndex++;
+                }
+                pokemonGen = (PokemonGen)pokemonGenIndex;
+            }
+            pokemonName = nameSplit[1];
         }
 
         if (pokemonName.Length > 0)
