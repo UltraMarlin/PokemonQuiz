@@ -33,7 +33,7 @@ public enum PokemonGen
 public class QuizUtils
 {
     //
-    public static bool validateQuestionObjects = true;
+    public static bool validateQuestionObjects = false;
     public static int[] pokemonGenCutoffs = new int[] { 151, 251, 386, 493, 649, 721, 809, 905, 1018 };
 }
 
@@ -102,14 +102,13 @@ public class QuizSession : MonoBehaviour
     {
         NetworkManager.Singleton.StartServer();
 
-        //TODO: Randomize here instead of later
         questionsDict = new()
         {
-            { QuestionType.Feature, featureQuestionDB.questions.ToList().ConvertAll(x => (IQuestion)x) },
-            { QuestionType.Shiny, shinyQuestionDB.questions.ToList().ConvertAll(x => (IQuestion)x) },
-            { QuestionType.Blur, blurQuestionDB.questions.ToList().ConvertAll(x => (IQuestion)x) },
-            { QuestionType.Anagram, anagramQuestionDB.questions.ToList().ConvertAll(x => (IQuestion)x) },
-            { QuestionType.Draw, drawQuestionDB.questions.ToList().ConvertAll(x => (IQuestion)x) }
+            { QuestionType.Feature, prepareQuestionList(QuestionType.Feature, featureQuestionDB) },
+            { QuestionType.Shiny, prepareQuestionList(QuestionType.Shiny, shinyQuestionDB) },
+            { QuestionType.Blur, prepareQuestionList(QuestionType.Blur, blurQuestionDB) },
+            { QuestionType.Anagram, prepareQuestionList(QuestionType.Anagram, anagramQuestionDB) },
+            { QuestionType.Draw, prepareQuestionList(QuestionType.Draw, drawQuestionDB) },
         };
 
         for (int i = 0; i < settings.quiz.players.Count; i++)
@@ -125,6 +124,15 @@ public class QuizSession : MonoBehaviour
         playerPanels.GetComponent<HorizontalLayoutGroup>().spacing = SpacingFromPlayerCount(settings.quiz.players.Count);
 
         PrepareQuiz();
+    }
+
+    private List<IQuestion> prepareQuestionList(QuestionType questionType, QuestionDB questionDB)
+    {
+        return questionDB.questions.ToList().Where(
+                question => !settings.quiz.questionTypeSettingsList.Where(
+                    questionTypeSetting => questionTypeSetting.type == questionType).ToList()[0]
+                .excludedGens.Contains(question.pokemonGen))
+            .OrderBy(x => UnityEngine.Random.value).ToList();
     }
 
     private void Update()
@@ -168,7 +176,7 @@ public class QuizSession : MonoBehaviour
                 if (!settings.quiz.infiniteMode)
                     questionTypeAmount = Mathf.Min(questionTypeAmount, settings.quiz.questionTypeSettingsList.Find(x => x.type == questionType).questionAmount);
 
-                foreach (IQuestion question in questionsDict[questionType].OrderBy(x => UnityEngine.Random.value).Take(questionTypeAmount))
+                foreach (IQuestion question in questionsDict[questionType].Take(questionTypeAmount))
                 {
                     allQuestions.Add(question);
                 }

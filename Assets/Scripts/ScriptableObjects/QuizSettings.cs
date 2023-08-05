@@ -17,8 +17,7 @@ public struct QuestionTypeSettings
     public int questionAmount;
     public int correctPoints;
     public int wrongPointsOther;
-    public List<PokemonGen> includedGensList;
-    public bool includeAllGens;
+    public List<PokemonGen> excludedGens;
 }
 
 [System.Serializable]
@@ -54,7 +53,6 @@ public class Quiz
         foreach (QuestionType questionType in Enum.GetValues(typeof(QuestionType)))
         {
             QuestionTypeSettings qts = new QuestionTypeSettings() { type = questionType };
-            qts.includeAllGens = true;
             questionTypeSettingsList.Add(qts);
         }
     }
