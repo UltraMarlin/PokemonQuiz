@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Noctuh
   m_EditorClassIdentifier: 
   pokemonName: Noctuh
-  pokemonGen: 0
+  pokemonGen: 1
   drawerName: Jessi
   videoClip: {fileID: 32900000, guid: 44ad6c18c8a027e4fab90f21982ed09b, type: 3}

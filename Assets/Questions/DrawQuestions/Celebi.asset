@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Celebi
   m_EditorClassIdentifier: 
   pokemonName: Celebi
+  pokemonGen: 1
   drawerName: Jessi
   videoClip: {fileID: 32900000, guid: feac3713245b33d4e8421f1c62ad3057, type: 3}

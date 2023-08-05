@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Serpifeu
   m_EditorClassIdentifier: 
   pokemonName: Serpifeu
-  pokemonGen: 0
+  pokemonGen: 4
   anagramString: Sirup Fee
   sprite: {fileID: 21300000, guid: dfefcd662d66148489426cdf3d24584e, type: 3}

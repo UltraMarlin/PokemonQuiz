@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Gelatini
   m_EditorClassIdentifier: 
   pokemonName: Gelatini
-  pokemonGen: 0
+  pokemonGen: 4
   anagramString: anteilig
   sprite: {fileID: 21300000, guid: c3cd5150807d39c4084ae8ef17ac27f3, type: 3}

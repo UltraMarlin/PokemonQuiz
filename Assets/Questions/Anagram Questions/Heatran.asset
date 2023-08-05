@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Heatran
   m_EditorClassIdentifier: 
   pokemonName: Heatran
-  pokemonGen: 0
+  pokemonGen: 3
   anagramString: enthaar
   sprite: {fileID: 21300000, guid: 6c7fa81e9940b694baf7689481d15ecb, type: 3}

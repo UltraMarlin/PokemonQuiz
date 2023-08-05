@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Magnayen
   m_EditorClassIdentifier: 
   pokemonName: Magnayen
-  pokemonGen: 0
+  pokemonGen: 2
   anagramString: gay Namen
   sprite: {fileID: 21300000, guid: 72527291723093b44b22d2a32001ba67, type: 3}

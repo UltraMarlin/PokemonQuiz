@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Feelinara
   m_EditorClassIdentifier: 
   pokemonName: Feelinara
-  pokemonGen: 0
+  pokemonGen: 5
   drawerName: Marlin
   videoClip: {fileID: 32900000, guid: 32fb7c7f98cf76946aad7145abcf402f, type: 3}

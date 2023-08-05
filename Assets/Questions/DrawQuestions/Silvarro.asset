@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Silvarro
   m_EditorClassIdentifier: 
   pokemonName: Silvarro
-  pokemonGen: 0
+  pokemonGen: 6
   drawerName: Marlin
   videoClip: {fileID: 32900000, guid: 2046760a5ecd20b41893e784f583f7de, type: 3}

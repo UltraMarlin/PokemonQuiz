@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Zeraora
   m_EditorClassIdentifier: 
   pokemonName: Zeraora
-  pokemonGen: 0
+  pokemonGen: 6
   drawerName: Marlin
   videoClip: {fileID: 32900000, guid: 5782b18ebb3f0e2498f39e1f7e4bfd47, type: 3}

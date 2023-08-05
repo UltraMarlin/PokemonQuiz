@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Mantax
   m_EditorClassIdentifier: 
   pokemonName: Mantax
-  pokemonGen: 0
+  pokemonGen: 1
   drawerName: Jessi
   videoClip: {fileID: 32900000, guid: a066efa65f01abc47a0f8e928206a218, type: 3}

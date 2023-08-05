@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Panzaeron
   m_EditorClassIdentifier: 
   pokemonName: Panzaeron
-  pokemonGen: 0
+  pokemonGen: 1
   drawerName: Jessi
   videoClip: {fileID: 32900000, guid: 32571eee1a7dfce4db8e53b25f364ed7, type: 3}

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Groudon
   m_EditorClassIdentifier: 
   pokemonName: Groudon
-  pokemonGen: 0
+  pokemonGen: 2
   drawerName: Jessi
   videoClip: {fileID: 32900000, guid: ded0c94f22a8374419fa823fe422e43f, type: 3}

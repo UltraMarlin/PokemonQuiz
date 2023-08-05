@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Glibunkel
   m_EditorClassIdentifier: 
   pokemonName: Glibunkel
-  pokemonGen: 0
+  pokemonGen: 3
   anagramString: King Bulle
   sprite: {fileID: 21300000, guid: df9f70bed1dcd9344ace24cd05728b97, type: 3}

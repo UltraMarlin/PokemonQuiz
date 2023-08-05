@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Lichtel
   m_EditorClassIdentifier: 
   pokemonName: Lichtel
-  pokemonGen: 0
+  pokemonGen: 4
   anagramString: chillte
   sprite: {fileID: 21300000, guid: 35adb3e591854064585a40a603d37764, type: 3}

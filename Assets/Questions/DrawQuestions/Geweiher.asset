@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Geweiher
   m_EditorClassIdentifier: 
   pokemonName: Geweiher
-  pokemonGen: 0
+  pokemonGen: 2
   drawerName: Jessi
   videoClip: {fileID: 32900000, guid: f2122a8b99b04a94e8cf1908c3425a4d, type: 3}

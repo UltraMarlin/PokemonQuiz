@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Ledyba
   m_EditorClassIdentifier: 
   pokemonName: Ledyba
-  pokemonGen: 0
+  pokemonGen: 1
   anagramString: bald ey
   sprite: {fileID: 21300000, guid: c169545fd49a0ce4990150aae4913ca9, type: 3}

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Honweisel
   m_EditorClassIdentifier: 
   pokemonName: Honweisel
-  pokemonGen: 0
+  pokemonGen: 3
   anagramString: Eisen Wohl
   sprite: {fileID: 21300000, guid: ae25a9276f6430c4daea25a5e95fc10e, type: 3}

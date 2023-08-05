@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Frosdedje
   m_EditorClassIdentifier: 
   pokemonName: Frosdedje
-  pokemonGen: 0
+  pokemonGen: 3
   anagramString: jedes Dorf
   sprite: {fileID: 21300000, guid: 92e985026cf49d946958aa72362d07d7, type: 3}

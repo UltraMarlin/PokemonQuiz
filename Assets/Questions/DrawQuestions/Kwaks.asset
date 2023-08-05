@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Kwaks
   m_EditorClassIdentifier: 
   pokemonName: Kwaks
-  pokemonGen: 0
+  pokemonGen: 8
   drawerName: Marlin
   videoClip: {fileID: 32900000, guid: 205b1d39fdb51c14faf8e23e37229ace, type: 3}

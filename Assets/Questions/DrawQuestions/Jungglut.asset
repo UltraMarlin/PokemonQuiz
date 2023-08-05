@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Jungglut
   m_EditorClassIdentifier: 
   pokemonName: Jungglut
-  pokemonGen: 0
+  pokemonGen: 2
   drawerName: Jessi
   videoClip: {fileID: 32900000, guid: 4e75b900786b82a468cfb8907bfd9c75, type: 3}

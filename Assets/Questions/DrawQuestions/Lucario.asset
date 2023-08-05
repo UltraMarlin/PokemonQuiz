@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Lucario
   m_EditorClassIdentifier: 
   pokemonName: Lucario
-  pokemonGen: 0
+  pokemonGen: 3
   drawerName: Marlin
   videoClip: {fileID: 32900000, guid: 0ddf693ee5bbefd4597cd2a126fab4e4, type: 3}

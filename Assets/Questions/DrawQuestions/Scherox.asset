@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Scherox
   m_EditorClassIdentifier: 
   pokemonName: Scherox
-  pokemonGen: 0
+  pokemonGen: 1
   drawerName: Jessi
   videoClip: {fileID: 32900000, guid: 0bf06b7a87a0a4442bd048ec8f5909f4, type: 3}

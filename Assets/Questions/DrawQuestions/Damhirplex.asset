@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Damhirplex
   m_EditorClassIdentifier: 
   pokemonName: Damhirplex
-  pokemonGen: 0
+  pokemonGen: 1
   drawerName: JESSIessi
   videoClip: {fileID: 32900000, guid: dc480d5e440ac0c46a95e1e8f19e2c80, type: 3}

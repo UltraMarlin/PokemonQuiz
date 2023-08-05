@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Reshiram
   m_EditorClassIdentifier: 
   pokemonName: Reshiram
-  pokemonGen: 0
+  pokemonGen: 4
   anagramString: Herr Mais
   sprite: {fileID: 21300000, guid: e61b3ddcb972296438f5fad7e2f2b67a, type: 3}

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Gewaldro
   m_EditorClassIdentifier: 
   pokemonName: Gewaldro
-  pokemonGen: 0
+  pokemonGen: 2
   anagramString: Gold Ware
   sprite: {fileID: 21300000, guid: 1af342be50f18074b9937152c213af50, type: 3}

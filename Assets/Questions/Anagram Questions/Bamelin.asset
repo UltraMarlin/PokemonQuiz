@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Bamelin
   m_EditorClassIdentifier: 
   pokemonName: Bamelin
-  pokemonGen: 0
+  pokemonGen: 3
   anagramString: bin lame
   sprite: {fileID: 21300000, guid: ae57c2fb5b11035419af56127b47e79f, type: 3}

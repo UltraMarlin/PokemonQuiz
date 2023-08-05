@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Zirpeise
   m_EditorClassIdentifier: 
   pokemonName: Zirpeise
-  pokemonGen: 0
+  pokemonGen: 3
   drawerName: Bina
   videoClip: {fileID: 32900000, guid: f626f85cbd9b0c04a815b8b4b58707ed, type: 3}

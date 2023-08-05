@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Reptain
   m_EditorClassIdentifier: 
   pokemonName: Reptain
-  pokemonGen: 0
+  pokemonGen: 2
   anagramString: Piraten
   sprite: {fileID: 21300000, guid: 46c7f3a6c3184e84aba6faca0ccc7386, type: 3}

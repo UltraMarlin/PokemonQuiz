@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Viscora
   m_EditorClassIdentifier: 
   pokemonName: Viscora
-  pokemonGen: 0
+  pokemonGen: 5
   drawerName: Bina
   videoClip: {fileID: 32900000, guid: bc8cfe617c5a1a64285959ec1d2c2ce0, type: 3}

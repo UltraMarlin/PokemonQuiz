@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Togetic
   m_EditorClassIdentifier: 
   pokemonName: Togetic
-  pokemonGen: 0
+  pokemonGen: 1
   drawerName: Jessi
   videoClip: {fileID: 32900000, guid: 230c5bfd29185d840856c14785d2f9f0, type: 3}

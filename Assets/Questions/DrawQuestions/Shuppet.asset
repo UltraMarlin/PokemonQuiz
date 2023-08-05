@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Shuppet
   m_EditorClassIdentifier: 
   pokemonName: Shuppet
-  pokemonGen: 0
+  pokemonGen: 2
   drawerName: Jessi
   videoClip: {fileID: 32900000, guid: 65e3d63c90539fe41946c906aeda88b5, type: 3}

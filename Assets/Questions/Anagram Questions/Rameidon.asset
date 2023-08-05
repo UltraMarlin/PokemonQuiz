@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Rameidon
   m_EditorClassIdentifier: 
   pokemonName: Rameidon
-  pokemonGen: 0
+  pokemonGen: 3
   anagramString: Dioramen
   sprite: {fileID: 21300000, guid: 5c9258b2be8cfde48bc2e768f4937714, type: 3}

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Heiteira
   m_EditorClassIdentifier: 
   pokemonName: Heiteira
-  pokemonGen: 0
+  pokemonGen: 1
   anagramString: Eiter Hai
   sprite: {fileID: 21300000, guid: a87d1ad37be87ca4386756bc1f43e11d, type: 3}

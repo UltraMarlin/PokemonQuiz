@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Geronimatz
   m_EditorClassIdentifier: 
   pokemonName: Geronimatz
-  pokemonGen: 0
+  pokemonGen: 4
   anagramString: mag Zitrone
   sprite: {fileID: 21300000, guid: dd451e5cf0a244f47af726a8bfa6254f, type: 3}

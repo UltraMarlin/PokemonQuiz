@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Pionskora
   m_EditorClassIdentifier: 
   pokemonName: Pionskora
-  pokemonGen: 0
+  pokemonGen: 3
   anagramString: Kais Porno
   sprite: {fileID: 21300000, guid: 14d4d0c05e63d3948ae2a13915f35c3d, type: 3}

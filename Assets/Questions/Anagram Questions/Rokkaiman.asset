@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Rokkaiman
   m_EditorClassIdentifier: 
   pokemonName: Rokkaiman
-  pokemonGen: 0
+  pokemonGen: 4
   anagramString: Makkaroni
   sprite: {fileID: 21300000, guid: dfa570afe40ed224f9305210379686af, type: 3}

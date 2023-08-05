@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Yanmega
   m_EditorClassIdentifier: 
   pokemonName: Yanmega
-  pokemonGen: 0
+  pokemonGen: 3
   anagramString: gay Amen
   sprite: {fileID: 21300000, guid: 74d33e7cb8ddfaf4889bf168df5d23ca, type: 3}

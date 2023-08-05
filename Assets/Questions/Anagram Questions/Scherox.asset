@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Scherox
   m_EditorClassIdentifier: 
   pokemonName: Scherox
-  pokemonGen: 0
+  pokemonGen: 1
   anagramString: Sex Chor
   sprite: {fileID: 21300000, guid: 103f1192d5e31e846b4199483c685892, type: 3}

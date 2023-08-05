@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Flamiau
   m_EditorClassIdentifier: 
   pokemonName: Flamiau
-  pokemonGen: 0
+  pokemonGen: 6
   drawerName: Marlin
   videoClip: {fileID: 32900000, guid: f9c5b72af4faa2545a0299f4499e927c, type: 3}

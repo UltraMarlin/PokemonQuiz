@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Impoleon
   m_EditorClassIdentifier: 
   pokemonName: Impoleon
-  pokemonGen: 0
+  pokemonGen: 3
   anagramString: mein Pool
   sprite: {fileID: 21300000, guid: f6537c82df7ca6b4abb40f480a7ac34b, type: 3}

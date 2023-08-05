@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Plaudagei
   m_EditorClassIdentifier: 
   pokemonName: Plaudagei
-  pokemonGen: 0
+  pokemonGen: 3
   anagramString: Audi Plage
   sprite: {fileID: 21300000, guid: 43e9af214054d324383f330020024829, type: 3}

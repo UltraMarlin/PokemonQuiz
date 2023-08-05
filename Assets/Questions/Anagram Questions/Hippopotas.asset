@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Hippopotas
   m_EditorClassIdentifier: 
   pokemonName: Hippopotas
-  pokemonGen: 0
+  pokemonGen: 3
   anagramString: Opas Pop Hit
   sprite: {fileID: 21300000, guid: d5d175ac49abbb940aa208639bff855d, type: 3}

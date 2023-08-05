@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Reptain
   m_EditorClassIdentifier: 
   pokemonName: Reptain
-  pokemonGen: 0
+  pokemonGen: 2
   drawerName: Jessi
   videoClip: {fileID: 32900000, guid: c4cc84872b3384f489b4a64bbf48fd36, type: 3}

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Meistagrif
   m_EditorClassIdentifier: 
   pokemonName: Meistagrif
-  pokemonGen: 0
+  pokemonGen: 4
   anagramString: Fertig Mais
   sprite: {fileID: 21300000, guid: 0184daf8d35c91344a6e1254998b5b8e, type: 3}

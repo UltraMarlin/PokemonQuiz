@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Cottomi
   m_EditorClassIdentifier: 
   pokemonName: Cottomi
-  pokemonGen: 0
+  pokemonGen: 7
   drawerName: Marlin
   videoClip: {fileID: 32900000, guid: 57f7282266eb8d94c885ceced23a4d69, type: 3}

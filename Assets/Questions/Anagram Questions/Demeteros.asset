@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Demeteros
   m_EditorClassIdentifier: 
   pokemonName: Demeteros
-  pokemonGen: 0
+  pokemonGen: 4
   anagramString: Meeres Tod
   sprite: {fileID: 21300000, guid: a0fab636e49aaf846883b50d68cc6393, type: 3}

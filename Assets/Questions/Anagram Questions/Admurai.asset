@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Admurai
   m_EditorClassIdentifier: 
   pokemonName: Admurai
-  pokemonGen: 0
+  pokemonGen: 4
   anagramString: Miau Rad
   sprite: {fileID: 21300000, guid: 9d447a4cb03379547a0d32815abda723, type: 3}

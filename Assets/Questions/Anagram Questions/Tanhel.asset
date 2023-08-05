@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Tanhel
   m_EditorClassIdentifier: 
   pokemonName: Tanhel
-  pokemonGen: 0
+  pokemonGen: 2
   anagramString: halten
   sprite: {fileID: 21300000, guid: 833a8b336d3b1b145b414a901cf770e3, type: 3}

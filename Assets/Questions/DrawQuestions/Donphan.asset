@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Donphan
   m_EditorClassIdentifier: 
   pokemonName: Donphan
-  pokemonGen: 0
+  pokemonGen: 1
   drawerName: Jessi
   videoClip: {fileID: 32900000, guid: e8daba4fcb10ebc41ba0b30326ce2805, type: 3}

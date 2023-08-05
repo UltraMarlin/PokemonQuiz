@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Tuska
   m_EditorClassIdentifier: 
   pokemonName: Tuska
-  pokemonGen: 0
+  pokemonGen: 2
   anagramString: kaust
   sprite: {fileID: 21300000, guid: 7564aaf14b46d164ab6f9260317fa2d0, type: 3}

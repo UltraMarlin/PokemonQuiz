@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Phione
   m_EditorClassIdentifier: 
   pokemonName: Phione
-  pokemonGen: 0
+  pokemonGen: 3
   anagramString: ohne Pi
   sprite: {fileID: 21300000, guid: adf3dc26e28145b4a83426f4d015e162, type: 3}

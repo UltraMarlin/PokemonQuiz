@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Matrifol
   m_EditorClassIdentifier: 
   pokemonName: Matrifol
-  pokemonGen: 0
+  pokemonGen: 4
   anagramString: Flirt Oma
   sprite: {fileID: 21300000, guid: 11df40dd22ffb8c40ae28cd9656ab1e5, type: 3}

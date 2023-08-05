@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Traunmagil
   m_EditorClassIdentifier: 
   pokemonName: Traunmagil
-  pokemonGen: 0
+  pokemonGen: 3
   anagramString: mal unartig
   sprite: {fileID: 21300000, guid: 6eeedd8ff4286ba4caa536ec98129c01, type: 3}

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Mamolida
   m_EditorClassIdentifier: 
   pokemonName: Mamolida
-  pokemonGen: 0
+  pokemonGen: 4
   anagramString: Mama Idol
   sprite: {fileID: 21300000, guid: 7276d142210fc0e419a413f3de93dcc4, type: 3}

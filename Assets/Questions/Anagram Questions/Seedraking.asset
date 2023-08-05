@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Seedraking
   m_EditorClassIdentifier: 
   pokemonName: Seedraking
-  pokemonGen: 0
+  pokemonGen: 1
   anagramString: Sir Gedanke
   sprite: {fileID: 21300000, guid: f5dfeb3b34950a64d96f62ec2597ee19, type: 3}

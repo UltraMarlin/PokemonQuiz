@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Meganie
   m_EditorClassIdentifier: 
   pokemonName: Meganie
-  pokemonGen: 0
+  pokemonGen: 1
   anagramString: ein Game
   sprite: {fileID: 21300000, guid: 7379e1e77d4d18940b11577908c199dd, type: 3}

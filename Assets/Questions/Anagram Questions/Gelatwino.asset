@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Gelatwino
   m_EditorClassIdentifier: 
   pokemonName: Gelatwino
-  pokemonGen: 0
+  pokemonGen: 4
   anagramString: Gewalt Ion
   sprite: {fileID: 21300000, guid: 44243e6ce34dea6469ae2487d0997f73, type: 3}

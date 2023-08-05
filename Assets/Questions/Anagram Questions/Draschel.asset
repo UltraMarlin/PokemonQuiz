@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Draschel
   m_EditorClassIdentifier: 
   pokemonName: Draschel
-  pokemonGen: 0
+  pokemonGen: 2
   anagramString: der Lachs
   sprite: {fileID: 21300000, guid: f7a78ee895a226447973ad2320f07eb8, type: 3}

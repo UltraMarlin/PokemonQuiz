@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Zebritz
   m_EditorClassIdentifier: 
   pokemonName: Zebritz
-  pokemonGen: 0
+  pokemonGen: 4
   anagramString: bezirzt
   sprite: {fileID: 21300000, guid: f6f359f9c2ca3e946bd7fc552a4b3e90, type: 3}

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Fletiamo
   m_EditorClassIdentifier: 
   pokemonName: Fletiamo
-  pokemonGen: 0
+  pokemonGen: 4
   anagramString: Omi Falte
   sprite: {fileID: 21300000, guid: 586613dac0075154187f39dc94ade58a, type: 3}

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Hundemon
   m_EditorClassIdentifier: 
   pokemonName: Hundemon
-  pokemonGen: 0
+  pokemonGen: 1
   anagramString: ohne Mund
   sprite: {fileID: 21300000, guid: f4d0215bfa8beee41911f640c2d0ee66, type: 3}

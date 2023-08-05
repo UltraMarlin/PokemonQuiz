@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Liberlo
   m_EditorClassIdentifier: 
   pokemonName: Liberlo
-  pokemonGen: 0
+  pokemonGen: 7
   drawerName: Marlin
   videoClip: {fileID: 32900000, guid: 89c7a567d6fa35c428084776bbdc06ef, type: 3}

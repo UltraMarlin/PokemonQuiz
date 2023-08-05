@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Nagelotz
   m_EditorClassIdentifier: 
   pokemonName: Nagelotz
-  pokemonGen: 0
+  pokemonGen: 4
   anagramString: anglotze
   sprite: {fileID: 21300000, guid: cb21f940b8998d940984933445960333, type: 3}

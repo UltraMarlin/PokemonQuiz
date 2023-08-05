@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Barschuft
   m_EditorClassIdentifier: 
   pokemonName: Barschuft
-  pokemonGen: 0
+  pokemonGen: 4
   anagramString: Frachtbus
   sprite: {fileID: 21300000, guid: 6845ff4c09f1c5a43b0d757237b8b4d4, type: 3}

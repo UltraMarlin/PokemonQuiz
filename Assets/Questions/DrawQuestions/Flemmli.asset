@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Flemmli
   m_EditorClassIdentifier: 
   pokemonName: Flemmli
-  pokemonGen: 0
+  pokemonGen: 2
   drawerName: Jessi
   videoClip: {fileID: 32900000, guid: 9f8317f4bceeebb4f942a6e15ba5f106, type: 3}

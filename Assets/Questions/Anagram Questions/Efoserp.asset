@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Efoserp
   m_EditorClassIdentifier: 
   pokemonName: Efoserp
-  pokemonGen: 0
+  pokemonGen: 4
   anagramString: Po Ferse
   sprite: {fileID: 21300000, guid: 2ff4796712a87f748ab129dc82bf1e99, type: 3}

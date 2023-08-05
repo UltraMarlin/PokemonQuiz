@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Blanas
   m_EditorClassIdentifier: 
   pokemonName: Blanas
-  pokemonGen: 0
+  pokemonGen: 2
   anagramString: anblas
   sprite: {fileID: 21300000, guid: b1933a1070e99ad449b6a9f5a621981c, type: 3}

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Kyogre
   m_EditorClassIdentifier: 
   pokemonName: Kyogre
-  pokemonGen: 0
+  pokemonGen: 2
   drawerName: Jessi
   videoClip: {fileID: 32900000, guid: 8d52cc1d1e3757b49801ca83f831914e, type: 3}

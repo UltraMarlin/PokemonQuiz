@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Echnatoll
   m_EditorClassIdentifier: 
   pokemonName: Echnatoll
-  pokemonGen: 0
+  pokemonGen: 4
   anagramString: Hotel Clan
   sprite: {fileID: 21300000, guid: c374f77246802ad499f35a20cc8c94b1, type: 3}

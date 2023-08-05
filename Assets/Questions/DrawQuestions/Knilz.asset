@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Knilz
   m_EditorClassIdentifier: 
   pokemonName: Knilz
-  pokemonGen: 0
+  pokemonGen: 2
   drawerName: Jessi
   videoClip: {fileID: 32900000, guid: 61fe4c536091968489f52c5731ab5368, type: 3}

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Sodamak
   m_EditorClassIdentifier: 
   pokemonName: Sodamak
-  pokemonGen: 0
+  pokemonGen: 4
   anagramString: das Koma
   sprite: {fileID: 21300000, guid: 58da7daea3bc56b42a616190c398efa2, type: 3}

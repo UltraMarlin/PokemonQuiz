@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Brutalanda
   m_EditorClassIdentifier: 
   pokemonName: Brutalanda
-  pokemonGen: 0
+  pokemonGen: 2
   anagramString: Landbau Rat
   sprite: {fileID: 21300000, guid: cdf30278c68f64340954e13fddc437c0, type: 3}

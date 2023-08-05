@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Frosdedje
   m_EditorClassIdentifier: 
   pokemonName: Frosdedje
-  pokemonGen: 0
+  pokemonGen: 3
   drawerName: Bina
   videoClip: {fileID: 32900000, guid: 8295fa0b2417ca144af390ce6ec60079, type: 3}

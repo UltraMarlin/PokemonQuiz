@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Tengulist
   m_EditorClassIdentifier: 
   pokemonName: Tengulist
-  pokemonGen: 0
+  pokemonGen: 2
   anagramString: net lustig
   sprite: {fileID: 21300000, guid: c60918f18bfefc64f824cbf833de9beb, type: 3}

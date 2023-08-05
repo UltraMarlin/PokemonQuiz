@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Felino
   m_EditorClassIdentifier: 
   pokemonName: Felino
-  pokemonGen: 0
+  pokemonGen: 1
   anagramString: Folien
   sprite: {fileID: 21300000, guid: 5250712790ada044899269311e3b33b8, type: 3}

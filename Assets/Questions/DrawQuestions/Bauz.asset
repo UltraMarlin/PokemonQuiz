@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Bauz
   m_EditorClassIdentifier: 
   pokemonName: Bauz
-  pokemonGen: 0
+  pokemonGen: 6
   drawerName: Marlin
   videoClip: {fileID: 32900000, guid: c85b1a48b9ef4db469ba5308d55873c1, type: 3}

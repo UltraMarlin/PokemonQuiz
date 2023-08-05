@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Schwalbini
   m_EditorClassIdentifier: 
   pokemonName: Schwalbini
-  pokemonGen: 0
+  pokemonGen: 2
   drawerName: Jessi
   videoClip: {fileID: 32900000, guid: 5ef8cc95a2908c44ba18610808d2a760, type: 3}

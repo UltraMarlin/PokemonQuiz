@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Seemops
   m_EditorClassIdentifier: 
   pokemonName: Seemops
-  pokemonGen: 0
+  pokemonGen: 2
   anagramString: Po Messe
   sprite: {fileID: 21300000, guid: 3e23fbccfdc6cb14b9929bea227cf96f, type: 3}

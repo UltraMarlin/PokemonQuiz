@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Roserade
   m_EditorClassIdentifier: 
   pokemonName: Roserade
-  pokemonGen: 0
+  pokemonGen: 3
   anagramString: rosa Erde
   sprite: {fileID: 21300000, guid: f0a643d0855663b458c5fd31dbb453e8, type: 3}

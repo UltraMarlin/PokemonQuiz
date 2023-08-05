@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Solgaleo
   m_EditorClassIdentifier: 
   pokemonName: Solgaleo
-  pokemonGen: 0
+  pokemonGen: 6
   drawerName: Bina
   videoClip: {fileID: 32900000, guid: f5a976d47b0cc1a4582f12dfb8e0b042, type: 3}

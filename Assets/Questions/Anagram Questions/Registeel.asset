@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Registeel
   m_EditorClassIdentifier: 
   pokemonName: Registeel
-  pokemonGen: 0
+  pokemonGen: 2
   anagramString: geliertes
   sprite: {fileID: 21300000, guid: e3751f186f60bca42a4353142db4c435, type: 3}

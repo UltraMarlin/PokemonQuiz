@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Pam-Pam
   m_EditorClassIdentifier: 
   pokemonName: Pam-Pam
-  pokemonGen: 0
+  pokemonGen: 5
   drawerName: Bina
   videoClip: {fileID: 32900000, guid: fc9eb700781337240a407dffda0e3572, type: 3}

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Gehweiher
   m_EditorClassIdentifier: 
   pokemonName: Gehweiher
-  pokemonGen: 0
+  pokemonGen: 2
   anagramString: Reh Geweih
   sprite: {fileID: 21300000, guid: ab3fa94c88e151d46ad70d08707d3976, type: 3}

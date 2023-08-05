@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Ramoth
   m_EditorClassIdentifier: 
   pokemonName: Ramoth
-  pokemonGen: 0
+  pokemonGen: 4
   anagramString: Ohr Amt
   sprite: {fileID: 21300000, guid: b9538732fc7942041b57f85cf456b5f7, type: 3}

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Metang
   m_EditorClassIdentifier: 
   pokemonName: Metang
-  pokemonGen: 0
+  pokemonGen: 2
   anagramString: Magnet
   sprite: {fileID: 21300000, guid: c4660c818a081a54ba319835d06d0e86, type: 3}

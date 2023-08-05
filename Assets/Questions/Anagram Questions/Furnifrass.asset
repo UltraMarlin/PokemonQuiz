@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Furnifrass
   m_EditorClassIdentifier: 
   pokemonName: Furnifrass
-  pokemonGen: 0
+  pokemonGen: 4
   anagramString: Frisur Fans
   sprite: {fileID: 21300000, guid: 55117aed6f18849428ec1e4b8d394178, type: 3}

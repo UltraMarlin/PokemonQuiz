@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Muntier
   m_EditorClassIdentifier: 
   pokemonName: Muntier
-  pokemonGen: 0
+  pokemonGen: 2
   anagramString: ein Turm
   sprite: {fileID: 21300000, guid: 89bb1ea285b51e1459f9f95f9c42c860, type: 3}

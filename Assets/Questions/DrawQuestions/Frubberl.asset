@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Frubberl
   m_EditorClassIdentifier: 
   pokemonName: Frubberl
-  pokemonGen: 0
+  pokemonGen: 6
   drawerName: Marlin
   videoClip: {fileID: 32900000, guid: 3ea85d8c6f049d94e8148c5a6c63d2b4, type: 3}

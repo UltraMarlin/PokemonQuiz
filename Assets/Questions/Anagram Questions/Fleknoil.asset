@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Fleknoil
   m_EditorClassIdentifier: 
   pokemonName: Fleknoil
-  pokemonGen: 0
+  pokemonGen: 4
   anagramString: Kill Ofen
   sprite: {fileID: 21300000, guid: 076441f682497154abc7c8ab7ad186dd, type: 3}

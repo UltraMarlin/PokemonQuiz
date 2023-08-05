@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Coronospa
   m_EditorClassIdentifier: 
   pokemonName: Coronospa
-  pokemonGen: 0
+  pokemonGen: 7
   drawerName: Bina
   videoClip: {fileID: 32900000, guid: c7985c787f678dc4bbb20c1638edf90c, type: 3}

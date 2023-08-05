@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Minun
   m_EditorClassIdentifier: 
   pokemonName: Minun
-  pokemonGen: 0
+  pokemonGen: 2
   drawerName: Jessi
   videoClip: {fileID: 32900000, guid: b7b040796bfe66547a57488e6caa8b28, type: 3}

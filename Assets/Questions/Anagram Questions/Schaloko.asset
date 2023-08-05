@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Schaloko
   m_EditorClassIdentifier: 
   pokemonName: Schaloko
-  pokemonGen: 0
+  pokemonGen: 2
   anagramString: Klo Chaos
   sprite: {fileID: 21300000, guid: c4111f4f1d5399a4a94c5ddbf628eabe, type: 3}

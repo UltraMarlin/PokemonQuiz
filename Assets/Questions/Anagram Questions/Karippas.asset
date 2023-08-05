@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Karippas
   m_EditorClassIdentifier: 
   pokemonName: Karippas
-  pokemonGen: 0
+  pokemonGen: 4
   anagramString: Paprikas
   sprite: {fileID: 21300000, guid: a6d16579c4be3a842972193337b1fc05, type: 3}

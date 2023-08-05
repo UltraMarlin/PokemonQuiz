@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Krakeelo
   m_EditorClassIdentifier: 
   pokemonName: Krakeelo
-  pokemonGen: 0
+  pokemonGen: 2
   drawerName: Jessi
   videoClip: {fileID: 32900000, guid: 99fd0ca157cc2be40a78ae8bb7abc6b5, type: 3}

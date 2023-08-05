@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Regigigas
   m_EditorClassIdentifier: 
   pokemonName: Regigigas
-  pokemonGen: 0
+  pokemonGen: 3
   anagramString: Gas gierig
   sprite: {fileID: 21300000, guid: bf240b692cb450d42a2864e9d97b9e0a, type: 3}

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Morbitesse
   m_EditorClassIdentifier: 
   pokemonName: Morbitesse
-  pokemonGen: 0
+  pokemonGen: 4
   anagramString: Meteor Biss
   sprite: {fileID: 21300000, guid: 69b9882aa6ea1744ba9fd37322340a25, type: 3}

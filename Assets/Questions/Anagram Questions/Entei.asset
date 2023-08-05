@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Entei
   m_EditorClassIdentifier: 
   pokemonName: Entei
-  pokemonGen: 0
+  pokemonGen: 1
   anagramString: Niete
   sprite: {fileID: 21300000, guid: 7ef661eff8b21184fb6c2296768ee5ae, type: 3}

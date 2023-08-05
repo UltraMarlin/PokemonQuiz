@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Waumpel
   m_EditorClassIdentifier: 
   pokemonName: Waumpel
-  pokemonGen: 0
+  pokemonGen: 2
   drawerName: Jessi
   videoClip: {fileID: 32900000, guid: a6e34cf0e35014e499916db2074ddc16, type: 3}

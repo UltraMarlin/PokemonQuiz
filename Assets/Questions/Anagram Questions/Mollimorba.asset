@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Mollimorba
   m_EditorClassIdentifier: 
   pokemonName: Mollimorba
-  pokemonGen: 0
+  pokemonGen: 4
   anagramString: Moral Mobil
   sprite: {fileID: 21300000, guid: bfd669ad3b0105747af355fd7388453d, type: 3}

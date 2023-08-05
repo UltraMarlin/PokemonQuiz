@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Guardevoir
   m_EditorClassIdentifier: 
   pokemonName: Guardevoir
-  pokemonGen: 0
+  pokemonGen: 2
   drawerName: Jessi
   videoClip: {fileID: 32900000, guid: 8b54810cd32701c46b93cb98672139c8, type: 3}

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Maskeregen
   m_EditorClassIdentifier: 
   pokemonName: Maskeregen
-  pokemonGen: 0
+  pokemonGen: 2
   anagramString: Gase merken
   sprite: {fileID: 21300000, guid: 08767fe93f1d36c4487d9a29df3d25c0, type: 3}

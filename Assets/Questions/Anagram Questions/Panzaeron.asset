@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Panzaeron
   m_EditorClassIdentifier: 
   pokemonName: Panzaeron
-  pokemonGen: 0
+  pokemonGen: 1
   anagramString: Ranzen Opa
   sprite: {fileID: 21300000, guid: b27c7f570884ea54695cfa0ea2b14d81, type: 3}

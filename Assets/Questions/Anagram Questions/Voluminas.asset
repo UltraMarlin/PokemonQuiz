@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Voluminas
   m_EditorClassIdentifier: 
   pokemonName: Voluminas
-  pokemonGen: 0
+  pokemonGen: 3
   anagramString: minus Oval
   sprite: {fileID: 21300000, guid: 1fdd3feea743feb4488ebb5d2e3b1d40, type: 3}

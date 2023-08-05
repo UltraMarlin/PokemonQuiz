@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Schwalbini
   m_EditorClassIdentifier: 
   pokemonName: Schwalbini
-  pokemonGen: 0
+  pokemonGen: 2
   anagramString: ich bins Wal
   sprite: {fileID: 21300000, guid: 62862c26773ac934f8db1cce9132b77f, type: 3}

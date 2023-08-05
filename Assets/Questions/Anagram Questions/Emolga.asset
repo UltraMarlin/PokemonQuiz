@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Emolga
   m_EditorClassIdentifier: 
   pokemonName: Emolga
-  pokemonGen: 0
+  pokemonGen: 4
   anagramString: Gel Oma
   sprite: {fileID: 21300000, guid: df59c4451db031a4282a11b90c54df2b, type: 3}

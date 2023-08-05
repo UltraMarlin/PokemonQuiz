@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Tuska
   m_EditorClassIdentifier: 
   pokemonName: Tuska
-  pokemonGen: 0
+  pokemonGen: 2
   drawerName: Jessi
   videoClip: {fileID: 32900000, guid: 4567af62699b8f64eb25bc75644b2893, type: 3}

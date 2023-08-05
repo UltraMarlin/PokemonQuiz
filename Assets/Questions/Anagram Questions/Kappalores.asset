@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Kappalores
   m_EditorClassIdentifier: 
   pokemonName: Kappalores
-  pokemonGen: 0
+  pokemonGen: 2
   anagramString: rosa Klappe
   sprite: {fileID: 21300000, guid: 44f2b2a5b5342164892eb127dbd2099e, type: 3}

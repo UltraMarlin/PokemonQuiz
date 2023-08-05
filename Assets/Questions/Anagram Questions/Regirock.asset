@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Regirock
   m_EditorClassIdentifier: 
   pokemonName: Regirock
-  pokemonGen: 0
+  pokemonGen: 2
   anagramString: rockiger
   sprite: {fileID: 21300000, guid: b972f066238e3b647bef33635e5e6170, type: 3}

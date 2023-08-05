@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Strepoli
   m_EditorClassIdentifier: 
   pokemonName: Strepoli
-  pokemonGen: 0
+  pokemonGen: 4
   anagramString: Spielort
   sprite: {fileID: 21300000, guid: 01a53a7958a7646429ff79de16e4b4e0, type: 3}

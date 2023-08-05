@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Barschwa
   m_EditorClassIdentifier: 
   pokemonName: Barschwa
-  pokemonGen: 0
+  pokemonGen: 2
   anagramString: waschbar
   sprite: {fileID: 21300000, guid: 2b015eaf630b0854784ca41265903d66, type: 3}

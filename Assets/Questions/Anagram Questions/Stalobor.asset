@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Stalobor
   m_EditorClassIdentifier: 
   pokemonName: Stalobor
-  pokemonGen: 0
+  pokemonGen: 4
   anagramString: Lars Boot
   sprite: {fileID: 21300000, guid: 27e4332d74e0725428e4bb2577af57e2, type: 3}

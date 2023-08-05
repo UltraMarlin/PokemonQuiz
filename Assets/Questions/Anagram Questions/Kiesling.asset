@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Kiesling
   m_EditorClassIdentifier: 
   pokemonName: Kiesling
-  pokemonGen: 0
+  pokemonGen: 4
   anagramString: Igel Skin
   sprite: {fileID: 21300000, guid: 579817db6f9b0014fb176b3d20878f20, type: 3}
