@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfbc244f4a40c704087f2013a9809da4, type: 3}
   m_Name: Papungha
   m_EditorClassIdentifier: 
-  pokemonName: Papunga
+  pokemonName: Papungha
   pokemonGen: 1
   drawerName: Jessi
   videoClip: {fileID: 32900000, guid: 13a0cbc9cb565e1438d299cb82181189, type: 3}

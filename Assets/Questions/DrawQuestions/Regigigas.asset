@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Regigigas
   m_EditorClassIdentifier: 
   pokemonName: Regigigas
-  pokemonGen: 2
+  pokemonGen: 3
   drawerName: Bina
   videoClip: {fileID: 32900000, guid: df681f49ba524f5498ea9a47d4b9d203, type: 3}

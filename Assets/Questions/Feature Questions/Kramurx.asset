@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe5e4d2aed74a645969d75d271b3805, type: 3}
+  m_Name: Kramurx
+  m_EditorClassIdentifier: 
+  pokemonName: Kramurx
+  pokemonGen: 1
+  solutionSprite: {fileID: 21300000, guid: ef6cc14b263b49747adce5915b60eb4a, type: 3}
+  featureSprites:
+  - {fileID: 21300000, guid: c45fbcfb0eca482498cc2a102a816276, type: 3}
+  - {fileID: 21300000, guid: 966299beb0fc4a742b6f4e78706345a0, type: 3}
+  - {fileID: 21300000, guid: f4348677f2870414589a72841a6c1ea8, type: 3}
+  - {fileID: 21300000, guid: 5b93c5ecd70d42a4c99c4760d7b6d016, type: 3}
