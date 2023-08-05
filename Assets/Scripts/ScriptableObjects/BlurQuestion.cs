@@ -5,6 +5,7 @@ using UnityEngine;
 public class BlurQuestion : IQuestion
 {
     public Sprite sprite;
+    public PokemonGen pokemonGen;
 
 #if UNITY_EDITOR
     public void OnValidate()

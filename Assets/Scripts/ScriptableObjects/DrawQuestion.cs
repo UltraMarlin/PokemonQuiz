@@ -7,6 +7,7 @@ public class DrawQuestion : IQuestion
 {
     public string drawerName;
     public VideoClip videoClip;
+    public PokemonGen pokemonGen;
 
 #if UNITY_EDITOR
     public void OnValidate()

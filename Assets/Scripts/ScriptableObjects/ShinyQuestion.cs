@@ -9,6 +9,7 @@ public class ShinyQuestion : IQuestion
     public Sprite solutionSprite;
     public List<Sprite> fakeSprites;
     public Sprite originalSprite;
+    public PokemonGen pokemonGen;
 
 #if UNITY_EDITOR
     public void OnValidate()

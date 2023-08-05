@@ -32,6 +32,7 @@ public enum PokemonGen
 
 public class QuizUtils
 {
+    //
     public static bool validateQuestionObjects = false;
     public static int[] pokemonGenCutoffs = new int[] { 151, 251, 386, 493, 649, 721, 809, 905, 1018 };
 }
@@ -39,7 +40,7 @@ public class QuizUtils
 public class IQuestion : ScriptableObject
 {
     public string pokemonName;
-    public PokemonGen pokemonGen;
+
 }
 
 public interface IQuestionController {
