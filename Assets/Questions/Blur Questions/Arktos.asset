@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Arktos
   m_EditorClassIdentifier: 
   pokemonName: Arktos
+  pokemonGen: 0
   sprite: {fileID: 21300000, guid: 76f50afb6b33d8543b7139503f7d8b2e, type: 3}

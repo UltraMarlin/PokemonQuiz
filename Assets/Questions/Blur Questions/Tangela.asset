@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Tangela
   m_EditorClassIdentifier: 
   pokemonName: Tangela
+  pokemonGen: 0
   sprite: {fileID: 21300000, guid: f24269f05e70f4a49b3640f7fad00bde, type: 3}

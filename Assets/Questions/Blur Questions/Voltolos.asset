@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Voltolos
   m_EditorClassIdentifier: 
   pokemonName: Voltolos
-  pokemonGen: 0
+  pokemonGen: 4
   sprite: {fileID: 21300000, guid: 170a92e28d744a34fbf2b5a6f1e7e1ff, type: 3}

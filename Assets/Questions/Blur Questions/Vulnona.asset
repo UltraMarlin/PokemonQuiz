@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Vulnona
   m_EditorClassIdentifier: 
   pokemonName: Vulnona
+  pokemonGen: 0
   sprite: {fileID: 21300000, guid: 2cbae1880bdabb149b4e41270d89f75c, type: 3}

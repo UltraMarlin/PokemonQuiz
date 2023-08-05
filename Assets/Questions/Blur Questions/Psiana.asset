@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Psiana
   m_EditorClassIdentifier: 
   pokemonName: Psiana
+  pokemonGen: 1
   sprite: {fileID: 21300000, guid: db1f9ab0c52bd7b44943995ac5ab0951, type: 3}

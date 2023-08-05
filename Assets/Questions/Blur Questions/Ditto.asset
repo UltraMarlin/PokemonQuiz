@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Ditto
   m_EditorClassIdentifier: 
   pokemonName: Ditto
+  pokemonGen: 0
   sprite: {fileID: 21300000, guid: e00cbdfa567e077469a3717c097426ed, type: 3}

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Sharfax
   m_EditorClassIdentifier: 
   pokemonName: Sharfax
-  pokemonGen: 0
+  pokemonGen: 4
   sprite: {fileID: 21300000, guid: be2eba2904415274287187fc5d888b5f, type: 3}

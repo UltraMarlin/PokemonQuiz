@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Schiggy
   m_EditorClassIdentifier: 
   pokemonName: Schiggy
+  pokemonGen: 0
   sprite: {fileID: 21300000, guid: d90032aeb77ae3b48bd03c45d969f5b2, type: 3}

@@ -9,7 +9,6 @@ public class FeatureQuestion : IQuestion
 {
     public Sprite solutionSprite;
     public List<Sprite> featureSprites;
-    public PokemonGen pokemonGen;
 
 #if UNITY_EDITOR
     public void OnValidate()

@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Arbok
   m_EditorClassIdentifier: 
   pokemonName: Arbok
+  pokemonGen: 0
   sprite: {fileID: 21300000, guid: b1b7757303e898f419894b82841c002f, type: 3}

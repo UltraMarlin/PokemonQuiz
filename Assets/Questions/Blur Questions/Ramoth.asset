@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Ramoth
   m_EditorClassIdentifier: 
   pokemonName: Ramoth
-  pokemonGen: 0
+  pokemonGen: 4
   sprite: {fileID: 21300000, guid: e44dfa43d8178334f8fb0aa0220d76c1, type: 3}

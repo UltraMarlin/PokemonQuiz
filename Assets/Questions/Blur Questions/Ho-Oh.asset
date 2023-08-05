@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Ho-Oh
   m_EditorClassIdentifier: 
   pokemonName: Ho-Oh
+  pokemonGen: 1
   sprite: {fileID: 21300000, guid: f60ab1a1249a9ad44ae19fb5d0a5a35e, type: 3}

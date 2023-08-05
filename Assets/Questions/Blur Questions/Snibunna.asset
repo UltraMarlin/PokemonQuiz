@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Snibunna
   m_EditorClassIdentifier: 
   pokemonName: Snibunna
-  pokemonGen: 0
+  pokemonGen: 3
   sprite: {fileID: 21300000, guid: 61f56896c6b21d54a9dafb01014aac35, type: 3}

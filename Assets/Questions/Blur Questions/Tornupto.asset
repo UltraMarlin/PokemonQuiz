@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Tornupto
   m_EditorClassIdentifier: 
   pokemonName: Tornupto
+  pokemonGen: 1
   sprite: {fileID: 21300000, guid: d87285b05bbd2dd42bb717de3d49ca66, type: 3}

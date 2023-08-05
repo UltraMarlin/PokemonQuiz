@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Azurill
   m_EditorClassIdentifier: 
   pokemonName: Azurill
+  pokemonGen: 2
   sprite: {fileID: 21300000, guid: 8de2b7347653fc741955337f312b3d41, type: 3}

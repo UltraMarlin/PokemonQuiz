@@ -6,7 +6,6 @@ public class AnagramQuestion : IQuestion
 {
     public string anagramString;
     public Sprite sprite;
-    public PokemonGen pokemonGen;
 
 #if UNITY_EDITOR
     public void OnValidate()

@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Endivie
   m_EditorClassIdentifier: 
   pokemonName: Endivie
+  pokemonGen: 1
   sprite: {fileID: 21300000, guid: 574e6ef0b4d377148a210113878a9787, type: 3}

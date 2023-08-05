@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Karnimani
   m_EditorClassIdentifier: 
   pokemonName: Karnimani
+  pokemonGen: 1
   sprite: {fileID: 21300000, guid: 5cc2852e823642f45afcb3f3ef25599b, type: 3}

@@ -1,3 +1,4 @@
+using System.IO;
 using UnityEditor;
 using UnityEngine;
 
@@ -5,7 +6,6 @@ using UnityEngine;
 public class BlurQuestion : IQuestion
 {
     public Sprite sprite;
-    public PokemonGen pokemonGen;
 
 #if UNITY_EDITOR
     public void OnValidate()
@@ -31,8 +31,8 @@ public class BlurQuestion : IQuestion
         {
             string assetPath = AssetDatabase.GetAssetPath(this.GetInstanceID());
             AssetDatabase.RenameAsset(assetPath, pokemonName);
+            EditorUtility.SetDirty(this);
         }
-        
         
     }
 #endif

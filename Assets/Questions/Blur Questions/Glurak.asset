@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Glurak
   m_EditorClassIdentifier: 
   pokemonName: Glurak
+  pokemonGen: 0
   sprite: {fileID: 21300000, guid: b2efd04f7e15094489d6943170a17c96, type: 3}

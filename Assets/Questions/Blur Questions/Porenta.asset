@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Porenta
   m_EditorClassIdentifier: 
   pokemonName: Porenta
+  pokemonGen: 0
   sprite: {fileID: 21300000, guid: f89e83b35424693458beabbd6141e2b5, type: 3}

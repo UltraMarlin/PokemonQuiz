@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Seedraking
   m_EditorClassIdentifier: 
   pokemonName: Seedraking
+  pokemonGen: 1
   sprite: {fileID: 21300000, guid: 3fa9f1b046e05b544801f41467345b73, type: 3}

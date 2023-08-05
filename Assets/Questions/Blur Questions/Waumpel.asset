@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Waumpel
   m_EditorClassIdentifier: 
   pokemonName: Waumpel
+  pokemonGen: 2
   sprite: {fileID: 21300000, guid: c357bcb7221fb7548b886db0958973c0, type: 3}

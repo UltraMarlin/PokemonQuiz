@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Fermicula
   m_EditorClassIdentifier: 
   pokemonName: Fermicula
-  pokemonGen: 0
+  pokemonGen: 4
   sprite: {fileID: 21300000, guid: fab027c2613ceb742a4b85a2d394c680, type: 3}

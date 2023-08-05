@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Kappalores
   m_EditorClassIdentifier: 
   pokemonName: Kappalores
-  pokemonGen: 0
+  pokemonGen: 2
   sprite: {fileID: 21300000, guid: 4ea5a8478e3e73b469521fa0a427e0a4, type: 3}

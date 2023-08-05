@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Chaneira
   m_EditorClassIdentifier: 
   pokemonName: Chaneira
+  pokemonGen: 0
   sprite: {fileID: 21300000, guid: 17951ea7557f1b144a928cc70a10d26b, type: 3}

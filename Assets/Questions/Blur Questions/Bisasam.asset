@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Bisasam
   m_EditorClassIdentifier: 
   pokemonName: Bisasam
+  pokemonGen: 0
   sprite: {fileID: 21300000, guid: 078f6985ef2d5804cb9daaae2389ef18, type: 3}

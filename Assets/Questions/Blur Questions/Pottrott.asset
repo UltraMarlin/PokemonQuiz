@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Pottrott
   m_EditorClassIdentifier: 
   pokemonName: Pottrott
+  pokemonGen: 1
   sprite: {fileID: 21300000, guid: 07c70869c273fec41add9a44b2b3c37e, type: 3}

@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Sonnflora
   m_EditorClassIdentifier: 
   pokemonName: Sonnflora
+  pokemonGen: 1
   sprite: {fileID: 21300000, guid: fd46aa329c674394b9c3a1c3e6fcf837, type: 3}

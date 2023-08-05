@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Flamara
   m_EditorClassIdentifier: 
   pokemonName: Flamara
+  pokemonGen: 0
   sprite: {fileID: 21300000, guid: 2d016794428d59f4099e9caac9d74d6b, type: 3}

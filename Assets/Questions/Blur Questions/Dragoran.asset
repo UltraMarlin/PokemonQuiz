@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Dragoran
   m_EditorClassIdentifier: 
   pokemonName: Dragoran
+  pokemonGen: 0
   sprite: {fileID: 21300000, guid: 49d8aeb5ba7d6ba4fbfe27fa98ae31da, type: 3}

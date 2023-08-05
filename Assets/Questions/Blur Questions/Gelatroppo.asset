@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Gelatroppo
   m_EditorClassIdentifier: 
   pokemonName: Gelatroppo
-  pokemonGen: 0
+  pokemonGen: 4
   sprite: {fileID: 21300000, guid: 0a6dea0d144135a44a18c5e5998c8183, type: 3}

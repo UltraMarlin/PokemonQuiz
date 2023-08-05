@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Tyracroc
   m_EditorClassIdentifier: 
   pokemonName: Tyracroc
+  pokemonGen: 1
   sprite: {fileID: 21300000, guid: 79bf822bd11c61f49845decee39582f7, type: 3}

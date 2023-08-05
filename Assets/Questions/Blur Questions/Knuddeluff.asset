@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Knuddeluff
   m_EditorClassIdentifier: 
   pokemonName: Knuddeluff
+  pokemonGen: 0
   sprite: {fileID: 21300000, guid: b3a8e6578e73a51489a5f5ff51fb7e00, type: 3}

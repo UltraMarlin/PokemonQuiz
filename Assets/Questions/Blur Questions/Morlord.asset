@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Morlord
   m_EditorClassIdentifier: 
   pokemonName: Morlord
+  pokemonGen: 1
   sprite: {fileID: 21300000, guid: 99b11bf7629324e4eb71beae6b4fe086, type: 3}

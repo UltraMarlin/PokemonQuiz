@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Pantimos
   m_EditorClassIdentifier: 
   pokemonName: Pantimos
+  pokemonGen: 0
   sprite: {fileID: 21300000, guid: 6e16039df95480e4aa6d77c142dc2771, type: 3}

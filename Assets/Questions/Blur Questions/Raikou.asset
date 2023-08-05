@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Raikou
   m_EditorClassIdentifier: 
   pokemonName: Raikou
+  pokemonGen: 1
   sprite: {fileID: 21300000, guid: 704b11a363f80dd41bd9851bb2d7a264, type: 3}
