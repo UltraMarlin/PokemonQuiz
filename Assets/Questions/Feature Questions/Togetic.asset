@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Togetic
   m_EditorClassIdentifier: 
   pokemonName: Togetic
+  pokemonGen: 1
   solutionSprite: {fileID: 21300000, guid: dd869dbe752cf0d4ca8d1ade42d2bc2c, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: 990342b3093c7e3419d2cdac702b7369, type: 3}

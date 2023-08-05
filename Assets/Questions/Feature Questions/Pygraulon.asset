@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Pygraulon
   m_EditorClassIdentifier: 
   pokemonName: Pygraulon
+  pokemonGen: 4
   solutionSprite: {fileID: 21300000, guid: 4b17da7a7f5615f4ba72f2c188bf4524, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: 3859e870709e3c34f91be2ce6a07acb8, type: 3}

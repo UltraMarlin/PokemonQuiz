@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Walraisa
   m_EditorClassIdentifier: 
   pokemonName: Walraisa
-  pokemonGen: 0
+  pokemonGen: 2
   solutionSprite: {fileID: 21300000, guid: c2ba70b3ad43d224487198ac896e0e9f, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: b0eddb551454e0944acb62c16e1de300, type: 3}

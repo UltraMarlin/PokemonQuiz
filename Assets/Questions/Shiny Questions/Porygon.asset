@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Porygon
   m_EditorClassIdentifier: 
   pokemonName: Porygon
+  pokemonGen: 0
   solutionSprite: {fileID: 21300000, guid: a9a09647b69dba04aa7ccd1fff5833a5, type: 3}
   fakeSprites:
   - {fileID: 21300000, guid: 87389962d682e2b4698db8cbd708fe3f, type: 3}

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Rotomurf
   m_EditorClassIdentifier: 
   pokemonName: Rotomurf
+  pokemonGen: 4
   solutionSprite: {fileID: 21300000, guid: 750afed3ce751fd4cbd562ce090e1ffb, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: c388f16dcbae9494b988e5f397e038c4, type: 3}

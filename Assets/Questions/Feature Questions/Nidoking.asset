@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Nidoking
   m_EditorClassIdentifier: 
   pokemonName: Nidoking
+  pokemonGen: 0
   solutionSprite: {fileID: 21300000, guid: d95fa4d3ab8e42c4f94fc66f8b40026f, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: c102e52920ee60a429b2777c1bf53deb, type: 3}

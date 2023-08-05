@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Rettan
   m_EditorClassIdentifier: 
   pokemonName: Rettan
+  pokemonGen: 0
   solutionSprite: {fileID: 21300000, guid: e1fc431b8e822c24b8d6c791022f4791, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: d1b32d6e4dcb46a478ae33f23b7b8809, type: 3}

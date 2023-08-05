@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Kanivanha
   m_EditorClassIdentifier: 
   pokemonName: Kanivanha
-  pokemonGen: 0
+  pokemonGen: 2
   solutionSprite: {fileID: 21300000, guid: 328e77244f6dd6b4fad3cfa0f3c9a354, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: 06cfcbac97abaaa4f8e4151689910e42, type: 3}

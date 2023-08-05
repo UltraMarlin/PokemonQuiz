@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Purmel
   m_EditorClassIdentifier: 
   pokemonName: Purmel
+  pokemonGen: 5
   solutionSprite: {fileID: 21300000, guid: 64bd5c913efea0f41a3e1b397f20a7fc, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: 0264ddde13a7eeb49a331f04217f3553, type: 3}

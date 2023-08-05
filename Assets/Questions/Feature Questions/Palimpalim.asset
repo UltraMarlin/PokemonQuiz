@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Palimpalim
   m_EditorClassIdentifier: 
   pokemonName: Palimpalim
+  pokemonGen: 2
   solutionSprite: {fileID: 21300000, guid: ac94c5227b4a4364a84ecd685bdfa9d4, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: 48c518edd5f94f04fa50c56aea49111d, type: 3}

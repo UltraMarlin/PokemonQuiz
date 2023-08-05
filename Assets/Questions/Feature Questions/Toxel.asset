@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Toxel
   m_EditorClassIdentifier: 
   pokemonName: Toxel
-  pokemonGen: 0
+  pokemonGen: 7
   solutionSprite: {fileID: 21300000, guid: 4b865d0d8ea1f4340b76cd0a2f2a3c9b, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: 0f2c42806e078cc468abbd0dca9dae38, type: 3}

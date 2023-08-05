@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Snibunna
   m_EditorClassIdentifier: 
   pokemonName: Snibunna
+  pokemonGen: 3
   solutionSprite: {fileID: 21300000, guid: 3619a1bc1f7cd61429bc0a37f4a99229, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: 21c9f7d675fa05247b0e91913e222291, type: 3}

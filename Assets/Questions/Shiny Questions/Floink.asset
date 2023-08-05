@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Floink
   m_EditorClassIdentifier: 
   pokemonName: Floink
+  pokemonGen: 4
   solutionSprite: {fileID: 21300000, guid: 92a9852a4476a3447802d3eeca177a99, type: 3}
   fakeSprites:
   - {fileID: 21300000, guid: bdb26108329b84541911a7394816b456, type: 3}

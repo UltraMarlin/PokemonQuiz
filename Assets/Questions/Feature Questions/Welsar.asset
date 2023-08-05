@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Welsar
   m_EditorClassIdentifier: 
   pokemonName: Welsar
+  pokemonGen: 2
   solutionSprite: {fileID: 21300000, guid: 6e09ab6cfb217e141a889eb429e90b8d, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: 82f9a9a683b850e459d38db33b9e93e3, type: 3}

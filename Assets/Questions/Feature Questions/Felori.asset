@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Felori
   m_EditorClassIdentifier: 
   pokemonName: Felori
+  pokemonGen: 8
   solutionSprite: {fileID: 21300000, guid: 89627018f6f1bd7489b5bd85bade24b6, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: 18ed5c22a59438345afca84de226ca45, type: 3}

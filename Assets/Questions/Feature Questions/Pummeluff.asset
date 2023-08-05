@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Pummeluff
   m_EditorClassIdentifier: 
   pokemonName: Pummeluff
+  pokemonGen: 0
   solutionSprite: {fileID: 21300000, guid: 278ed206107a1f649b02b5b812b44707, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: e572c2f9358b9564d8e049d29c1840d1, type: 3}

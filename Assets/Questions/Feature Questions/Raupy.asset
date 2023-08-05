@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Raupy
   m_EditorClassIdentifier: 
   pokemonName: Raupy
+  pokemonGen: 0
   solutionSprite: {fileID: 21300000, guid: 7e1a7bcbb5f7b934091403ea825bf6fb, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: 1973e83c9a695bc4aaa58a8a63734d05, type: 3}

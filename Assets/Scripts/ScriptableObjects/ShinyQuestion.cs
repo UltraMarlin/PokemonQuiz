@@ -34,6 +34,8 @@ public class ShinyQuestion : IQuestion
         {
             string assetPath = AssetDatabase.GetAssetPath(this.GetInstanceID());
             AssetDatabase.RenameAsset(assetPath, pokemonName);
+            ShinyQuestion obj = AssetDatabase.LoadAssetAtPath<ShinyQuestion>(assetPath);
+            EditorUtility.SetDirty(obj);
         }
     }
 #endif

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Glumanda
   m_EditorClassIdentifier: 
   pokemonName: Glumanda
+  pokemonGen: 0
   solutionSprite: {fileID: 21300000, guid: 9ceaa5bb476f95044a09eebce176d769, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: 4b1aacc56572919499f613223dff137a, type: 3}

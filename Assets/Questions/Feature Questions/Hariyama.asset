@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Hariyama
   m_EditorClassIdentifier: 
   pokemonName: Hariyama
+  pokemonGen: 2
   solutionSprite: {fileID: 21300000, guid: 4d7764c08a59c8c44abd94655241c3aa, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: 733f5dc1b3e0a224287b5fac0520af93, type: 3}

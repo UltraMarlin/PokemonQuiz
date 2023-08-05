@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Vulpix
   m_EditorClassIdentifier: 
   pokemonName: Vulpix
+  pokemonGen: 0
   solutionSprite: {fileID: 21300000, guid: 140f866d8ed93d847879c3bbe1dead29, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: 98410ba28eb8ba24987bc80060b331bc, type: 3}

@@ -31,7 +31,8 @@ public class BlurQuestion : IQuestion
         {
             string assetPath = AssetDatabase.GetAssetPath(this.GetInstanceID());
             AssetDatabase.RenameAsset(assetPath, pokemonName);
-            EditorUtility.SetDirty(this);
+            BlurQuestion obj = AssetDatabase.LoadAssetAtPath<BlurQuestion>(assetPath);
+            EditorUtility.SetDirty(obj);
         }
         
     }

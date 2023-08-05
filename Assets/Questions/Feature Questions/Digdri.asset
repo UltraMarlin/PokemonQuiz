@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Digdri
   m_EditorClassIdentifier: 
   pokemonName: Digdri
+  pokemonGen: 0
   solutionSprite: {fileID: 21300000, guid: 8908791dd696bad418f0f507a9ce3870, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: 72fa98b6b50a04c41876c24194d7f9ae, type: 3}

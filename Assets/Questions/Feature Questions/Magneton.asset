@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Magneton
   m_EditorClassIdentifier: 
   pokemonName: Magneton
+  pokemonGen: 0
   solutionSprite: {fileID: 21300000, guid: 8c9741b70a3582745b61b0023a4aa0f7, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: 12b3f5bdc2962f845bce8635050ccfaf, type: 3}

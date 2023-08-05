@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Shardrago
   m_EditorClassIdentifier: 
   pokemonName: Shardrago
-  pokemonGen: 0
+  pokemonGen: 4
   solutionSprite: {fileID: 21300000, guid: 83d9aab8b755a8b4f88380d487cdb01f, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: 5c6fa017a7dc5d74b985b366e8928e77, type: 3}

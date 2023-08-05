@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Sheinux
   m_EditorClassIdentifier: 
   pokemonName: Sheinux
+  pokemonGen: 3
   solutionSprite: {fileID: 21300000, guid: fa7402163aa204e4897ef9a74b0cdf3a, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: 47afd7828a5fafb40833fae9dd48515b, type: 3}

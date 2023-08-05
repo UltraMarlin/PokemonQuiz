@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Rattfratz
   m_EditorClassIdentifier: 
   pokemonName: Rattfratz
+  pokemonGen: 0
   solutionSprite: {fileID: 21300000, guid: 6435e6e975bed5c469bfe54bf2bf7048, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: 0336d9a85fe02e2479d239059c4cfc18, type: 3}

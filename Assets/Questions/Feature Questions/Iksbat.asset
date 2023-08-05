@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Iksbat
   m_EditorClassIdentifier: 
   pokemonName: Iksbat
+  pokemonGen: 1
   solutionSprite: {fileID: 21300000, guid: 576f4eadf85531a4e9277392d57d6a69, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: de792263ee8c21246ba3c5e6e1a9510d, type: 3}

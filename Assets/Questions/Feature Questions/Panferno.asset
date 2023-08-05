@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Panferno
   m_EditorClassIdentifier: 
   pokemonName: Panferno
+  pokemonGen: 3
   solutionSprite: {fileID: 21300000, guid: 13653d5519e3af040b96555ebe6e1fe6, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: ef6fd5b3541c19f44b266710e476be81, type: 3}

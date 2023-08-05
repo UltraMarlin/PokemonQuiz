@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pionskora
   m_EditorClassIdentifier: 
   pokemonName: Pionskora
-  pokemonGen: 0
+  pokemonGen: 3
   solutionSprite: {fileID: 21300000, guid: 129fb9a167ef7a24a95c28cbd05cd5a5, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: d4d53130a66ae2f4bab736c747663547, type: 3}

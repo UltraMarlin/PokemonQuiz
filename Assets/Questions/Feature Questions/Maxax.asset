@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Maxax
   m_EditorClassIdentifier: 
   pokemonName: Maxax
+  pokemonGen: 4
   solutionSprite: {fileID: 21300000, guid: 579f5ec1c4d08b54f9fd502fbbbb25b4, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: 12c4c5d3e26a0674dafb4c4885beba7b, type: 3}

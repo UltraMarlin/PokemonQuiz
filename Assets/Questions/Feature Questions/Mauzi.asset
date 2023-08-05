@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Mauzi
   m_EditorClassIdentifier: 
   pokemonName: Mauzi
+  pokemonGen: 0
   solutionSprite: {fileID: 21300000, guid: 9a8f337f39b30934d8fc56afc5527c1a, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: 997ec162e151ac44cae80f5b3052700a, type: 3}

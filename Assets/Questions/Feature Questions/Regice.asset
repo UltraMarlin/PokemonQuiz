@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Regice
   m_EditorClassIdentifier: 
   pokemonName: Regice
+  pokemonGen: 2
   solutionSprite: {fileID: 21300000, guid: 7cdbee964ea25784195acabfd1a272a2, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: 24f67a50fa54de04d8a3d96a504736b5, type: 3}

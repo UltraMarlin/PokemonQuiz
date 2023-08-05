@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bidiza
   m_EditorClassIdentifier: 
   pokemonName: Bidiza
-  pokemonGen: 0
+  pokemonGen: 3
   solutionSprite: {fileID: 21300000, guid: c22bbf42ee37ba0429e2e71fb27469fe, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: 9214526ee644a664b9a6b1bd6d1f9264, type: 3}

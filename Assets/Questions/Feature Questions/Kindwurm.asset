@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Kindwurm
   m_EditorClassIdentifier: 
   pokemonName: Kindwurm
-  pokemonGen: 0
+  pokemonGen: 2
   solutionSprite: {fileID: 21300000, guid: f29cd987ed93cd249a15f2cea7a1fb6d, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: 5d549a01316b35c4fb1381f3da2ff557, type: 3}

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Katapuldra
   m_EditorClassIdentifier: 
   pokemonName: Katapuldra
+  pokemonGen: 7
   solutionSprite: {fileID: 21300000, guid: f94dd9ce8eb5a934d941d1e578fded90, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: c3d81f980c7075e4da82731d12be1a62, type: 3}

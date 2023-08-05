@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.U2D;
@@ -34,6 +35,8 @@ public class FeatureQuestion : IQuestion
         {
             string assetPath = AssetDatabase.GetAssetPath(this.GetInstanceID());
             AssetDatabase.RenameAsset(assetPath, pokemonName);
+            FeatureQuestion obj = AssetDatabase.LoadAssetAtPath<FeatureQuestion>(assetPath);
+            EditorUtility.SetDirty(obj);
         }
     }
 #endif

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Kokuna
   m_EditorClassIdentifier: 
   pokemonName: Kokuna
+  pokemonGen: 0
   solutionSprite: {fileID: 21300000, guid: f225cb3fd7737b04ab9c7cf9a4b244c5, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: ca2339fbc81d6b044ac7a26d6d661672, type: 3}

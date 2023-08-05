@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Tentoxa
   m_EditorClassIdentifier: 
   pokemonName: Tentoxa
+  pokemonGen: 0
   solutionSprite: {fileID: 21300000, guid: 291a6b8b5179be641bbd431550a0b434, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: e84b4b2421407594db870764d8e8928c, type: 3}

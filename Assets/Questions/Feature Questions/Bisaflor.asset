@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Bisaflor
   m_EditorClassIdentifier: 
   pokemonName: Bisaflor
+  pokemonGen: 0
   solutionSprite: {fileID: 21300000, guid: 921257835552f7445bd4faa68a2c0e15, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: a6b3a79d003d4ed4888281bc83da5c14, type: 3}

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Zubat
   m_EditorClassIdentifier: 
   pokemonName: Zubat
+  pokemonGen: 0
   solutionSprite: {fileID: 21300000, guid: b065b5713e1e09d44bd18ccbca670733, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: b6336aabd5a6fe440b2f850f4b2eb8ec, type: 3}

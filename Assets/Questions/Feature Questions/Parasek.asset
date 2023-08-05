@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Parasek
   m_EditorClassIdentifier: 
   pokemonName: Parasek
+  pokemonGen: 0
   solutionSprite: {fileID: 21300000, guid: 443f44f66cfca53458e3e952a71445eb, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: ae88c5855bb79aa4bb9a5e00f25d0f97, type: 3}

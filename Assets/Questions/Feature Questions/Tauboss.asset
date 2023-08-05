@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Tauboss
   m_EditorClassIdentifier: 
   pokemonName: Tauboss
+  pokemonGen: 0
   solutionSprite: {fileID: 21300000, guid: d14c5a3ceab01e8439e99bd5493e8bda, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: da356ce09295d2e47acef223e5dc4edd, type: 3}

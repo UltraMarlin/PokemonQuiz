@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Nidorina
   m_EditorClassIdentifier: 
   pokemonName: Nidorina
+  pokemonGen: 0
   solutionSprite: {fileID: 21300000, guid: 62ad7be786dd8404097fb13df51f510a, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: f4d083df561955c4d8baf39bf070cb45, type: 3}

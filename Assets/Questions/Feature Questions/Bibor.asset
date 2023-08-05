@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Bibor
   m_EditorClassIdentifier: 
   pokemonName: Bibor
+  pokemonGen: 0
   solutionSprite: {fileID: 21300000, guid: 5d5ec5295b543ed4685b36aa3fc1b34c, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: 2daef5844d1af8744a6d62d498982f8b, type: 3}

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Shuppet
   m_EditorClassIdentifier: 
   pokemonName: Shuppet
+  pokemonGen: 2
   solutionSprite: {fileID: 21300000, guid: 2154897b900848944a5b70ff12a9b987, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: cd307c3018848fe44917fddb35eb9f68, type: 3}

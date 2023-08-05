@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Relicanth
   m_EditorClassIdentifier: 
   pokemonName: Relicanth
-  pokemonGen: 0
+  pokemonGen: 2
   solutionSprite: {fileID: 21300000, guid: 877b90db2966f1648b284a70f9bc5564, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: 369a7b3ad00644a44ab57f2cf1b4e88c, type: 3}

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Bluzuk
   m_EditorClassIdentifier: 
   pokemonName: Bluzuk
+  pokemonGen: 0
   solutionSprite: {fileID: 21300000, guid: ef970ed01444cdd4c9c7a9fda335bf7c, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: 79d5906b0d637e444a45738d637537b1, type: 3}

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Ibitak
   m_EditorClassIdentifier: 
   pokemonName: Ibitak
+  pokemonGen: 0
   solutionSprite: {fileID: 21300000, guid: 93b5d449938ec3f4daa91a8feaca17a4, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: 900b97e91d582694a8be06d411c918c3, type: 3}

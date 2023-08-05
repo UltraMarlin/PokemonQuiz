@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Piepi
   m_EditorClassIdentifier: 
   pokemonName: Piepi
+  pokemonGen: 0
   solutionSprite: {fileID: 21300000, guid: 1cbfeb04de69292479e7551fe2ace589, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: e2e512178a8b7004985716d84c08916e, type: 3}

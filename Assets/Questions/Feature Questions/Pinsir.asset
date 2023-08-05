@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Pinsir
   m_EditorClassIdentifier: 
   pokemonName: Pinsir
+  pokemonGen: 0
   solutionSprite: {fileID: 21300000, guid: e33af971a04d3094894c1e4859a29b3c, type: 3}
   featureSprites:
   - {fileID: 21300000, guid: 9202edab26c22a640af1231a99e2ea39, type: 3}
