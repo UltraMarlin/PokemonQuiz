@@ -62,9 +62,9 @@ public class AdminPanelUser : NetworkBehaviour
     }
 
     [ClientRpc]
-    public void ShowSolutionClientRpc()
+    public void ShowSolutionClientRpc(string solutionString)
     {
-        AdminPanelController.instance.SetSolutionImageTest();
+        AdminPanelController.instance.SetSolutionString(solutionString);
     }
 
     [ServerRpc]

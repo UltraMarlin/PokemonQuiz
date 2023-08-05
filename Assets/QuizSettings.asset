@@ -25,35 +25,30 @@ MonoBehaviour:
       color: 6
     questionTypeSettingsList:
     - type: 0
-      questionAmount: 15
+      questionAmount: 5
       correctPoints: 5
       wrongPointsOther: 1
-      includedGensList: 
-      includeAllGens: 1
+      excludedGens: 
     - type: 1
-      questionAmount: 4
+      questionAmount: 5
       correctPoints: 3
       wrongPointsOther: 2
-      includedGensList: 
-      includeAllGens: 1
+      excludedGens: 
     - type: 2
-      questionAmount: 15
+      questionAmount: 5
       correctPoints: 5
       wrongPointsOther: 1
-      includedGensList: 
-      includeAllGens: 1
+      excludedGens: 
     - type: 3
-      questionAmount: 15
+      questionAmount: 5
       correctPoints: 3
       wrongPointsOther: 1
-      includedGensList: 
-      includeAllGens: 1
+      excludedGens: 
     - type: 4
-      questionAmount: 15
+      questionAmount: 5
       correctPoints: 5
       wrongPointsOther: 1
-      includedGensList: 
-      includeAllGens: 1
+      excludedGens: 
     shuffleCategories: 0
     infiniteMode: 1
     explainRules: 0

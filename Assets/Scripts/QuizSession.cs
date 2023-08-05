@@ -238,6 +238,7 @@ public class QuizSession : MonoBehaviour
         }
 
         DisplayQuestion(question);
+        DisplayAdminSolution(question);
         return (int)currentQuestionType;
     }
 
@@ -388,11 +389,20 @@ public class QuizSession : MonoBehaviour
         playerPanelControllers[playerID].SetPlayerPointsText(playerPoints[playerID].ToString());
     }
 
-    public void DisplayAdminSolution()
+    public void DisplayAdminSolution(IQuestion question)
     {
-        if (adminPanelUser != null)
+        if (adminPanelUser != null && question != null)
         {
-            adminPanelUser.ShowSolutionClientRpc();
+            string solutionString;
+            if (currentQuestionType == QuestionType.Shiny)
+            {
+                int shinySolutionIndex = (currentQuestionController as ShinyQuestionController).solutionIndex;
+                string[] shinySolutionStrings = new string[] { "Left,", "Middle,", "Right," };
+                solutionString = shinySolutionStrings[shinySolutionIndex];
+            } else {
+                solutionString = question.pokemonName + ",GEN " + ((int)question.pokemonGen + 1);
+            }
+            adminPanelUser.ShowSolutionClientRpc(solutionString);
         }
     }
 

@@ -15,12 +15,11 @@ public class AdminPanelController : MonoBehaviour
     [SerializeField] private GameObject playerControlPanels;
     [SerializeField] private GameObject playerControlPanelPrefab;
 
-    [SerializeField] private Image solutionImage;
+    [SerializeField] private TextMeshProUGUI solutionText;
+    [SerializeField] private TextMeshProUGUI solutionGenText;
     [SerializeField] private TextMeshProUGUI nextButtonStepText;
 
     [SerializeField] private CategorySelector categorySelector;
-
-    public Sprite testSprite;
 
     private QuestionType currentQuestionType;
     private bool lastQuestionReached = false;
@@ -53,21 +52,11 @@ public class AdminPanelController : MonoBehaviour
         adminPanelUser = user;
     }
 
-    public void SetSolutionImage(Sprite sprite)
+    public void SetSolutionString(string solutionString)
     {
-        if (sprite != null)
-        {
-            solutionImage.color = Color.white;
-        } else
-        {
-            solutionImage.color = Color.clear;
-        }
-        solutionImage.sprite = sprite;
-    }
-
-    public void SetSolutionImageTest()
-    {
-        SetSolutionImage(testSprite);
+        var splitString = solutionString.Split(',');
+        solutionText.text = splitString[0];
+        solutionGenText.text = splitString[1];
     }
 
     public void NextQuestion()

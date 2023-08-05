@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2792c75c1cf2969468ef62873fff0dfd, type: 3}
   m_Name: ShinyQuestionDB
   m_EditorClassIdentifier: 
-  questions: []
+  questions:
+  - {fileID: 11400000, guid: 9b90b2bb1516d2644aedb64ae3993c7f, type: 2}
+  - {fileID: 11400000, guid: 73e7e2d7df59e6f4084e7628cd58b1ba, type: 2}
+  - {fileID: 11400000, guid: 99fbac84890a26d40a33acb99053dbe6, type: 2}
+  - {fileID: 11400000, guid: 3a311b82c108aaf4489321facc4cf1d8, type: 2}

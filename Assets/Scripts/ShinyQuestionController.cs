@@ -15,7 +15,7 @@ public class ShinyQuestionController : MonoBehaviour, IQuestionController
     [SerializeField] private List<Image> optionsImageBackgroundList;
 
     public ShinyQuestion shinyQuestionData;
-    private int solutionIndex;
+    public int solutionIndex;
 
     private Color fakeBackgroundColor = new Color(1f, 0f, 0f, 0.3f);
     private Color solutionBackgroundColor = new Color (0f, 1f, 0f, 0.3f);
