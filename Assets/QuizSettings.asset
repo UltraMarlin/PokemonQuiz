@@ -28,27 +28,27 @@ MonoBehaviour:
       questionAmount: 5
       correctPoints: 5
       wrongPointsOther: 1
-      excludedGens: 00000000030000000400000005000000060000000700000008000000
+      excludedGens: 
     - type: 1
       questionAmount: 5
       correctPoints: 3
       wrongPointsOther: 2
-      excludedGens: 00000000030000000400000005000000060000000700000008000000
+      excludedGens: 
     - type: 2
       questionAmount: 5
       correctPoints: 5
       wrongPointsOther: 1
-      excludedGens: 00000000030000000400000005000000060000000700000008000000
+      excludedGens: 
     - type: 3
       questionAmount: 5
       correctPoints: 3
       wrongPointsOther: 1
-      excludedGens: 00000000030000000400000005000000060000000700000008000000
+      excludedGens: 
     - type: 4
       questionAmount: 5
       correctPoints: 5
       wrongPointsOther: 1
-      excludedGens: 00000000030000000400000005000000060000000700000008000000
+      excludedGens: 
     shuffleCategories: 0
     infiniteMode: 1
     explainRules: 0
