@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1cf78d64fd493743a38041a2d57215d, type: 3}
+  m_Name: Feurigel
+  m_EditorClassIdentifier: 
+  pokemonName: Feurigel
+  pokemonGen: 1
+  solutionSprite: {fileID: 21300000, guid: f321cf0bda86c3b4d9606965db654aee, type: 3}
+  fakeSprites:
+  - {fileID: 21300000, guid: 35197201bae023f4cbb0c0bbd4d8ed3c, type: 3}
+  - {fileID: 21300000, guid: ef346462824aa7d48b6769efc5657c35, type: 3}
+  originalSprite: {fileID: 21300000, guid: 7a80ecda35d5c8244b8d3bb811e59830, type: 3}

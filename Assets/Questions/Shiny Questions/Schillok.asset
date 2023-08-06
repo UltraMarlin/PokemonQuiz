@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1cf78d64fd493743a38041a2d57215d, type: 3}
+  m_Name: Schillok
+  m_EditorClassIdentifier: 
+  pokemonName: Schillok
+  pokemonGen: 0
+  solutionSprite: {fileID: 21300000, guid: 45f91c8432449ab4689ff448c1a34587, type: 3}
+  fakeSprites:
+  - {fileID: 21300000, guid: 3dc026731c44905499161ccb6b659378, type: 3}
+  - {fileID: 21300000, guid: c9a44ac923ef9014497aa24cba6cd650, type: 3}
+  originalSprite: {fileID: 21300000, guid: 2d02cb771606a5a4babc4d5aeedcef31, type: 3}

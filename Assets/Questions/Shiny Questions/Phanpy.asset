@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1cf78d64fd493743a38041a2d57215d, type: 3}
+  m_Name: Phanpy
+  m_EditorClassIdentifier: 
+  pokemonName: Phanpy
+  pokemonGen: 1
+  solutionSprite: {fileID: 21300000, guid: dbd97ee9db48cb240907e37b7f8e658a, type: 3}
+  fakeSprites:
+  - {fileID: 21300000, guid: e773717ff9d49c04999f0e2d82c4cbb9, type: 3}
+  - {fileID: 21300000, guid: 194fe25e3636d8b47b10f4e3ff1a914f, type: 3}
+  originalSprite: {fileID: 21300000, guid: cecca9861e1ddc14b8368f6909b464b8, type: 3}

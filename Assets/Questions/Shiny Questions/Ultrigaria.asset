@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1cf78d64fd493743a38041a2d57215d, type: 3}
+  m_Name: Ultrigaria
+  m_EditorClassIdentifier: 
+  pokemonName: Ultrigaria
+  pokemonGen: 0
+  solutionSprite: {fileID: 21300000, guid: 44272c4366336b946a37ce562423a6ce, type: 3}
+  fakeSprites:
+  - {fileID: 21300000, guid: 85b8c9db6e30cd74999c0c6d4fa8befb, type: 3}
+  - {fileID: 21300000, guid: fa13637f8eec0a446994d67a69472590, type: 3}
+  originalSprite: {fileID: 21300000, guid: 70e2115a3243cac4983579af09aba6a4, type: 3}

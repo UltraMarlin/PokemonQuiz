@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1cf78d64fd493743a38041a2d57215d, type: 3}
+  m_Name: Webarak
+  m_EditorClassIdentifier: 
+  pokemonName: Webarak
+  pokemonGen: 1
+  solutionSprite: {fileID: 21300000, guid: cbce6de794795e542aa2047c5907ab4e, type: 3}
+  fakeSprites:
+  - {fileID: 21300000, guid: 8c44591aadb1e7c4e8fff5cc4bfc54e2, type: 3}
+  - {fileID: 21300000, guid: f287c4ecbadaade4394780f5f45eb748, type: 3}
+  originalSprite: {fileID: 21300000, guid: d8900c27757dec54f929c89de6ad86f8, type: 3}
