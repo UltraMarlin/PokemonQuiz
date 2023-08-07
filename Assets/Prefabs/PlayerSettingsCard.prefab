@@ -1592,6 +1592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panelBackground: {fileID: 7668016275404373704}
+  playerNameText: {fileID: 2984212228059346596}
   colorDropdown: {fileID: 737556221209948684}
   playerPanelColors:
   - {r: 1, g: 0.8235295, b: 0.21176472, a: 1}

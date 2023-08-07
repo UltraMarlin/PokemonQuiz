@@ -16,6 +16,6 @@ MonoBehaviour:
   pokemonGen: 0
   solutionSprite: {fileID: 21300000, guid: 1dd7a9ccb75d8da419c24b65b001a433, type: 3}
   fakeSprites:
-  - {fileID: 21300000, guid: a90e48f11e840e04da4ed624d90ab797, type: 3}
-  - {fileID: 21300000, guid: 25717b5c9637250458946d60e632f636, type: 3}
+  - {fileID: 21300000, guid: 7b827ef1d2a707d43b2e7801ecf2ed74, type: 3}
+  - {fileID: 21300000, guid: 386f89f5ce2bb874fb9e36f66017aa1e, type: 3}
   originalSprite: {fileID: 21300000, guid: 2905a994c4118194e8fd43610be77ff9, type: 3}

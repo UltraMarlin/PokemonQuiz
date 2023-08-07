@@ -1394,7 +1394,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -0.5000019}
-  m_SizeDelta: {x: -20, y: -13}
+  m_SizeDelta: {x: -4, y: -13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5323784868048602290
 MonoBehaviour:
@@ -1408,8 +1408,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Padding: {x: -8, y: -5, z: -8, w: -5}
-  m_Softness: {x: 0, y: 0}
+  m_Padding: {x: 0, y: -5, z: 0, w: -5}
+  m_Softness: {x: 1, y: 0}
 --- !u!1 &1462319835252760303
 GameObject:
   m_ObjectHideFlags: 0
@@ -1448,7 +1448,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 30, y: 0}
+  m_SizeDelta: {x: 42, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &1722515079823098770
 CanvasRenderer:
@@ -1536,14 +1536,14 @@ MonoBehaviour:
   m_VerticalScrollbarEventHandler: {fileID: 0}
   m_LayoutGroup: {fileID: 0}
   m_ScrollSensitivity: 1
-  m_ContentType: 0
+  m_ContentType: 9
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 0
+  m_KeyboardType: 11
   m_LineType: 0
   m_HideMobileInput: 0
   m_HideSoftKeyboard: 0
-  m_CharacterValidation: 0
+  m_CharacterValidation: 2
   m_RegexValue: 
   m_GlobalPointSize: 16
   m_CharacterLimit: 0
@@ -2823,7 +2823,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -0.50000286}
-  m_SizeDelta: {x: -20, y: -13}
+  m_SizeDelta: {x: -4, y: -13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2878399117079264086
 MonoBehaviour:
@@ -2837,8 +2837,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Padding: {x: -8, y: -5, z: -8, w: -5}
-  m_Softness: {x: 0, y: 0}
+  m_Padding: {x: 0, y: -5, z: 0, w: -5}
+  m_Softness: {x: 1, y: 0}
 --- !u!1 &2691492753000073606
 GameObject:
   m_ObjectHideFlags: 0
@@ -3388,7 +3388,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -0.50000286}
-  m_SizeDelta: {x: -20, y: -13}
+  m_SizeDelta: {x: -4, y: -13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7997408215946668797
 MonoBehaviour:
@@ -3402,8 +3402,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Padding: {x: -8, y: -5, z: -8, w: -5}
-  m_Softness: {x: 0, y: 0}
+  m_Padding: {x: 0, y: -5, z: 0, w: -5}
+  m_Softness: {x: 1, y: 0}
 --- !u!1 &3780244633098895996
 GameObject:
   m_ObjectHideFlags: 0
@@ -4144,6 +4144,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3374014477738043352}
+  - component: {fileID: 5584718701931480993}
   m_Layer: 5
   m_Name: CategorySettingsCard
   m_TagString: Untagged
@@ -4174,6 +4175,34 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 250, y: 210}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &5584718701931480993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4270402975127525127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e10de0c933bf7b4cb82209331407846, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  categoryNameText: {fileID: 1645486714220580091}
+  questionAmountInput: {fileID: 139611642820339580}
+  genToggles:
+  - {fileID: 5000345303238250143}
+  - {fileID: 8929625485829282805}
+  - {fileID: 7390708315452255822}
+  - {fileID: 4368550604574986390}
+  - {fileID: 3801439213666772634}
+  - {fileID: 3410320665339627143}
+  - {fileID: 4190151934947447636}
+  - {fileID: 9066550139143242141}
+  - {fileID: 9112719769070158936}
+  pointsCorrectPlayerInput: {fileID: 5391618597728664597}
+  pointsCorrectOthersInput: {fileID: 7144483535209294078}
+  pointsWrongPlayerInput: {fileID: 5353259765234710553}
+  pointsWrongOthersInput: {fileID: 8771787634654448429}
 --- !u!1 &4362353915852470440
 GameObject:
   m_ObjectHideFlags: 0
@@ -4578,7 +4607,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 20
+  m_Spacing: 10
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
@@ -5121,7 +5150,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 20
+  m_Spacing: 10
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
@@ -6298,7 +6327,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -0.50000286}
-  m_SizeDelta: {x: -20, y: -13}
+  m_SizeDelta: {x: -4, y: -13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3405455440662080478
 MonoBehaviour:
@@ -6312,8 +6341,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Padding: {x: -8, y: -5, z: -8, w: -5}
-  m_Softness: {x: 0, y: 0}
+  m_Padding: {x: 0, y: -5, z: 0, w: -5}
+  m_Softness: {x: 1, y: 0}
 --- !u!1 &7050512543369962941
 GameObject:
   m_ObjectHideFlags: 0
@@ -6994,14 +7023,14 @@ MonoBehaviour:
   m_VerticalScrollbarEventHandler: {fileID: 0}
   m_LayoutGroup: {fileID: 0}
   m_ScrollSensitivity: 1
-  m_ContentType: 0
+  m_ContentType: 9
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 0
+  m_KeyboardType: 11
   m_LineType: 0
   m_HideMobileInput: 0
   m_HideSoftKeyboard: 0
-  m_CharacterValidation: 0
+  m_CharacterValidation: 2
   m_RegexValue: 
   m_GlobalPointSize: 22
   m_CharacterLimit: 0
@@ -7082,7 +7111,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 30, y: 0}
+  m_SizeDelta: {x: 42, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &3037160523945411250
 CanvasRenderer:
@@ -7170,14 +7199,14 @@ MonoBehaviour:
   m_VerticalScrollbarEventHandler: {fileID: 0}
   m_LayoutGroup: {fileID: 0}
   m_ScrollSensitivity: 1
-  m_ContentType: 0
+  m_ContentType: 9
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 0
+  m_KeyboardType: 11
   m_LineType: 0
   m_HideMobileInput: 0
   m_HideSoftKeyboard: 0
-  m_CharacterValidation: 0
+  m_CharacterValidation: 2
   m_RegexValue: 
   m_GlobalPointSize: 16
   m_CharacterLimit: 0
@@ -7335,7 +7364,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 30, y: 0}
+  m_SizeDelta: {x: 42, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &172793150768341915
 CanvasRenderer:
@@ -7423,14 +7452,14 @@ MonoBehaviour:
   m_VerticalScrollbarEventHandler: {fileID: 0}
   m_LayoutGroup: {fileID: 0}
   m_ScrollSensitivity: 1
-  m_ContentType: 0
+  m_ContentType: 9
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 0
+  m_KeyboardType: 11
   m_LineType: 0
   m_HideMobileInput: 0
   m_HideSoftKeyboard: 0
-  m_CharacterValidation: 0
+  m_CharacterValidation: 2
   m_RegexValue: 
   m_GlobalPointSize: 16
   m_CharacterLimit: 0
@@ -7511,7 +7540,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 30, y: 0}
+  m_SizeDelta: {x: 42, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &7398826042349209078
 CanvasRenderer:
@@ -7599,14 +7628,14 @@ MonoBehaviour:
   m_VerticalScrollbarEventHandler: {fileID: 0}
   m_LayoutGroup: {fileID: 0}
   m_ScrollSensitivity: 1
-  m_ContentType: 0
+  m_ContentType: 9
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 0
+  m_KeyboardType: 11
   m_LineType: 0
   m_HideMobileInput: 0
   m_HideSoftKeyboard: 0
-  m_CharacterValidation: 0
+  m_CharacterValidation: 2
   m_RegexValue: 
   m_GlobalPointSize: 16
   m_CharacterLimit: 0
@@ -8366,7 +8395,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -0.50000286}
-  m_SizeDelta: {x: -20, y: -13}
+  m_SizeDelta: {x: -4, y: -13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2181124124508334420
 MonoBehaviour:
@@ -8380,8 +8409,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Padding: {x: -8, y: -5, z: -8, w: -5}
-  m_Softness: {x: 0, y: 0}
+  m_Padding: {x: 0, y: -5, z: 0, w: -5}
+  m_Softness: {x: 1, y: 0}
 --- !u!1 &9007250755037300898
 GameObject:
   m_ObjectHideFlags: 0

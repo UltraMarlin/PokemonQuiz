@@ -16,6 +16,8 @@ public struct QuestionTypeSettings
     public QuestionType type;
     public int questionAmount;
     public int correctPoints;
+    public int correctPointsOther;
+    public int wrongPoints;
     public int wrongPointsOther;
     public List<PokemonGen> excludedGens;
 }

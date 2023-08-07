@@ -13,42 +13,50 @@ MonoBehaviour:
   m_Name: QuizSettings
   m_EditorClassIdentifier: 
   quiz:
-    presetName: TestQuiz4P
+    presetName: 56-Quiz
     players:
     - name: Bina
       color: 0
     - name: Marlin
-      color: 1
-    - name: Lars
-      color: 5
-    - name: Florentin
       color: 6
+    - name: Jesko
+      color: 2
     questionTypeSettingsList:
     - type: 0
       questionAmount: 5
-      correctPoints: 5
-      wrongPointsOther: 1
-      excludedGens: 
-    - type: 1
-      questionAmount: 5
       correctPoints: 3
-      wrongPointsOther: 2
+      correctPointsOther: 0
+      wrongPoints: 0
+      wrongPointsOther: 1
+      excludedGens: 0100000002000000030000000400000005000000060000000700000008000000
+    - type: 1
+      questionAmount: 1
+      correctPoints: 3
+      correctPointsOther: 0
+      wrongPoints: 0
+      wrongPointsOther: 1
       excludedGens: 
     - type: 2
-      questionAmount: 5
-      correctPoints: 5
-      wrongPointsOther: 1
-      excludedGens: 
-    - type: 3
-      questionAmount: 5
+      questionAmount: 3
       correctPoints: 3
+      correctPointsOther: 0
+      wrongPoints: 0
       wrongPointsOther: 1
-      excludedGens: 
+      excludedGens: 0000000002000000030000000400000005000000060000000700000008000000
+    - type: 3
+      questionAmount: 6
+      correctPoints: 3
+      correctPointsOther: 0
+      wrongPoints: 0
+      wrongPointsOther: 1
+      excludedGens: 0000000001000000020000000300000005000000060000000700000008000000
     - type: 4
-      questionAmount: 5
-      correctPoints: 5
+      questionAmount: 4
+      correctPoints: 3
+      correctPointsOther: 0
+      wrongPoints: 0
       wrongPointsOther: 1
-      excludedGens: 
-    shuffleCategories: 0
-    infiniteMode: 1
+      excludedGens: 0000000001000000030000000400000005000000060000000700000008000000
+    shuffleCategories: 1
+    infiniteMode: 0
     explainRules: 0

@@ -12,12 +12,6 @@ public class MainMenu : MonoBehaviour
         Application.targetFrameRate = 60;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void Quit()
     {
         Application.Quit();
@@ -31,5 +25,10 @@ public class MainMenu : MonoBehaviour
     public void StartAdminPanel()
     {
         SceneManager.LoadScene("AdminPanel");
+    }
+
+    public void LoadSettings()
+    {
+        SceneManager.LoadScene("Settings");
     }
 }

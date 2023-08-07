@@ -364,14 +364,16 @@ public class QuizSession : MonoBehaviour
 
     public void CorrectAnswerFrom(int playerID)
     {
-        int points = settings.quiz.questionTypeSettingsList.Find(x => x.type == currentQuestionType).correctPoints;
-        AddPointsToPlayer(playerID, points);
+        QuestionTypeSettings questionTypeSettings = settings.quiz.questionTypeSettingsList.Find(x => x.type == currentQuestionType);
+        AddPointsToPlayer(playerID, questionTypeSettings.correctPoints);
+        AddPointsToEveryoneExcept(playerID, questionTypeSettings.correctPointsOther);
     }
 
     public void WrongAnswerFrom(int playerID)
     {
-        int points = settings.quiz.questionTypeSettingsList.Find(x => x.type == currentQuestionType).wrongPointsOther;
-        AddPointsToEveryoneExcept(playerID, points);
+        QuestionTypeSettings questionTypeSettings = settings.quiz.questionTypeSettingsList.Find(x => x.type == currentQuestionType);
+        AddPointsToPlayer(playerID, questionTypeSettings.wrongPoints);
+        AddPointsToEveryoneExcept(playerID, questionTypeSettings.wrongPointsOther);
     }
 
     public void AddPointsToEveryoneExcept(int playerID, int points)
