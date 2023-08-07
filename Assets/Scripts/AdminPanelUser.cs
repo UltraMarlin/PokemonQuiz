@@ -61,6 +61,12 @@ public class AdminPanelUser : NetworkBehaviour
         QuizSession.instance.AddPointsToPlayer(playerId, -1);
     }
 
+    [ServerRpc]
+    public void ToggleFeatureBackgroundServerRpc()
+    {
+        QuizSession.instance.ToggleFeatureBackground();
+    }
+
     [ClientRpc]
     public void ShowSolutionClientRpc(string solutionString)
     {

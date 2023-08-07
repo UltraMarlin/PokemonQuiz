@@ -45,6 +45,12 @@ public class FeatureQuestionController : MonoBehaviour, IQuestionController
         }
     }
 
+    public void ToggleBackground()
+    {
+        Image bgImage = imageContainer.GetComponent<Image>();
+        bgImage.enabled = !bgImage.enabled;
+    }
+
     public void AddSpriteToContainer(Sprite sprite)
     {
         GameObject featureImage = Instantiate(stretchImagePrefab, imageContainer.transform);

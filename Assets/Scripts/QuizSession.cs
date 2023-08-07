@@ -344,6 +344,15 @@ public class QuizSession : MonoBehaviour
         currentQuestionController.ShowSolution();
     }
 
+    public void ToggleFeatureBackground()
+    {
+        if (currentQuestionController == null) return;
+        if (currentQuestionController.GetType() == typeof(FeatureQuestionController))
+        {
+            (currentQuestionController as FeatureQuestionController).ToggleBackground();
+        }
+    }
+
     public void ClearQuestionContainer()
     {
         foreach (Transform transform in questionContainer.transform)

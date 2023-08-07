@@ -21,6 +21,8 @@ public class AdminPanelController : MonoBehaviour
 
     [SerializeField] private CategorySelector categorySelector;
 
+    [SerializeField] private Button featureBackgroundButton;
+
     private QuestionType currentQuestionType;
     private bool lastQuestionReached = false;
     private int nextButtonStepTextId;
@@ -80,6 +82,11 @@ public class AdminPanelController : MonoBehaviour
         adminPanelUser.ShowSolutionServerRpc();
     }
 
+    public void ToggleFeatureBackground()
+    {
+        adminPanelUser.ToggleFeatureBackgroundServerRpc();
+    }
+
     public void SetCurrentQuestionType(int questionType)
     {
         if (questionType == -1)
@@ -91,5 +98,6 @@ public class AdminPanelController : MonoBehaviour
         }
         categorySelector.SetActiveCategoryLabel(questionType);
         Debug.Log("AdminControlPanel: " + currentQuestionType);
+        featureBackgroundButton.interactable = currentQuestionType == QuestionType.Feature;
     }
 }
