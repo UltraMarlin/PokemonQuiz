@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfbc244f4a40c704087f2013a9809da4, type: 3}
+  m_Name: Sharfax
+  m_EditorClassIdentifier: 
+  pokemonName: Sharfax
+  pokemonGen: 4
+  drawerName: Bina
+  videoClip: {fileID: 32900000, guid: 31a83bd43f59d434ca4e7e4eec65be28, type: 3}
