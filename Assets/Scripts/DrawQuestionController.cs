@@ -29,11 +29,10 @@ public class DrawQuestionController : MonoBehaviour, IQuestionController
     {
         if (videoDonePlaying) return;
         long framesLeft = (long)drawVideoPlayerComponent.frameCount - drawVideoPlayerComponent.frame;
-        if (framesLeft < 5 && !drawVideoPlayerComponent.isPlaying)
+        if (framesLeft < 5)
         {
             videoDonePlaying = true;
             QuizSession.instance.SetNextStepButtonTextId(3);
-            drawVideoPlayerComponent.Play();
         }
     }
 
