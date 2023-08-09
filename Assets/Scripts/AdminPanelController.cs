@@ -24,7 +24,7 @@ public class AdminPanelController : MonoBehaviour
     [SerializeField] private Button featureBackgroundButton;
 
     private QuestionType currentQuestionType;
-    private bool lastQuestionReached = false;
+    public bool quizOver = false;
     private int nextButtonStepTextId;
 
     private void Awake()
@@ -61,37 +61,48 @@ public class AdminPanelController : MonoBehaviour
         solutionGenText.text = splitString[1];
     }
 
-    public void NextQuestion()
-    {
-        adminPanelUser.NextQuestionServerRpc();
-    }
-
     public void SetNextStepButtonText(int textid)
     {
-        string[] textStrings = {"Next Step", "Pausieren", "Abspielen", ""};
+        string[] textStrings = { "Next Step", "Pausieren", "Abspielen", "" };
         nextButtonStepText.text = textStrings[textid];
+    }
+
+    public void NextQuestion()
+    {
+        if (quizOver) return;
+        adminPanelUser.NextQuestionServerRpc();
     }
 
     public void NextQuestionStep()
     {
+        if (quizOver) return;
         adminPanelUser.NextQuestionStepServerRpc();
     }
 
     public void ShowSolution()
     {
+        if (quizOver) return;
         adminPanelUser.ShowSolutionServerRpc();
     }
 
     public void ToggleFeatureBackground()
     {
+        if (quizOver) return;
         adminPanelUser.ToggleFeatureBackgroundServerRpc();
+    }
+
+    public void EndQuiz()
+    {
+        if (quizOver) return;
+        quizOver = true;
+        adminPanelUser.EndQuizServerRpc();
     }
 
     public void SetCurrentQuestionType(int questionType)
     {
         if (questionType == -1)
         {
-            lastQuestionReached = true;
+            quizOver = true;
         } else
         {
             currentQuestionType = (QuestionType)questionType;

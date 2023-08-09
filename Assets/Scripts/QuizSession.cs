@@ -74,6 +74,8 @@ public class QuizSession : MonoBehaviour
     [SerializeField] private GameObject anagramQuestionPrefab;
     [SerializeField] private GameObject drawQuestionPrefab;
 
+    [SerializeField] private GameObject endScreenPrefab;
+
     [SerializeField] private QuestionDB featureQuestionDB;
     [SerializeField] private QuestionDB shinyQuestionDB;
     [SerializeField] private QuestionDB blurQuestionDB;
@@ -211,7 +213,7 @@ public class QuizSession : MonoBehaviour
         {
             if (currentQuestionIndex >= allQuestions.Count - 1)
             {
-                OnQuizFinished();
+                OnAllQuestionsPlayed();
                 return -1;
             }
             currentQuestionIndex++;
@@ -227,7 +229,7 @@ public class QuizSession : MonoBehaviour
                 selectedCategory = (QuestionType)currentCategoryInt;
                 if (counter > numberOfQuestionTypes)
                 {
-                    OnQuizFinished();
+                    OnAllQuestionsPlayed();
                     return -1;
                 }
                 counter++;
@@ -242,9 +244,32 @@ public class QuizSession : MonoBehaviour
         return (int)currentQuestionType;
     }
 
-    private void OnQuizFinished()
+    private void OnAllQuestionsPlayed()
     {
         Debug.Log("Every question has been played!");
+        EndQuiz();
+    }
+
+    public void EndQuiz()
+    {
+        Debug.Log("Quiz is over!");
+        ClearQuestionContainer();
+        StartCoroutine(ShowRankingAfterDelay(0.05f));
+    }
+
+    public IEnumerator ShowRankingAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        GameObject endScreenObject = Instantiate(endScreenPrefab, questionContainer.transform);
+        List<Result> results = new List<Result>();
+        for (int i = 0; i < playerPoints.Count; i++)
+        {
+            Result result = new Result();
+            result.playerName = playerPanelControllers[i].GetPlayerName();
+            result.playerPoints = playerPoints[i];
+            results.Add(result);
+        }
+        endScreenObject.GetComponent<EndScreenController>().DisplayPlayerRankings(results);
     }
 
     public void SwitchToQuestionType(int questionIndex)

@@ -41,6 +41,11 @@ public class PlayerPanelController : MonoBehaviour
         pointsText.text = text;
     }
 
+    public string GetPlayerName()
+    {
+        return playerNameText.text;
+    }
+
     private IEnumerator PlayAnimationWithRandomDelay(float minDelay,  float maxDelay)
     {
         yield return new WaitForSeconds(Random.Range(minDelay, maxDelay));

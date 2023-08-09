@@ -18,12 +18,6 @@ public class CategorySelector : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-         
-    }
-
     public void SetActiveCategoryLabel(int toggleIndex)
     {
         Button button = buttons[toggleIndex];
@@ -33,8 +27,9 @@ public class CategorySelector : MonoBehaviour
 
     public void ButtonActivated(int toggleIndex)
     {
-        if (AdminPanelController.instance.adminPanelUser != null)
-            AdminPanelController.instance.adminPanelUser.SendCategorySwitchServerRpc(toggleIndex);
+        if (AdminPanelController.instance.adminPanelUser == null || AdminPanelController.instance.quizOver)
+            return;
+        AdminPanelController.instance.adminPanelUser.SendCategorySwitchServerRpc(toggleIndex);
     }
 
 }

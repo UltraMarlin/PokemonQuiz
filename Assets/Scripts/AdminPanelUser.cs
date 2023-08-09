@@ -67,6 +67,12 @@ public class AdminPanelUser : NetworkBehaviour
         QuizSession.instance.ToggleFeatureBackground();
     }
 
+    [ServerRpc]
+    public void EndQuizServerRpc()
+    {
+        QuizSession.instance.EndQuiz();
+    }
+
     [ClientRpc]
     public void ShowSolutionClientRpc(string solutionString)
     {
