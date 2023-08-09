@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1cdf8be6a090c344a1381e2db64752a, type: 3}
+  m_Name: Maschock
+  m_EditorClassIdentifier: 
+  pokemonName: Maschock
+  pokemonGen: 0
+  sprites:
+  - {fileID: 21300000, guid: a773041aa698b844093aaec74bef5b75, type: 3}
+  - {fileID: 21300000, guid: cda4338199034df4893fc448e079fb33, type: 3}
+  - {fileID: 21300000, guid: 6f7ae777789a9594bb1bc933bebce053, type: 3}
+  solutionSprite: {fileID: 21300000, guid: a773041aa698b844093aaec74bef5b75, type: 3}
+  footprintSprite: {fileID: 21300000, guid: cda4338199034df4893fc448e079fb33, type: 3}
+  portraitSprite: {fileID: 21300000, guid: 6f7ae777789a9594bb1bc933bebce053, type: 3}
+  footprintGroups: 0e000000

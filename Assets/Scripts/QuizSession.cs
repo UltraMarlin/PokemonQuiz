@@ -13,7 +13,9 @@ public enum QuestionType
     Shiny,
     Blur,
     Anagram,
-    Draw
+    Draw,
+    Footprint,
+    Team
 }
 
 [System.Serializable]
@@ -73,6 +75,8 @@ public class QuizSession : MonoBehaviour
     [SerializeField] private GameObject blurQuestionPrefab;
     [SerializeField] private GameObject anagramQuestionPrefab;
     [SerializeField] private GameObject drawQuestionPrefab;
+    [SerializeField] private GameObject footprintQuestionPrefab;
+    [SerializeField] private GameObject teamQuestionPrefab;
 
     [SerializeField] private GameObject endScreenPrefab;
 
@@ -81,6 +85,8 @@ public class QuizSession : MonoBehaviour
     [SerializeField] private QuestionDB blurQuestionDB;
     [SerializeField] private QuestionDB anagramQuestionDB;
     [SerializeField] private QuestionDB drawQuestionDB;
+    [SerializeField] private QuestionDB footprintQuestionDB;
+    [SerializeField] private QuestionDB teamQuestionDB;
 
     private int numberOfQuestionTypes;
 
@@ -111,6 +117,8 @@ public class QuizSession : MonoBehaviour
             { QuestionType.Blur, prepareQuestionList(QuestionType.Blur, blurQuestionDB) },
             { QuestionType.Anagram, prepareQuestionList(QuestionType.Anagram, anagramQuestionDB) },
             { QuestionType.Draw, prepareQuestionList(QuestionType.Draw, drawQuestionDB) },
+            { QuestionType.Footprint, prepareQuestionList(QuestionType.Footprint, footprintQuestionDB) },
+            { QuestionType.Team, prepareQuestionList(QuestionType.Team, teamQuestionDB) },
         };
 
         for (int i = 0; i < settings.quiz.players.Count; i++)
@@ -306,6 +314,16 @@ public class QuizSession : MonoBehaviour
             currentQuestionType = QuestionType.Draw;
             DisplayDrawQuestion(question as DrawQuestion);
         }
+        else if (question.GetType() == typeof(FootprintQuestion))
+        {
+            currentQuestionType = QuestionType.Footprint;
+            DisplayFootprintQuestion(question as FootprintQuestion);
+        }
+        else if (question.GetType() == typeof(TeamQuestion))
+        {
+            currentQuestionType = QuestionType.Team;
+            DisplayTeamQuestion(question as TeamQuestion);
+        }
     }
 
     public void DisplayFeatureQuestion(FeatureQuestion questionData)
@@ -340,6 +358,20 @@ public class QuizSession : MonoBehaviour
     {
         GameObject questionObject = Instantiate(drawQuestionPrefab, questionContainer.transform);
         DrawQuestionController questionController = questionObject.GetComponent<DrawQuestionController>();
+        StartQuestionController(questionData, questionController);
+    }
+
+    public void DisplayFootprintQuestion(FootprintQuestion questionData)
+    {
+        GameObject questionObject = Instantiate(footprintQuestionPrefab, questionContainer.transform);
+        FootprintQuestionController questionController = questionObject.GetComponent<FootprintQuestionController>();
+        StartQuestionController(questionData, questionController);
+    }
+
+    public void DisplayTeamQuestion(TeamQuestion questionData)
+    {
+        GameObject questionObject = Instantiate(teamQuestionPrefab, questionContainer.transform);
+        TeamQuestionController questionController = questionObject.GetComponent<TeamQuestionController>();
         StartQuestionController(questionData, questionController);
     }
 
@@ -435,7 +467,15 @@ public class QuizSession : MonoBehaviour
                 int shinySolutionIndex = (currentQuestionController as ShinyQuestionController).solutionIndex;
                 string[] shinySolutionStrings = new string[] { "Left,", "Middle,", "Right," };
                 solutionString = shinySolutionStrings[shinySolutionIndex];
-            } else {
+            }
+            else if (currentQuestionType == QuestionType.Footprint)
+            {
+                int footprintSolutionIndex = (currentQuestionController as FootprintQuestionController).solutionIndex;
+                string[] footprintSolutionStrings = new string[] { "Top left,", "Top right,", "Bottom left,", "Bottom right," };
+                solutionString = footprintSolutionStrings[footprintSolutionIndex];
+            }
+            else
+            {
                 solutionString = question.pokemonName + ",GEN " + ((int)question.pokemonGen + 1);
             }
             adminPanelUser.ShowSolutionClientRpc(solutionString);

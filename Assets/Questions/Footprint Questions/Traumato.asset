@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1cdf8be6a090c344a1381e2db64752a, type: 3}
+  m_Name: Traumato
+  m_EditorClassIdentifier: 
+  pokemonName: Traumato
+  pokemonGen: 0
+  sprites:
+  - {fileID: 21300000, guid: ceb40d3351f309447a184a03d0101615, type: 3}
+  - {fileID: 21300000, guid: a21c33067f13a854f97911589f7ad29e, type: 3}
+  - {fileID: 21300000, guid: f6c76197acbe799489b18cad5a686fc6, type: 3}
+  solutionSprite: {fileID: 21300000, guid: ceb40d3351f309447a184a03d0101615, type: 3}
+  footprintSprite: {fileID: 21300000, guid: a21c33067f13a854f97911589f7ad29e, type: 3}
+  portraitSprite: {fileID: 21300000, guid: f6c76197acbe799489b18cad5a686fc6, type: 3}
+  footprintGroups: 17000000

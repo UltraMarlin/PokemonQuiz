@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1cdf8be6a090c344a1381e2db64752a, type: 3}
+  m_Name: Taubsi
+  m_EditorClassIdentifier: 
+  pokemonName: Taubsi
+  pokemonGen: 0
+  sprites:
+  - {fileID: 21300000, guid: ad699f0b2ec1e7640b8b5d5f7c6a8295, type: 3}
+  - {fileID: 21300000, guid: adebbd75c3da3404abb61acb85963a52, type: 3}
+  - {fileID: 21300000, guid: ab352f42a5586da429ca7f30e0dea911, type: 3}
+  solutionSprite: {fileID: 21300000, guid: ad699f0b2ec1e7640b8b5d5f7c6a8295, type: 3}
+  footprintSprite: {fileID: 21300000, guid: adebbd75c3da3404abb61acb85963a52, type: 3}
+  portraitSprite: {fileID: 21300000, guid: ab352f42a5586da429ca7f30e0dea911, type: 3}
+  footprintGroups: 07000000

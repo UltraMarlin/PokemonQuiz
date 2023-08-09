@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1cdf8be6a090c344a1381e2db64752a, type: 3}
+  m_Name: Dodri
+  m_EditorClassIdentifier: 
+  pokemonName: Dodri
+  pokemonGen: 0
+  sprites:
+  - {fileID: 21300000, guid: d3dc96c6de40eba4ea50771a55481654, type: 3}
+  - {fileID: 21300000, guid: 026c7c191a80b1b4b8f5e04c3af6c340, type: 3}
+  - {fileID: 21300000, guid: 064184eb983ec984ca29bf2d39f6db9d, type: 3}
+  solutionSprite: {fileID: 21300000, guid: d3dc96c6de40eba4ea50771a55481654, type: 3}
+  footprintSprite: {fileID: 21300000, guid: 026c7c191a80b1b4b8f5e04c3af6c340, type: 3}
+  portraitSprite: {fileID: 21300000, guid: 064184eb983ec984ca29bf2d39f6db9d, type: 3}
+  footprintGroups: 08000000

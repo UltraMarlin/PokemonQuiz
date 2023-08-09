@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1cdf8be6a090c344a1381e2db64752a, type: 3}
+  m_Name: Glurak
+  m_EditorClassIdentifier: 
+  pokemonName: Glurak
+  pokemonGen: 0
+  sprites:
+  - {fileID: 21300000, guid: 71961d36119ae2b4292012f1cf1e3341, type: 3}
+  - {fileID: 21300000, guid: 47372d4e95e0c664e964654c9d3619b9, type: 3}
+  - {fileID: 21300000, guid: 9d615c85c9bce1842bba9260c45d8bba, type: 3}
+  solutionSprite: {fileID: 21300000, guid: 71961d36119ae2b4292012f1cf1e3341, type: 3}
+  footprintSprite: {fileID: 21300000, guid: 47372d4e95e0c664e964654c9d3619b9, type: 3}
+  portraitSprite: {fileID: 21300000, guid: 9d615c85c9bce1842bba9260c45d8bba, type: 3}
+  footprintGroups: 02000000

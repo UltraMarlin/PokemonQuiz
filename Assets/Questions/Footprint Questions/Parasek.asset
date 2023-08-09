@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1cdf8be6a090c344a1381e2db64752a, type: 3}
+  m_Name: Parasek
+  m_EditorClassIdentifier: 
+  pokemonName: Parasek
+  pokemonGen: 0
+  sprites:
+  - {fileID: 21300000, guid: 12150299b7e4e22488c5d77add2bb235, type: 3}
+  - {fileID: 21300000, guid: 9cbf2cb5ffb218e49979d4b60f49ab18, type: 3}
+  - {fileID: 21300000, guid: a52bc530106e1be4abe1113f9f2842d0, type: 3}
+  solutionSprite: {fileID: 21300000, guid: 12150299b7e4e22488c5d77add2bb235, type: 3}
+  footprintSprite: {fileID: 21300000, guid: 9cbf2cb5ffb218e49979d4b60f49ab18, type: 3}
+  portraitSprite: {fileID: 21300000, guid: a52bc530106e1be4abe1113f9f2842d0, type: 3}
+  footprintGroups: 1a000000

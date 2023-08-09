@@ -15,11 +15,11 @@ public class FeatureQuestion : IQuestion
     public void OnValidate()
     {
         if (!QuizUtils.validateQuestionObjects) return;
-        int pokemonNumber = 0;
+
         if (solutionSprite != null)
         {
             string[] nameSplit = solutionSprite.name.Split("_");
-            if (int.TryParse(nameSplit[0], out pokemonNumber))
+            if (int.TryParse(nameSplit[0], out int pokemonNumber))
             {
                 int pokemonGenIndex = 0;
                 while (pokemonGenIndex < QuizUtils.pokemonGenCutoffs.Length && pokemonNumber > QuizUtils.pokemonGenCutoffs[pokemonGenIndex])
