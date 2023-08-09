@@ -27,8 +27,8 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("AdminPanel");
     }
 
-    public void LoadSettings()
+    public void LoadQuizSelection()
     {
-        SceneManager.LoadScene("Settings");
+        SceneManager.LoadScene("QuizSelection");
     }
 }

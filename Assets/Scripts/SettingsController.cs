@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -23,6 +24,8 @@ public class Settings : MonoBehaviour
     [SerializeField] private List<CategorySettingsCard> categorySettingsCards;
 
     [SerializeField] private TMP_Text infoMessageText;
+    [SerializeField] private Button deleteQuizButton;
+    [SerializeField] private Button overwriteQuizButton;
     [SerializeField] private Button saveQuizButton;
 
     // Start is called before the first frame update
@@ -38,6 +41,7 @@ public class Settings : MonoBehaviour
         }
         playerCountDropdown.onValueChanged.AddListener(delegate { DropdownValueChanged(playerCountDropdown); });
         LoadCurrentSettings();
+        settings.quizzes = settings.quizzes.Where(quiz => quiz.presetName.Length > 0).ToList();
     }
 
     public void DropdownValueChanged(TMP_Dropdown dropdown)
@@ -50,9 +54,14 @@ public class Settings : MonoBehaviour
         }
     }
 
-    public void LoadMainMenu()
+    public void LoadQuizSelection()
     {
-        SceneManager.LoadScene("MainMenu");
+        if (settings.quiz.presetName.Length <= 0)
+        {
+            settings.DeleteSelectedQuiz();
+            settings.selectedQuiz = 0;
+        }
+        SceneManager.LoadScene("QuizSelection");
     }
 
     public void LoadCurrentSettings()
@@ -60,6 +69,13 @@ public class Settings : MonoBehaviour
         Quiz quiz = settings.quiz;
 
         quizNameInput.text = quiz.presetName;
+        if (quiz.presetName.Length <= 0)
+        {
+            deleteQuizButton.interactable = false;
+            overwriteQuizButton.interactable = false;
+        }
+            
+
         playerCountDropdown.value = Mathf.Min(Mathf.Max(0, quiz.players.Count - 1), 7);
         DropdownValueChanged(playerCountDropdown);
 
@@ -85,9 +101,38 @@ public class Settings : MonoBehaviour
         explainRulesToggle.isOn = quiz.explainRules;
     }
 
-    public void SaveCurrentSettings()
+    public void DeleteCurrentAndReturn()
     {
-        infoMessageText.text = "";
+        settings.DeleteSelectedQuiz();
+        settings.selectedQuiz = 0;
+        SceneManager.LoadScene("QuizSelection");
+    }
+
+    public void OverwriteCurrent()
+    {
+        Quiz currentQuiz = settings.quiz;
+        settings.DeleteSelectedQuiz();
+        Quiz quiz = CreateQuizFromCurrentSettings();
+        infoMessageText.text = settings.AddQuiz(quiz, settings.selectedQuiz);
+        if (infoMessageText.text.StartsWith("Nicht gespeichert"))
+            settings.AddQuiz(currentQuiz, settings.selectedQuiz);
+        StartCoroutine(InfoMessageHideCoroutine(2.5f));
+    }
+
+    public void SaveNewCurrentSettings()
+    {
+        Quiz quiz = CreateQuizFromCurrentSettings();
+        infoMessageText.text = settings.AddQuiz(quiz);
+        if (settings.quiz.presetName.Length > 0 && !infoMessageText.text.StartsWith("Nicht gespeichert"))
+        {
+            deleteQuizButton.interactable = true;
+            overwriteQuizButton.interactable = true;
+        }
+        StartCoroutine(InfoMessageHideCoroutine(2.5f));
+    }
+
+    public Quiz CreateQuizFromCurrentSettings()
+    {
         Quiz quiz = new Quiz();
 
         quiz.presetName = quizNameInput.text;
@@ -116,18 +161,12 @@ public class Settings : MonoBehaviour
         quiz.shuffleCategories = categoryShuffleToggle.isOn;
         quiz.infiniteMode = infiniteModeToggle.isOn;
         quiz.explainRules = explainRulesToggle.isOn;
-
-        settings.quiz = quiz;
-
-        infoMessageText.text = "Quiz Gespeichert!";
-        saveQuizButton.interactable = false;
-        StartCoroutine(SaveQuizCoroutine(1.0f));
+        return quiz;
     }
 
-    IEnumerator SaveQuizCoroutine(float time)
+    IEnumerator InfoMessageHideCoroutine(float time)
     {
         yield return new WaitForSeconds(time);
         infoMessageText.text = "";
-        saveQuizButton.interactable = true;
     }
 }
