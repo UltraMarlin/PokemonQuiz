@@ -17,7 +17,6 @@ public class FileDataHandler
 
     public QuizSettingsData Load()
     {
-        Debug.Log("Loading Data!");
         string fullPath = Path.Combine(dataDirPath, dataFileName);
         QuizSettingsData loadedData = null;
         if (File.Exists(fullPath))
@@ -40,14 +39,11 @@ public class FileDataHandler
                 Debug.LogError("Error occured when trying to load data from file: " + fullPath + "\n" + e);
             }
         }
-        Debug.Log("Loading Done.");
         return loadedData;
     }
 
     public void Save(QuizSettings settings)
     {
-        Debug.Log("Saving Data!");
-
         QuizSettingsData data = new QuizSettingsData();
         data.selectedQuiz = settings.selectedQuiz;
         data.quizzes = settings.quizzes;
@@ -71,6 +67,5 @@ public class FileDataHandler
         {
             Debug.LogError("Error occured when trying to save data to file: " + fullPath + "\n" + e);
         }
-        Debug.Log("Saving Done.");
     }
 }
