@@ -14,9 +14,10 @@ public class DrawQuestionController : MonoBehaviour, IQuestionController
     [SerializeField] private TextMeshProUGUI drawerText;
     [SerializeField] private Sprite blankSquare;
     [SerializeField] private RenderTexture videoRenderTexture;
+    [SerializeField] private GameObject originalImageContainer;
+    [SerializeField] private GameObject stretchImagePrefab;
 
     private VideoPlayer drawVideoPlayerComponent;
-    private RawImage rawImageComponent;
     public DrawQuestion drawQuestionData;
     public bool videoDonePlaying;
 
@@ -42,7 +43,6 @@ public class DrawQuestionController : MonoBehaviour, IQuestionController
         if (drawQuestionData == null) return;
         GameObject drawVideo = Instantiate(stretchVideoPrefab, videoContainer.transform);
         drawVideoPlayerComponent = drawVideo.GetComponent<VideoPlayer>();
-        rawImageComponent = drawVideo.GetComponent<RawImage>();
         drawVideoPlayerComponent.waitForFirstFrame = true;
         drawVideoPlayerComponent.clip = drawQuestionData.videoClip;
         QuizSession.instance.SetNextStepButtonTextId(1);
@@ -72,6 +72,9 @@ public class DrawQuestionController : MonoBehaviour, IQuestionController
         solutionText.text = drawQuestionData.pokemonName;
         drawerTitle.enabled = true;
         drawerText.text = drawQuestionData.drawerName;
+        if (originalImageContainer.transform.childCount > 0)
+            Destroy(originalImageContainer.transform.GetChild(0).gameObject);
+        AddSpriteToContainer(drawQuestionData.originalImage, originalImageContainer);
 
         if (videoDonePlaying) return;
         videoDonePlaying = true;
@@ -81,8 +84,14 @@ public class DrawQuestionController : MonoBehaviour, IQuestionController
         if (!drawVideoPlayerComponent.isPlaying) drawVideoPlayerComponent.Play();
     }
 
+    public void AddSpriteToContainer(Sprite sprite, GameObject container)
+    {
+        GameObject image = Instantiate(stretchImagePrefab, container.transform);
+        image.GetComponent<Image>().sprite = sprite;
+    }
+
     public void ResetDisplay()
     {
-
+        return;
     }
 }
