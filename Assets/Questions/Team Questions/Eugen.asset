@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2792c75c1cf2969468ef62873fff0dfd, type: 3}
-  m_Name: TeamQuestionDB
+  m_Script: {fileID: 11500000, guid: 2e276cd1ef131324f991b6b8460dd6ee, type: 3}
+  m_Name: Eugen
   m_EditorClassIdentifier: 
-  questions:
-  - {fileID: 11400000, guid: fd0e734f973fd5b43ac646a8778db40d, type: 2}
-  - {fileID: 11400000, guid: 42718acd15434ff4993b4415955b723e, type: 2}
+  pokemonName: Eugen
+  pokemonGen: 0
+  teamImage: {fileID: 21300000, guid: 5911540bbafbe764ca84e1630846b4a9, type: 3}
+  profileImage: {fileID: 21300000, guid: 04273ee65eaef6f409291447e2cef0d2, type: 3}

@@ -486,8 +486,12 @@ public class QuizSession : MonoBehaviour
             else if (currentQuestionType == QuestionType.Footprint)
             {
                 int footprintSolutionIndex = (currentQuestionController as FootprintQuestionController).solutionIndex;
-                string[] footprintSolutionStrings = new string[] { "Top left,", "Top right,", "Bottom left,", "Bottom right," };
+                string[] footprintSolutionStrings = new string[] { "A,", "B,", "C,", "D," };
                 solutionString = footprintSolutionStrings[footprintSolutionIndex];
+            }
+            else if (currentQuestionType == QuestionType.Team)
+            {
+                solutionString = question.pokemonName + ",";
             }
             else
             {

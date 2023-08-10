@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.Video;
 
 [CreateAssetMenu(fileName = "FootprintQuestion", menuName = "QuestionTypes/Footprint", order = 6)]
 public class FootprintQuestion : IQuestion

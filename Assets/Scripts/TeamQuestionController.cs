@@ -8,52 +8,45 @@ public class TeamQuestionController : MonoBehaviour, IQuestionController
 {
     [SerializeField] private GameObject imageContainer;
     [SerializeField] private GameObject stretchImagePrefab;
+    [SerializeField] private GameObject profileImageContainer;
     [SerializeField] private TextMeshProUGUI solutionText;
 
-    public FeatureQuestion featureQuestionData;
-    private int currentFeatureIndex = 0;
+    public TeamQuestion teamQuestionData;
 
     public void SetData(IQuestion questionData)
     {
-        featureQuestionData = questionData as FeatureQuestion;
+        teamQuestionData = questionData as TeamQuestion;
     }
 
     public void StartQuestion()
     {
-        if (featureQuestionData == null) return;
-        AddSpriteToContainer(featureQuestionData.featureSprites[currentFeatureIndex]);
+        if (teamQuestionData == null) return;
+        AddSpriteToContainer(teamQuestionData.teamImage, imageContainer);
     }
 
     public void NextQuestionStep()
     {
-        if (currentFeatureIndex + 1 >= featureQuestionData.featureSprites.Count) return;
-        currentFeatureIndex++;
-        AddSpriteToContainer(featureQuestionData.featureSprites[currentFeatureIndex]);
+        return;
     }
 
     public void ShowSolution()
     {
-        AddSpriteToContainer(featureQuestionData.solutionSprite);
-        solutionText.text = featureQuestionData.pokemonName;
+        if (profileImageContainer.transform.childCount > 0)
+        {
+            Destroy(profileImageContainer.transform.GetChild(0));
+        }
+        AddSpriteToContainer(teamQuestionData.profileImage, profileImageContainer);
+        solutionText.text = teamQuestionData.pokemonName;
     }
 
     public void ResetDisplay()
     {
-        foreach (Transform transform in imageContainer.transform)
-        {
-            Destroy(transform.gameObject);
-        }
+        return;
     }
 
-    public void ToggleBackground()
+    public void AddSpriteToContainer(Sprite sprite, GameObject container)
     {
-        Image bgImage = imageContainer.GetComponent<Image>();
-        bgImage.enabled = !bgImage.enabled;
-    }
-
-    public void AddSpriteToContainer(Sprite sprite)
-    {
-        GameObject featureImage = Instantiate(stretchImagePrefab, imageContainer.transform);
-        featureImage.GetComponent<Image>().sprite = sprite;
+        GameObject image = Instantiate(stretchImagePrefab, container.transform);
+        image.GetComponent<Image>().sprite = sprite;
     }
 }
