@@ -16,3 +16,4 @@ MonoBehaviour:
   pokemonGen: 1
   drawerName: Noir
   videoClip: {fileID: 32900000, guid: e451d943cd0583b42ab41fe12a46db4a, type: 3}
+  originalImage: {fileID: 21300000, guid: 2dcfa1829d3f72c47a8ae6efb88d1265, type: 3}

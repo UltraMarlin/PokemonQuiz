@@ -16,3 +16,4 @@ MonoBehaviour:
   pokemonGen: 6
   drawerName: Marlin
   videoClip: {fileID: 32900000, guid: c85b1a48b9ef4db469ba5308d55873c1, type: 3}
+  originalImage: {fileID: 21300000, guid: 53bc4898bd36546479c11093c2753080, type: 3}

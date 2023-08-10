@@ -16,3 +16,4 @@ MonoBehaviour:
   pokemonGen: 1
   drawerName: Jessi
   videoClip: {fileID: 32900000, guid: 0bf06b7a87a0a4442bd048ec8f5909f4, type: 3}
+  originalImage: {fileID: 21300000, guid: c98da7234bb90dc42832172f72a5410b, type: 3}

@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pokemonName: Digdri
   pokemonGen: 0
-  drawerName: JESSIessi
+  drawerName: Jessi
   videoClip: {fileID: 32900000, guid: d44e6ba64426d364bbd8b1340da915d0, type: 3}
+  originalImage: {fileID: 21300000, guid: f2eca1a10b2d60a44bc17959117defe3, type: 3}

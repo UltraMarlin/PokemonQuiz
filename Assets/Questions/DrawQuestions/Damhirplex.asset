@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pokemonName: Damhirplex
   pokemonGen: 1
-  drawerName: JESSIessi
+  drawerName: Jessi
   videoClip: {fileID: 32900000, guid: dc480d5e440ac0c46a95e1e8f19e2c80, type: 3}
+  originalImage: {fileID: 21300000, guid: ea44c585db937144382de11ca57df78e, type: 3}

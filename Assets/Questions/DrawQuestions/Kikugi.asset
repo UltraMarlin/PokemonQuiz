@@ -16,3 +16,4 @@ MonoBehaviour:
   pokemonGen: 3
   drawerName: Bina
   videoClip: {fileID: 32900000, guid: 2226ae6255e06834687dcf314e5f331e, type: 3}
+  originalImage: {fileID: 21300000, guid: 5b6233ee45ebc4b4ba971788931c06fc, type: 3}
