@@ -18,8 +18,8 @@ public class FootprintQuestionController : MonoBehaviour, IQuestionController
     public FootprintQuestion footprintQuestionData;
     public int solutionIndex;
 
-    private Color fakeBackgroundColor = new Color(1f, 0f, 0f, 0.3f);
-    private Color solutionBackgroundColor = new Color(0f, 1f, 0f, 0.3f);
+    private Color fakeBackgroundColor = new Color(255f / 255, 108f / 255, 97f / 255, 1.0f); //rgb(255, 108, 97)
+    private Color solutionBackgroundColor = new Color(97f / 255, 255f / 255, 101f / 255, 1.0f); //rgb(97, 255, 101)
 
     public void SetData(IQuestion questionData)
     {
@@ -92,6 +92,8 @@ public class FootprintQuestionController : MonoBehaviour, IQuestionController
         if (referenceImageContainer.transform.childCount > 0)
             Destroy(referenceImageContainer.transform.GetChild(0).gameObject);
         AddSpriteToContainer(footprintQuestionData.solutionSprite, referenceImageContainer);
+        (referenceImageContainer.transform as RectTransform).sizeDelta = new Vector2(500f, 500f);
+        LayoutRebuilder.MarkLayoutForRebuild(referenceImageContainer.transform as RectTransform);
     }
 
     public void ResetDisplay()
