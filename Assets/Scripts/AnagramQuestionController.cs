@@ -25,6 +25,7 @@ public class AnagramQuestionController : MonoBehaviour, IQuestionController
     public void StartQuestion()
     {
         if (anagramQuestionData == null) return;
+        QuizSession.instance.SetNextStepButtonTextId(NextStepButtonState.NextStep);
         anagramText.text = anagramQuestionData.anagramString;
         for (int i = 0; i < anagramQuestionData.anagramString.Length; i++)
         {
@@ -41,6 +42,12 @@ public class AnagramQuestionController : MonoBehaviour, IQuestionController
         }
         char newlyRevealedChar = char.ToUpper(anagramQuestionData.pokemonName[currentStep]);
         currentStep++;
+
+        if (currentStep >= anagramQuestionData.pokemonName.Length)
+        {
+            QuizSession.instance.SetNextStepButtonTextId(NextStepButtonState.Empty);
+        }
+
         string newAnagramText = "";
         string newHintText = "";
 

@@ -33,7 +33,7 @@ public class DrawQuestionController : MonoBehaviour, IQuestionController
         if (framesLeft < 5)
         {
             videoDonePlaying = true;
-            QuizSession.instance.SetNextStepButtonTextId(3);
+            QuizSession.instance.SetNextStepButtonTextId(NextStepButtonState.Empty);
         }
     }
 
@@ -45,7 +45,7 @@ public class DrawQuestionController : MonoBehaviour, IQuestionController
         drawVideoPlayerComponent = drawVideo.GetComponent<VideoPlayer>();
         drawVideoPlayerComponent.waitForFirstFrame = true;
         drawVideoPlayerComponent.clip = drawQuestionData.videoClip;
-        QuizSession.instance.SetNextStepButtonTextId(1);
+        QuizSession.instance.SetNextStepButtonTextId(NextStepButtonState.Pause);
         Graphics.Blit(blankSquare.texture, videoRenderTexture);
     }
 
@@ -57,12 +57,12 @@ public class DrawQuestionController : MonoBehaviour, IQuestionController
         if (drawVideoPlayerComponent.isPlaying)
         {
             Debug.Log("Now Paused");
-            QuizSession.instance.SetNextStepButtonTextId(2);
+            QuizSession.instance.SetNextStepButtonTextId(NextStepButtonState.Play);
             drawVideoPlayerComponent.Pause();
         } else
         {
             Debug.Log("Now Playing");
-            QuizSession.instance.SetNextStepButtonTextId(1);
+            QuizSession.instance.SetNextStepButtonTextId(NextStepButtonState.Pause);
             drawVideoPlayerComponent.Play();
         }
     }
@@ -78,7 +78,7 @@ public class DrawQuestionController : MonoBehaviour, IQuestionController
 
         if (videoDonePlaying) return;
         videoDonePlaying = true;
-        QuizSession.instance.SetNextStepButtonTextId(3);
+        QuizSession.instance.SetNextStepButtonTextId(NextStepButtonState.Empty);
 
         drawVideoPlayerComponent.frame = (long)drawVideoPlayerComponent.frameCount;
         if (!drawVideoPlayerComponent.isPlaying) drawVideoPlayerComponent.Play();

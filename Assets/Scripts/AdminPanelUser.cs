@@ -22,6 +22,7 @@ public class AdminPanelUser : NetworkBehaviour
     [ServerRpc]
     public void NextQuestionServerRpc()
     {
+        nwv_CurrentQuestionType.Value = -2;
         nwv_CurrentQuestionType.Value = QuizSession.instance.NextQuestion();
     }
 
@@ -89,7 +90,8 @@ public class AdminPanelUser : NetworkBehaviour
     {
         if (IsClient)
         {
-            AdminPanelController.instance.SetCurrentQuestionType(current);
+            if (current > -2)
+                AdminPanelController.instance.SetCurrentQuestionType(current);
         }
     }
 

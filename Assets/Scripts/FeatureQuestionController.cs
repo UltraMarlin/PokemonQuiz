@@ -12,6 +12,7 @@ public class FeatureQuestionController : MonoBehaviour, IQuestionController
 
     public FeatureQuestion featureQuestionData;
     private int currentFeatureIndex = 0;
+    private bool lastFeatureShown = false;
 
     public void SetData(IQuestion questionData)
     {
@@ -21,14 +22,21 @@ public class FeatureQuestionController : MonoBehaviour, IQuestionController
     public void StartQuestion()
     {
         if (featureQuestionData == null) return;
+        QuizSession.instance.SetNextStepButtonTextId(NextStepButtonState.NextStep);
         AddSpriteToContainer(featureQuestionData.featureSprites[currentFeatureIndex]);
     }
 
     public void NextQuestionStep()
     {
-        if (currentFeatureIndex + 1 >= featureQuestionData.featureSprites.Count) return;
+        if (lastFeatureShown) return;
         currentFeatureIndex++;
         AddSpriteToContainer(featureQuestionData.featureSprites[currentFeatureIndex]);
+
+        if (currentFeatureIndex == featureQuestionData.featureSprites.Count - 1)
+        {
+            lastFeatureShown = true;
+            QuizSession.instance.SetNextStepButtonTextId(NextStepButtonState.Empty);
+        }
     }
 
     public void ShowSolution()

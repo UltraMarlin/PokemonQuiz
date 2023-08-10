@@ -21,6 +21,7 @@ public class TeamQuestionController : MonoBehaviour, IQuestionController
     public void StartQuestion()
     {
         if (teamQuestionData == null) return;
+        QuizSession.instance.SetNextStepButtonTextId(NextStepButtonState.Empty);
         AddSpriteToContainer(teamQuestionData.teamImage, imageContainer);
     }
 

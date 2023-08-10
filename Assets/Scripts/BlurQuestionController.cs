@@ -35,8 +35,8 @@ public class BlurQuestionController : MonoBehaviour, IQuestionController
         blurImageComponent.texture = blurQuestionData.sprite.texture;
         distortionMaterial = distortionEffects[Random.Range(0, distortionEffects.Count)];
         passCount = distortionMaterial.passCount;
+        QuizSession.instance.SetNextStepButtonTextId(NextStepButtonState.Pause);
         distortionActive = true;
-        QuizSession.instance.SetNextStepButtonTextId(1);
         StartCoroutine(ReduceDistortionOverTime(1.0f, 0.0f, 30.0f));
     }
 
@@ -45,11 +45,11 @@ public class BlurQuestionController : MonoBehaviour, IQuestionController
         if (distortionPaused)
         {
             distortionPaused = false;
-            QuizSession.instance.SetNextStepButtonTextId(1);
+            QuizSession.instance.SetNextStepButtonTextId(NextStepButtonState.Pause);
         } else
         {
             distortionPaused = true;
-            QuizSession.instance.SetNextStepButtonTextId(2);
+            QuizSession.instance.SetNextStepButtonTextId(NextStepButtonState.Play);
         }
         Debug.Log("Paused: " + distortionPaused);
     }
@@ -107,7 +107,7 @@ public class BlurQuestionController : MonoBehaviour, IQuestionController
             yield return new WaitForFixedUpdate();
         }
         distortionActive = false;
-        QuizSession.instance.SetNextStepButtonTextId(3);
+        QuizSession.instance.SetNextStepButtonTextId(NextStepButtonState.Empty);
         blurImageComponent.texture = blurQuestionData.sprite.texture;
     }
 }

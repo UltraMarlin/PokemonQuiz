@@ -30,6 +30,8 @@ public class FootprintQuestionController : MonoBehaviour, IQuestionController
     {
         if (footprintQuestionData == null) return;
 
+        QuizSession.instance.SetNextStepButtonTextId(NextStepButtonState.Empty);
+
         pokemonName.text = footprintQuestionData.pokemonName;
         AddSpriteToContainer(footprintQuestionData.portraitSprite, referenceImageContainer);
 

@@ -19,15 +19,20 @@ public class AdminPanelController : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI solutionText;
     [SerializeField] private TextMeshProUGUI solutionGenText;
-    [SerializeField] private TextMeshProUGUI nextButtonStepText;
 
     [SerializeField] private CategorySelector categorySelector;
 
     [SerializeField] private Button featureBackgroundButton;
+    [SerializeField] private Button showSolutionButton;
+    [SerializeField] private Button nextStepButton;
+    [SerializeField] private TextMeshProUGUI showSolutionButtonText;
+    private string showSolutionButtonOriginalText;
+    [SerializeField] private TextMeshProUGUI nextButtonStepText;
+    [SerializeField] private TextMeshProUGUI featureBackgroundButtonText;
+    private string featureBackgroundButtonOriginalText;
 
     private QuestionType currentQuestionType;
     public bool quizOver = false;
-    private int nextButtonStepTextId;
 
     private void Awake()
     {
@@ -62,6 +67,9 @@ public class AdminPanelController : MonoBehaviour
             pcpComponent.SetPlayerName(player.name);
         }
 
+        showSolutionButtonOriginalText = showSolutionButtonText.text;
+        featureBackgroundButtonOriginalText = featureBackgroundButtonText.text;
+
         playerControlPanels.GetComponent<HorizontalLayoutGroup>().spacing = QuizSession.SpacingFromPlayerCount(settings.quiz.players.Count);
     }
 
@@ -81,11 +89,15 @@ public class AdminPanelController : MonoBehaviour
     {
         string[] textStrings = { "Next Step", "Pausieren", "Abspielen", "" };
         nextButtonStepText.text = textStrings[textid];
+        nextStepButton.interactable = (NextStepButtonState)textid != NextStepButtonState.Empty;
     }
 
     public void NextQuestion()
     {
         if (quizOver) return;
+        showSolutionButton.interactable = true;
+        nextStepButton.interactable = true;
+        showSolutionButtonText.text = showSolutionButtonOriginalText;
         adminPanelUser.NextQuestionServerRpc();
     }
 
@@ -99,6 +111,9 @@ public class AdminPanelController : MonoBehaviour
     {
         if (quizOver) return;
         adminPanelUser.ShowSolutionServerRpc();
+        showSolutionButton.interactable = false;
+        SetNextStepButtonText((int)NextStepButtonState.Empty);
+        showSolutionButtonText.text = "";
     }
 
     public void ToggleFeatureBackground()
@@ -126,5 +141,6 @@ public class AdminPanelController : MonoBehaviour
         categorySelector.SetActiveCategoryLabel(questionType);
         Debug.Log("AdminControlPanel: " + currentQuestionType);
         featureBackgroundButton.interactable = currentQuestionType == QuestionType.Feature;
+        featureBackgroundButtonText.text = currentQuestionType == QuestionType.Feature ? featureBackgroundButtonOriginalText : "";
     }
 }

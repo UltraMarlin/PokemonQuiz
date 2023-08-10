@@ -149,6 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonID: -1
   text: {fileID: 5083855529847837069}
+  buttonImage: {fileID: 256620455066168253}
 --- !u!1 &5023707149436769523
 GameObject:
   m_ObjectHideFlags: 0

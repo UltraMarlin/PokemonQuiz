@@ -32,6 +32,14 @@ public enum PokemonGen
     GEN9
 }
 
+public enum NextStepButtonState
+{
+    NextStep,
+    Pause,
+    Play,
+    Empty
+}
+
 public class QuizUtils
 {
     public static bool validateQuestionObjects = false;
@@ -229,7 +237,6 @@ public class QuizSession : MonoBehaviour
     public int NextQuestion()
     {
         IQuestion question = null;
-        SetNextStepButtonTextId(0);
 
         if (singleQuestionList)
         {
@@ -500,11 +507,11 @@ public class QuizSession : MonoBehaviour
         }
     }
 
-    public void SetNextStepButtonTextId(int id)
+    public void SetNextStepButtonTextId(NextStepButtonState state)
     {
         if (adminPanelUser != null)
         {
-            adminPanelUser.SetNextStepButtonTextClientRpc(id);
+            adminPanelUser.SetNextStepButtonTextClientRpc((int)state);
         }
     }
 }

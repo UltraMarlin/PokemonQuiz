@@ -29,6 +29,8 @@ public class ShinyQuestionController : MonoBehaviour, IQuestionController
     {
         if (shinyQuestionData == null) return;
 
+        QuizSession.instance.SetNextStepButtonTextId(NextStepButtonState.Empty);
+
         pokemonName.text = shinyQuestionData.pokemonName;
         AddSpriteToContainer(shinyQuestionData.originalSprite, referenceImageContainer);
         
