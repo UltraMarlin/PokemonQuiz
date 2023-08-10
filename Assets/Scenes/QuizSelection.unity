@@ -1311,7 +1311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quizGrid: {fileID: 1050644000}
   quizSelectCardPrefab: {fileID: 5973920648469535030, guid: 9cd705122a4c64c488aba3c77e43fb2b, type: 3}
-  quizSettings: {fileID: 11400000, guid: 97c193481b71fca4bb57243035b43842, type: 2}
+  settings: {fileID: 11400000, guid: 97c193481b71fca4bb57243035b43842, type: 2}
 --- !u!1 &1715458887
 GameObject:
   m_ObjectHideFlags: 0

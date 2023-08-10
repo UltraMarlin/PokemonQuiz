@@ -10,6 +10,8 @@ public class AdminPanelController : MonoBehaviour
     public static AdminPanelController instance;
     public AdminPanelUser adminPanelUser;
 
+    private FileDataHandler fileDataHandler;
+
     [SerializeField] private QuizSettings settings;
 
     [SerializeField] private GameObject playerControlPanels;
@@ -35,6 +37,20 @@ public class AdminPanelController : MonoBehaviour
     void Start()
     {
         Screen.SetResolution(1920, 300, FullScreenMode.Windowed);
+
+        fileDataHandler = new FileDataHandler();
+        FileDataHandler.QuizSettingsData settingsData = fileDataHandler.Load();
+        if (settingsData != null)
+        {
+            settings.selectedQuiz = settingsData.selectedQuiz;
+            settings.quizzes = settingsData.quizzes;
+            Debug.Log("Overwrite data from loaded settings.");
+        }
+        else
+        {
+            Debug.Log("Dont overwrite data. Take Editor data instead.");
+        }
+
         NetworkManager.Singleton.StartClient();
 
         for (int i = 0; i < settings.quiz.players.Count; i++)

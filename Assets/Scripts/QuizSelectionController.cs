@@ -9,22 +9,35 @@ public class QuizSelectionController : MonoBehaviour
 {
     [SerializeField] private GameObject quizGrid;
     [SerializeField] private GameObject quizSelectCardPrefab;
-    [SerializeField] private QuizSettings quizSettings;
+    [SerializeField] private QuizSettings settings;
 
     private List<QuizSelectCard> quizSelectCards;
+
+    private FileDataHandler fileDataHandler;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (quizSettings == null) return;
-        int previousLength = quizSettings.quizzes.Count;
-        quizSettings.quizzes = quizSettings.quizzes.Where(quiz => quiz.presetName.Length > 0).ToList();
-        int lengthDifference = previousLength - quizSettings.quizzes.Count;
-        quizSettings.selectedQuiz -= lengthDifference;
+        fileDataHandler = new FileDataHandler();
+        FileDataHandler.QuizSettingsData settingsData = fileDataHandler.Load();
+        if (settingsData != null)
+        {
+            settings.selectedQuiz = settingsData.selectedQuiz;
+            settings.quizzes = settingsData.quizzes;
+            Debug.Log("Overwrite data from loaded settings.");
+        }
+        else
+        {
+            Debug.Log("Dont overwrite data. Take Editor data instead.");
+        }
+        int previousLength = settings.quizzes.Count;
+        settings.quizzes = settings.quizzes.Where(quiz => quiz.presetName.Length > 0).ToList();
+        int lengthDifference = previousLength - settings.quizzes.Count;
+        settings.selectedQuiz -= lengthDifference;
 
         int quizIndex = 0;
         quizSelectCards = new List<QuizSelectCard>();
-        foreach (Quiz quiz in quizSettings.quizzes)
+        foreach (Quiz quiz in settings.quizzes)
         {
             GameObject go = Instantiate(quizSelectCardPrefab, quizGrid.transform);
             QuizSelectCard quizSelectCard = go.GetComponent<QuizSelectCard>();
@@ -33,7 +46,7 @@ public class QuizSelectionController : MonoBehaviour
             int copyQuizIndex = quizIndex;
             go.GetComponent<Button>().onClick.AddListener(delegate {
                 Debug.Log("Pressed Quiz number: " + copyQuizIndex);
-                quizSettings.selectedQuiz = copyQuizIndex;
+                settings.selectedQuiz = copyQuizIndex;
                 UpdateQuizSelectCardHighlights();
             });
             quizSelectCards.Add(quizSelectCard);
@@ -42,11 +55,11 @@ public class QuizSelectionController : MonoBehaviour
 
         if (quizGrid.transform.childCount > 0)
         {
-            if (quizSettings.selectedQuiz > quizGrid.transform.childCount - 1 || quizSettings.selectedQuiz < 0)
+            if (settings.selectedQuiz > quizGrid.transform.childCount - 1 || settings.selectedQuiz < 0)
             {
-                quizSettings.selectedQuiz = 0;
+                settings.selectedQuiz = 0;
             }
-            quizGrid.transform.GetChild(quizSettings.selectedQuiz).GetComponent<QuizSelectCard>().EnableHighlight();
+            quizGrid.transform.GetChild(settings.selectedQuiz).GetComponent<QuizSelectCard>().EnableHighlight();
         }
     }
 
@@ -54,7 +67,7 @@ public class QuizSelectionController : MonoBehaviour
     {
         for (int i = 0; i < quizSelectCards.Count; i++)
         {
-            if (quizSettings.selectedQuiz == i)
+            if (settings.selectedQuiz == i)
                 quizSelectCards[i].EnableHighlight();
             else
                 quizSelectCards[i].DisableHighlight();
@@ -63,18 +76,21 @@ public class QuizSelectionController : MonoBehaviour
 
     public void LoadMainMenu()
     {
+        fileDataHandler.Save(settings);
         SceneManager.LoadScene("MainMenu");
     }
 
     public void CreateNewQuiz()
     {
-        quizSettings.CreateNewQuiz();
+        fileDataHandler.Save(settings);
+        settings.CreateNewQuiz();
         SceneManager.LoadScene("Settings");
     }
 
     public void EditSelectedQuiz()
     {
-        if (quizSettings.quizzes.Count == 0) return;
+        if (settings.quizzes.Count == 0) return;
+        fileDataHandler.Save(settings);
         SceneManager.LoadScene("Settings");
     }
 }

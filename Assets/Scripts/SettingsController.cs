@@ -28,9 +28,13 @@ public class Settings : MonoBehaviour
     [SerializeField] private Button overwriteQuizButton;
     [SerializeField] private Button saveQuizButton;
 
+    private FileDataHandler fileDataHandler;
+
     // Start is called before the first frame update
     void Start()
     {
+        fileDataHandler = new FileDataHandler();
+
         foreach (Transform playerCard in playerGrid.transform)
         {
             playerSettingsCards.Add(playerCard.GetComponent<PlayerSettingsCard>());
@@ -116,6 +120,8 @@ public class Settings : MonoBehaviour
         infoMessageText.text = settings.AddQuiz(quiz, settings.selectedQuiz);
         if (infoMessageText.text.StartsWith("Nicht gespeichert"))
             settings.AddQuiz(currentQuiz, settings.selectedQuiz);
+        else
+            fileDataHandler.Save(settings);
         StartCoroutine(InfoMessageHideCoroutine(2.5f));
     }
 
@@ -127,6 +133,7 @@ public class Settings : MonoBehaviour
         {
             deleteQuizButton.interactable = true;
             overwriteQuizButton.interactable = true;
+            fileDataHandler.Save(settings);
         }
         StartCoroutine(InfoMessageHideCoroutine(2.5f));
     }

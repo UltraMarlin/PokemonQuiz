@@ -57,6 +57,8 @@ public class QuizSession : MonoBehaviour
 {
     public static QuizSession instance;
 
+    private FileDataHandler fileDataHandler;
+
     public Dictionary<QuestionType, List<IQuestion>> questionsDict;
     private Dictionary<QuestionType, int> currentQuestionIndices = new();
     private QuestionType selectedCategory = QuestionType.Feature;
@@ -108,17 +110,30 @@ public class QuizSession : MonoBehaviour
 
     void Start()
     {
+        fileDataHandler = new FileDataHandler();
+        FileDataHandler.QuizSettingsData settingsData = fileDataHandler.Load();
+        if (settingsData != null)
+        {
+            settings.selectedQuiz = settingsData.selectedQuiz;
+            settings.quizzes = settingsData.quizzes;
+            Debug.Log("Overwrite data from loaded settings.");
+        }
+        else
+        {
+            Debug.Log("Dont overwrite data. Take Editor data instead.");
+        }
+
         NetworkManager.Singleton.StartServer();
 
         questionsDict = new()
         {
-            { QuestionType.Feature, prepareQuestionList(QuestionType.Feature, featureQuestionDB) },
-            { QuestionType.Shiny, prepareQuestionList(QuestionType.Shiny, shinyQuestionDB) },
-            { QuestionType.Blur, prepareQuestionList(QuestionType.Blur, blurQuestionDB) },
-            { QuestionType.Anagram, prepareQuestionList(QuestionType.Anagram, anagramQuestionDB) },
-            { QuestionType.Draw, prepareQuestionList(QuestionType.Draw, drawQuestionDB) },
-            { QuestionType.Footprint, prepareQuestionList(QuestionType.Footprint, footprintQuestionDB) },
-            { QuestionType.Team, prepareQuestionList(QuestionType.Team, teamQuestionDB) },
+            { QuestionType.Feature, PrepareQuestionList(QuestionType.Feature, featureQuestionDB) },
+            { QuestionType.Shiny, PrepareQuestionList(QuestionType.Shiny, shinyQuestionDB) },
+            { QuestionType.Blur, PrepareQuestionList(QuestionType.Blur, blurQuestionDB) },
+            { QuestionType.Anagram, PrepareQuestionList(QuestionType.Anagram, anagramQuestionDB) },
+            { QuestionType.Draw, PrepareQuestionList(QuestionType.Draw, drawQuestionDB) },
+            { QuestionType.Footprint, PrepareQuestionList(QuestionType.Footprint, footprintQuestionDB) },
+            { QuestionType.Team, PrepareQuestionList(QuestionType.Team, teamQuestionDB) },
         };
 
         for (int i = 0; i < settings.quiz.players.Count; i++)
@@ -136,7 +151,7 @@ public class QuizSession : MonoBehaviour
         PrepareQuiz();
     }
 
-    private List<IQuestion> prepareQuestionList(QuestionType questionType, QuestionDB questionDB)
+    private List<IQuestion> PrepareQuestionList(QuestionType questionType, QuestionDB questionDB)
     {
         return questionDB.questions.ToList().Where(
                 question => !settings.quiz.questionTypeSettingsList.Where(
