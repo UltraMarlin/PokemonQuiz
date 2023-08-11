@@ -14,6 +14,7 @@ public class PlayerPanelController : MonoBehaviour
     private float minDelay = 0.8f;
     private float maxDelay = 8.0f;
     private int spriteIndex1, spriteIndex2;
+    private bool blockRandomAnimation = false;
 
     public void SetPlayerColor(PlayerColor playerColor)
     {
@@ -55,13 +56,28 @@ public class PlayerPanelController : MonoBehaviour
 
     public void PlayAnimation(float duration)
     {
-        backgroundImage.sprite = playerPanelSprites[spriteIndex2];
+        if (!blockRandomAnimation)
+            backgroundImage.sprite = playerPanelSprites[spriteIndex2];
         StartCoroutine(SwitchToNormalSpriteAfterSeconds(duration));
     }
 
     private IEnumerator SwitchToNormalSpriteAfterSeconds(float duration)
     {
         yield return new WaitForSeconds(duration);
-        backgroundImage.sprite = playerPanelSprites[spriteIndex1];
+        if (!blockRandomAnimation)
+            backgroundImage.sprite = playerPanelSprites[spriteIndex1];
+    }
+
+    public IEnumerator PlayWinAnimation()
+    {
+        blockRandomAnimation = true;
+        for (int i = 0; i < 4; i++)
+        {
+            backgroundImage.sprite = playerPanelSprites[spriteIndex2];
+            yield return new WaitForSeconds(0.15f);
+            backgroundImage.sprite = playerPanelSprites[spriteIndex1];
+            yield return new WaitForSeconds(0.15f);
+        }
+        blockRandomAnimation = false;
     }
 }

@@ -774,6 +774,7 @@ MonoBehaviour:
   drawQuestionDB: {fileID: 11400000, guid: 2087430f320a94f48aac7c241896b565, type: 2}
   footprintQuestionDB: {fileID: 11400000, guid: 1bc75854a18baf94eb3d45cbee6b0afe, type: 2}
   teamQuestionDB: {fileID: 11400000, guid: 46a7cf13b701d50449b070b575b70652, type: 2}
+  explainImages: []
 --- !u!4 &1485359137
 Transform:
   m_ObjectHideFlags: 0

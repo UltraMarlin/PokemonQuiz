@@ -97,6 +97,8 @@ public class QuizSession : MonoBehaviour
     [SerializeField] private QuestionDB footprintQuestionDB;
     [SerializeField] private QuestionDB teamQuestionDB;
 
+    [SerializeField] private List<Sprite> explainImages;
+
     private int numberOfQuestionTypes;
 
     private List<PlayerPanelController> playerPanelControllers = new();
@@ -109,6 +111,8 @@ public class QuizSession : MonoBehaviour
 
     private QuestionType currentQuestionType;
     private IQuestionController currentQuestionController;
+
+    private List<bool> explainedAlready = new();
 
     private void Awake()
     {
@@ -142,6 +146,10 @@ public class QuizSession : MonoBehaviour
             { QuestionType.Footprint, PrepareQuestionList(QuestionType.Footprint, footprintQuestionDB) },
             { QuestionType.Team, PrepareQuestionList(QuestionType.Team, teamQuestionDB) },
         };
+
+        foreach (QuestionType _ in Enum.GetValues(typeof(QuestionType))) {
+            explainedAlready.Add(!settings.quiz.explainRules);
+        }
 
         for (int i = 0; i < settings.quiz.players.Count; i++)
         {
@@ -268,9 +276,34 @@ public class QuizSession : MonoBehaviour
             question = questionsDict[selectedCategory][index];
         }
 
-        DisplayQuestion(question);
-        DisplayAdminSolution(question);
-        return (int)currentQuestionType;
+        if (!explainedAlready[(int)selectedCategory])
+        {
+            ExplainCategory(selectedCategory);
+            ResetCurrentQuestionIndexToPrevious();
+            return -2;
+        } else
+        {
+            DisplayQuestion(question);
+            DisplayAdminSolution(question);
+            return (int)currentQuestionType;
+        }
+    }
+
+    public void ExplainCategory(QuestionType type)
+    {
+        //Sprite explainImage = explainImages[(int)type];
+        Debug.Log("Explain Image: " + type);
+        ClearQuestionContainer();
+        // Display Explain Image 
+        explainedAlready[(int)type] = true;
+    }
+
+    public void ResetCurrentQuestionIndexToPrevious()
+    {
+        if (singleQuestionList)
+            currentQuestionIndex--;
+        else
+            currentQuestionIndices[selectedCategory]--;
     }
 
     private void OnAllQuestionsPlayed()
@@ -403,28 +436,22 @@ public class QuizSession : MonoBehaviour
         currentQuestionController = questionController;
     }
 
-    public void NextQuestionFromCategory(QuestionType category)
-    {
-        selectedCategory = category;
-        NextQuestion();
-    }
-
     public void NextQuestionStep()
     {
-        if (currentQuestionController == null) return;
+        if (currentQuestionController == null || currentQuestionController.ToString() == "null") return;
         currentQuestionController.NextQuestionStep();
     }
 
     public void ShowSolution()
     {
-        if (currentQuestionController == null) return;
+        if (currentQuestionController == null || currentQuestionController.ToString() == "null") return;
         currentQuestionController.ResetDisplay();
         currentQuestionController.ShowSolution();
     }
 
     public void ToggleFeatureBackground()
     {
-        if (currentQuestionController == null) return;
+        if (currentQuestionController == null || currentQuestionController.ToString() == "null") return;
         if (currentQuestionController.GetType() == typeof(FeatureQuestionController))
         {
             (currentQuestionController as FeatureQuestionController).ToggleBackground();
@@ -454,6 +481,8 @@ public class QuizSession : MonoBehaviour
         QuestionTypeSettings questionTypeSettings = settings.quiz.questionTypeSettingsList.Find(x => x.type == currentQuestionType);
         AddPointsToPlayer(playerID, questionTypeSettings.correctPoints);
         AddPointsToEveryoneExcept(playerID, questionTypeSettings.correctPointsOther);
+        StartCoroutine(playerPanelControllers[playerID].PlayWinAnimation());
+        Debug.Log("Correct Answer From " + playerID);
     }
 
     public void WrongAnswerFrom(int playerID)
