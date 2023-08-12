@@ -278,7 +278,8 @@ public class QuizSession : MonoBehaviour
 
         if (!explainedAlready[(int)selectedCategory])
         {
-            ExplainCategory(selectedCategory);
+            QuestionType type = GetTypeFromIQuestion(question);
+            ExplainCategory(type);
             ResetCurrentQuestionIndexToPrevious();
             return -2;
         } else
@@ -296,6 +297,39 @@ public class QuizSession : MonoBehaviour
         ClearQuestionContainer();
         // Display Explain Image 
         explainedAlready[(int)type] = true;
+    }
+
+    public QuestionType GetTypeFromIQuestion(IQuestion question)
+    {
+        if (question.GetType() == typeof(FeatureQuestion))
+        {
+            return QuestionType.Feature;
+        }
+        else if (question.GetType() == typeof(ShinyQuestion))
+        {
+            return QuestionType.Shiny;
+        }   
+        else if (question.GetType() == typeof(BlurQuestion))
+        {   
+            return QuestionType.Blur;
+        }
+        else if (question.GetType() == typeof(AnagramQuestion))
+        {
+            return QuestionType.Anagram;
+        }
+        else if (question.GetType() == typeof(DrawQuestion))
+        {
+            return QuestionType.Draw;
+        }
+        else if (question.GetType() == typeof(FootprintQuestion))
+        {
+            return QuestionType.Footprint;
+        }
+        else if (question.GetType() == typeof(TeamQuestion))
+        {
+            return QuestionType.Team;
+        }
+        return QuestionType.Feature;
     }
 
     public void ResetCurrentQuestionIndexToPrevious()
@@ -343,39 +377,33 @@ public class QuizSession : MonoBehaviour
     private void DisplayQuestion(IQuestion question)
     {
         ClearQuestionContainer();
+        currentQuestionType = GetTypeFromIQuestion(question);
         if (question.GetType() == typeof(FeatureQuestion))
         {
-            currentQuestionType = QuestionType.Feature;
             DisplayFeatureQuestion(question as FeatureQuestion);
         }
         else if (question.GetType() == typeof(ShinyQuestion))
         {
-            currentQuestionType = QuestionType.Shiny;
             DisplayShinyQuestion(question as ShinyQuestion);
         }
         else if (question.GetType() == typeof(BlurQuestion))
         {
-            currentQuestionType = QuestionType.Blur;
             DisplayBlurQuestion(question as BlurQuestion);
         }
         else if (question.GetType() == typeof(AnagramQuestion))
         {
-            currentQuestionType = QuestionType.Anagram;
             DisplayAnagramQuestion(question as AnagramQuestion);
         }
         else if (question.GetType() == typeof(DrawQuestion))
         {
-            currentQuestionType = QuestionType.Draw;
             DisplayDrawQuestion(question as DrawQuestion);
         }
         else if (question.GetType() == typeof(FootprintQuestion))
         {
-            currentQuestionType = QuestionType.Footprint;
             DisplayFootprintQuestion(question as FootprintQuestion);
         }
         else if (question.GetType() == typeof(TeamQuestion))
         {
-            currentQuestionType = QuestionType.Team;
             DisplayTeamQuestion(question as TeamQuestion);
         }
     }

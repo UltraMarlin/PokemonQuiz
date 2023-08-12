@@ -12,6 +12,7 @@ public class BlurQuestionController : MonoBehaviour, IQuestionController
     [SerializeField] private List<Material> distortionEffects = new List<Material>();
     [SerializeField] private RenderTexture renderTextureA;
     [SerializeField] private RenderTexture renderTextureB;
+    [SerializeField] private ProgressBar progressBar;
 
     private RawImage blurImageComponent;
     private bool distortionActive;
@@ -59,6 +60,7 @@ public class BlurQuestionController : MonoBehaviour, IQuestionController
         distortionActive = false;
         distortionPaused = false;
         solutionText.text = blurQuestionData.pokemonName;
+        progressBar.gameObject.SetActive(false);
     }
 
     public void ResetDisplay()
@@ -79,6 +81,8 @@ public class BlurQuestionController : MonoBehaviour, IQuestionController
             elapsedTime += Time.deltaTime;
             currentDistortion = Mathf.Lerp(initialStrength, finalStrength, elapsedTime / duration);
             distortionMaterial.SetFloat("_DistortionAmount", currentDistortion);
+            if (progressBar.isActiveAndEnabled)
+                progressBar.BarValue = Mathf.Lerp(0.8f, 99.2f, 1.0f - currentDistortion);
 
             for (int i = 0; i < passCount; i++)
             {
