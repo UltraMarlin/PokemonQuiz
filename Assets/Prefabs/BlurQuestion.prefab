@@ -56,6 +56,10 @@ MonoBehaviour:
   stretchImagePrefab: {fileID: 5011798807074744736, guid: 3e252a4c087e06d4e876337534f51606, type: 3}
   solutionText: {fileID: 5134181591361893870}
   distortionEffects:
+  - {fileID: 2100000, guid: 4bc05efc5f16f124e8f20f508071322d, type: 2}
+  - {fileID: 2100000, guid: 8aa9810fb0830284fa54b84cec770f3e, type: 2}
+  - {fileID: 2100000, guid: 18268f0882cef4848ac406f428a22ea2, type: 2}
+  - {fileID: 2100000, guid: 10b4ddd0d9e82c24690e6020c08c8428, type: 2}
   - {fileID: 2100000, guid: a98443322297108489e7ccdf6b58addd, type: 2}
   renderTextureA: {fileID: 8400000, guid: dc4abd56ea1678943bbd672b23082485, type: 2}
   renderTextureB: {fileID: 8400000, guid: 18891ed412bc6c34d8a027ac42d4f590, type: 2}

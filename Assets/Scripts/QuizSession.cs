@@ -87,6 +87,7 @@ public class QuizSession : MonoBehaviour
     [SerializeField] private GameObject footprintQuestionPrefab;
     [SerializeField] private GameObject teamQuestionPrefab;
 
+    [SerializeField] private GameObject explainScreenPrefab;
     [SerializeField] private GameObject endScreenPrefab;
 
     [SerializeField] private QuestionDB featureQuestionDB;
@@ -96,8 +97,6 @@ public class QuizSession : MonoBehaviour
     [SerializeField] private QuestionDB drawQuestionDB;
     [SerializeField] private QuestionDB footprintQuestionDB;
     [SerializeField] private QuestionDB teamQuestionDB;
-
-    [SerializeField] private List<Sprite> explainImages;
 
     private int numberOfQuestionTypes;
 
@@ -292,11 +291,10 @@ public class QuizSession : MonoBehaviour
 
     public void ExplainCategory(QuestionType type)
     {
-        //Sprite explainImage = explainImages[(int)type];
-        Debug.Log("Explain Image: " + type);
         ClearQuestionContainer();
-        // Display Explain Image 
         explainedAlready[(int)type] = true;
+        Instantiate(explainScreenPrefab, questionContainer.transform)
+            .GetComponent<ExplainScreenController>().ExplainQuestionType(type);
     }
 
     public QuestionType GetTypeFromIQuestion(IQuestion question)
