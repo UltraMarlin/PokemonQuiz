@@ -92,6 +92,11 @@ public class AdminPanelController : MonoBehaviour
         nextStepButton.interactable = (NextStepButtonState)textid != NextStepButtonState.Empty;
     }
 
+    public void FreeBuzzer()
+    {
+        adminPanelUser.FreeBuzzerServerRpc();
+    }
+
     public void NextQuestion()
     {
         if (quizOver) return;

@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class PlayerPanelController : MonoBehaviour
 {
     [SerializeField] private Image backgroundImage;
+    [SerializeField] private Image highlightImage;
     [SerializeField] private TextMeshProUGUI playerNameText;
     [SerializeField] private TextMeshProUGUI pointsText;
     [SerializeField] private List<Sprite> playerPanelSprites = new List<Sprite>();
@@ -15,6 +16,11 @@ public class PlayerPanelController : MonoBehaviour
     private float maxDelay = 8.0f;
     private int spriteIndex1, spriteIndex2;
     private bool blockRandomAnimation = false;
+
+    public void Start()
+    {
+        highlightImage.enabled = false;
+    }
 
     public void SetPlayerColor(PlayerColor playerColor)
     {
@@ -59,6 +65,20 @@ public class PlayerPanelController : MonoBehaviour
         if (!blockRandomAnimation)
             backgroundImage.sprite = playerPanelSprites[spriteIndex2];
         StartCoroutine(SwitchToNormalSpriteAfterSeconds(duration));
+    }
+
+    public void SetBuzzerHighlight()
+    {
+        Debug.Log("Set Buzzer Highlight: " + playerNameText.text);
+        highlightImage.enabled = true;
+        Debug.Log(highlightImage.enabled);
+        blockRandomAnimation = true;
+    }
+
+    public void ResetBuzzerHighlight()
+    {
+        highlightImage.enabled = false;
+        blockRandomAnimation = false;
     }
 
     private IEnumerator SwitchToNormalSpriteAfterSeconds(float duration)

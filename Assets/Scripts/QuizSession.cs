@@ -1,7 +1,10 @@
+using SocketIOClient;
+using SocketIOClient.Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
@@ -60,6 +63,29 @@ public interface IQuestionController {
     void ResetDisplay();
 }
 
+[System.Serializable]
+public class RoomUpdateResponse
+{
+    public string room;
+    public List<RoomUser> users;
+}
+
+[System.Serializable]
+public class RoomUser
+{
+    public string id;
+    public string name;
+    public string room;
+}
+
+[System.Serializable]
+public class TextfieldUpdateResponse
+{
+    public string name;
+    public string text;
+}
+
+
 public class QuizSession : MonoBehaviour
 {
     public static QuizSession instance;
@@ -71,6 +97,7 @@ public class QuizSession : MonoBehaviour
     private QuestionType selectedCategory = QuestionType.Feature;
 
     private AdminPanelUser adminPanelUser;
+    private bool adminPanelConnected = false;
 
     [SerializeField] private QuizSettings settings;
 
@@ -78,6 +105,7 @@ public class QuizSession : MonoBehaviour
     [SerializeField] private GameObject playerPanelPrefab;
 
     [SerializeField] private GameObject questionContainer;
+    [SerializeField] private TMP_Text statusText;
 
     [SerializeField] private GameObject featureQuestionPrefab;
     [SerializeField] private GameObject shinyQuestionPrefab;
@@ -102,6 +130,9 @@ public class QuizSession : MonoBehaviour
 
     private List<PlayerPanelController> playerPanelControllers = new();
     private List<int> playerPoints = new();
+    private List<string> quizPlayerNames = new();
+    private List<string> playerNamesBuzzerRoom = new();
+    private bool quizReady = false;
 
     private bool singleQuestionList;
     private List<IQuestion> allQuestions = new();
@@ -112,6 +143,11 @@ public class QuizSession : MonoBehaviour
     private IQuestionController currentQuestionController;
 
     private List<bool> explainedAlready = new();
+
+    private SocketIOUnity socket;
+    private bool socketConnected = false;
+
+    private string quizSocketIOUsername = "pokemonquizprogramm";
 
     private void Awake()
     {
@@ -159,10 +195,31 @@ public class QuizSession : MonoBehaviour
 
             playerPanelControllers.Add(playerPanelontroller);
             playerPoints.Add(0);
+            quizPlayerNames.Add(player.name.ToLower());
         }
         playerPanels.GetComponent<HorizontalLayoutGroup>().spacing = SpacingFromPlayerCount(settings.quiz.players.Count);
 
+        SetUpSocketIOConnection();
+
+        StartCoroutine(StatusUpdateLoop(0.2f));
+
         PrepareQuiz();
+    }
+
+    public IEnumerator StatusUpdateLoop(float delayBetweenUpdates)
+    {
+        UpdateStatus();
+        yield return new WaitForSeconds(delayBetweenUpdates);
+        if (!quizReady)
+        {
+            StartCoroutine(StatusUpdateLoop(delayBetweenUpdates));
+        }
+    }
+
+    void OnApplicationQuit()
+    {
+        socket.Options.Reconnection = false;
+        socket.Disconnect();
     }
 
     private List<IQuestion> PrepareQuestionList(QuestionType questionType, QuestionDB questionDB)
@@ -178,16 +235,173 @@ public class QuizSession : MonoBehaviour
     {
         if (Input.GetButtonDown("NextQuestion"))
         {
-            NextQuestion();
+            NextQuestion();   
         }
         if (Input.GetButtonDown("NextQuestionStep"))
         {
-            NextQuestionStep();
+            FreeBuzzer();
+            //NextQuestionStep();
         }
         if (Input.GetButtonDown("ShowSolution"))
         {
             ShowSolution();
         }
+    }
+
+    public void UpdateStatus()
+    {
+        if (!socketConnected)
+        {
+            statusText.text = "Connecting to Buzzer Server...";
+            return;
+        } else
+        {
+            statusText.text = "Connected.";
+        }
+
+        if (!AllPlayersConnected())
+        {
+            statusText.text = $"Waiting for all Players to join the Buzzer Room...\nConnected Players: {ConnectedPlayerStrings()}";
+            return;
+        } else
+        {
+            statusText.text = "All players joined.";
+        }
+
+        if (!adminPanelConnected)
+        {
+            statusText.text = "Waiting for Admin Panel to connect...";
+            return;
+        } else
+        {
+            statusText.text = "Admin Panel connceted.";
+        }
+
+        statusText.text = "Quiz ready";
+        quizReady = true;
+    }
+
+    public string ConnectedPlayerStrings()
+    {
+        return string.Join(", ", playerNamesBuzzerRoom.Where(name => name != quizSocketIOUsername));
+    }
+
+    public bool AllPlayersConnected()
+    {
+        foreach (string name in quizPlayerNames)
+        {
+            if (!playerNamesBuzzerRoom.Contains(name))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public void AdminPanelConnected()
+    {
+        adminPanelConnected = true;
+    }
+
+    private void SetUpSocketIOConnection()
+    {
+        var uri = new Uri("http://localhost:3001");
+        socket = new SocketIOUnity(uri, new SocketIOOptions
+        {
+            Query = new Dictionary<string, string> { {"token", "UNITY" } },
+            EIO = 4,
+            Transport = SocketIOClient.Transport.TransportProtocol.WebSocket
+        });
+        socket.JsonSerializer = new NewtonsoftJsonSerializer();
+
+        ///// reserved socketio events
+        socket.OnConnected += (sender, e) =>
+        {
+            socketConnected = true;
+            socket.Emit("connect_to_room", new { room = "1234", username = quizSocketIOUsername, secret = "oLL8CUQsr6zMrs9T4ZH8dbNyXPziH9PX" });
+            Debug.Log("Connected.");
+        };
+        /*socket.OnPing += (sender, e) =>
+        {
+            Debug.Log("Ping");
+        };
+        socket.OnPong += (sender, e) =>
+        {
+            Debug.Log("Pong: " + e.TotalMilliseconds);
+        };*/
+        socket.OnDisconnected += (sender, e) =>
+        {
+            socketConnected = false;
+            Debug.Log("disconnect: " + e);
+        };
+        socket.OnReconnectAttempt += (sender, e) =>
+        {
+            Debug.Log($"{DateTime.Now} Reconnecting: attempt = {e}");
+        };
+
+        socket.OnUnityThread("room_update", response =>
+        {
+            RoomUpdateResponse roomUpdate = response.GetValue<RoomUpdateResponse>();
+            playerNamesBuzzerRoom = roomUpdate.users.Select(user => user.name).ToList();
+        });
+        socket.OnUnityThread("buzzer_was_pressed", response =>
+        {
+            string name = response.GetValue<string>();
+            BuzzerFromPlayerWithName(name);
+        });
+        socket.OnUnityThread("textfield_update_from", response =>
+        {
+            TextfieldUpdateResponse textfieldUpdate = response.GetValue<TextfieldUpdateResponse>();
+            UpdateTextfield(textfieldUpdate);
+        });
+        Debug.Log("Connecting...");
+        socket.Connect();
+    }
+
+    public void FreeBuzzer()
+    {
+        if (socketConnected) {
+            socket.Emit("free_buzzer");
+        }
+        foreach (PlayerPanelController playerPanelController in playerPanelControllers) {
+            playerPanelController.ResetBuzzerHighlight();
+        }
+        Type controllerType = currentQuestionController?.GetType();
+        if (controllerType == typeof(DrawQuestionController))
+        {
+            (currentQuestionController as DrawQuestionController).Play();
+        } else if (controllerType == typeof(BlurQuestionController))
+        {
+            (currentQuestionController as BlurQuestionController).Play();
+        }
+    }
+
+    public void BuzzerFromPlayerWithName(string name)
+    {
+        Debug.Log($"The buzzer was hit by {name}.");
+        int index = quizPlayerNames.IndexOf(name);
+        if (index == -1)
+        {
+            Debug.Log($"{name} is not part of the quiz. Freeing buzzer.");
+            FreeBuzzer();
+        } else
+        {
+            playerPanelControllers[index].SetBuzzerHighlight();
+            Type controllerType = currentQuestionController?.GetType();
+            if (controllerType == typeof(DrawQuestionController))
+            {
+                (currentQuestionController as DrawQuestionController).Pause();
+            }
+            else if (controllerType == typeof(BlurQuestionController))
+            {
+                (currentQuestionController as BlurQuestionController).Pause();
+            }
+        }
+    }
+
+    public void UpdateTextfield(TextfieldUpdateResponse response)
+    {
+        Debug.Log($"{response.name}: {response.text}");
     }
 
     public void PrepareQuiz()
@@ -374,6 +588,7 @@ public class QuizSession : MonoBehaviour
 
     private void DisplayQuestion(IQuestion question)
     {
+        FreeBuzzer();
         ClearQuestionContainer();
         currentQuestionType = GetTypeFromIQuestion(question);
         if (question.GetType() == typeof(FeatureQuestion))
@@ -509,6 +724,7 @@ public class QuizSession : MonoBehaviour
         AddPointsToEveryoneExcept(playerID, questionTypeSettings.correctPointsOther);
         StartCoroutine(playerPanelControllers[playerID].PlayWinAnimation());
         Debug.Log("Correct Answer From " + playerID);
+        ShowSolution();
     }
 
     public void WrongAnswerFrom(int playerID)
@@ -516,6 +732,7 @@ public class QuizSession : MonoBehaviour
         QuestionTypeSettings questionTypeSettings = settings.quiz.questionTypeSettingsList.Find(x => x.type == currentQuestionType);
         AddPointsToPlayer(playerID, questionTypeSettings.wrongPoints);
         AddPointsToEveryoneExcept(playerID, questionTypeSettings.wrongPointsOther);
+        FreeBuzzer();
     }
 
     public void AddPointsToEveryoneExcept(int playerID, int points)

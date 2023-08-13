@@ -51,20 +51,29 @@ public class DrawQuestionController : MonoBehaviour, IQuestionController
 
     public void NextQuestionStep()
     {
-        if (videoDonePlaying) return;
-        if (drawVideoPlayerComponent == null) return;
-
         if (drawVideoPlayerComponent.isPlaying)
         {
-            Debug.Log("Now Paused");
-            QuizSession.instance.SetNextStepButtonTextId(NextStepButtonState.Play);
-            drawVideoPlayerComponent.Pause();
+            Pause();
         } else
         {
-            Debug.Log("Now Playing");
-            QuizSession.instance.SetNextStepButtonTextId(NextStepButtonState.Pause);
-            drawVideoPlayerComponent.Play();
+            Play();
         }
+    }
+
+    public void Pause()
+    {
+        if (videoDonePlaying || drawVideoPlayerComponent == null) return;
+        Debug.Log("Now Paused");
+        QuizSession.instance.SetNextStepButtonTextId(NextStepButtonState.Play);
+        drawVideoPlayerComponent.Pause();
+    }
+
+    public void Play()
+    {
+        if (videoDonePlaying || drawVideoPlayerComponent == null) return;
+        Debug.Log("Now Playing");
+        QuizSession.instance.SetNextStepButtonTextId(NextStepButtonState.Pause);
+        drawVideoPlayerComponent.Play();
     }
 
     public void ShowSolution()

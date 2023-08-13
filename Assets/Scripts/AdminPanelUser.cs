@@ -13,10 +13,17 @@ public class AdminPanelUser : NetworkBehaviour
         {
             AdminPanelController.instance.RegisterAdminPanelUser(this);
             nwv_CurrentQuestionType.OnValueChanged += OnQuestionTypeChange;
+            AdminPanelConnectedServerRpc();
         } else if (IsServer)
         {
             QuizSession.instance.RegisterAdminPanelUser(this);
         }
+    }
+
+    [ServerRpc]
+    public void FreeBuzzerServerRpc()
+    {
+        QuizSession.instance.FreeBuzzer();
     }
 
     [ServerRpc]
@@ -30,6 +37,12 @@ public class AdminPanelUser : NetworkBehaviour
     public void NextQuestionStepServerRpc()
     {
         QuizSession.instance.NextQuestionStep();
+    }
+
+    [ServerRpc]
+    private void AdminPanelConnectedServerRpc()
+    {
+        QuizSession.instance.AdminPanelConnected();
     }
 
     [ServerRpc]

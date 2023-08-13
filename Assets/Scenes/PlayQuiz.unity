@@ -467,7 +467,7 @@ GameObject:
   - component: {fileID: 1095728760}
   - component: {fileID: 1095728759}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: StatusText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -488,10 +488,10 @@ RectTransform:
   m_Father: {fileID: 2104904634}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -50}
-  m_SizeDelta: {x: 800, y: 150}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1095728759
 MonoBehaviour:
@@ -513,7 +513,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Quiz bereit
+  m_text: Status
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 29d0902b34676d54893adbaebd3dbf5e, type: 2}
   m_sharedMaterial: {fileID: 7359584183593160843, guid: 29d0902b34676d54893adbaebd3dbf5e, type: 2}
@@ -540,8 +540,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
-  m_fontSizeBase: 100
+  m_fontSize: 56
+  m_fontSizeBase: 56
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -759,6 +759,7 @@ MonoBehaviour:
   playerPanels: {fileID: 290511236}
   playerPanelPrefab: {fileID: 3787513607734698168, guid: 70e82f5fdbfe20144a1a169672ab226d, type: 3}
   questionContainer: {fileID: 2104904633}
+  statusText: {fileID: 1095728759}
   featureQuestionPrefab: {fileID: 3529269227914904280, guid: f4e37e294e985234e8f45528f222adcb, type: 3}
   shinyQuestionPrefab: {fileID: 4449596377381968513, guid: cf7ef809a08cdf14082da2d5791f1c2e, type: 3}
   blurQuestionPrefab: {fileID: 3600208903142011537, guid: a083d9d95cf1e9c479358ad6e2b2451d, type: 3}

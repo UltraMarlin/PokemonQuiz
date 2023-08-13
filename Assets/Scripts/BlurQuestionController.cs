@@ -45,14 +45,24 @@ public class BlurQuestionController : MonoBehaviour, IQuestionController
     {
         if (distortionPaused)
         {
-            distortionPaused = false;
-            QuizSession.instance.SetNextStepButtonTextId(NextStepButtonState.Pause);
+            Play();
         } else
         {
-            distortionPaused = true;
-            QuizSession.instance.SetNextStepButtonTextId(NextStepButtonState.Play);
+            Pause();
         }
         Debug.Log("Paused: " + distortionPaused);
+    }
+
+    public void Pause()
+    {
+        distortionPaused = true;
+        QuizSession.instance.SetNextStepButtonTextId(NextStepButtonState.Play);
+    }
+
+    public void Play()
+    {
+        distortionPaused = false;
+        QuizSession.instance.SetNextStepButtonTextId(NextStepButtonState.Pause);
     }
 
     public void ShowSolution()
