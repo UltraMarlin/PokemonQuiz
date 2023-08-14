@@ -16,6 +16,7 @@ public class DrawQuestionController : MonoBehaviour, IQuestionController
     [SerializeField] private RenderTexture videoRenderTexture;
     [SerializeField] private GameObject originalImageContainer;
     [SerializeField] private GameObject stretchImagePrefab;
+    [SerializeField] private ProgressBar progressBar;
 
     private VideoPlayer drawVideoPlayerComponent;
     public DrawQuestion drawQuestionData;
@@ -26,10 +27,16 @@ public class DrawQuestionController : MonoBehaviour, IQuestionController
         drawQuestionData = questionData as DrawQuestion;
     }
 
-    public void Update()
+    public void FixedUpdate()
     {
         if (videoDonePlaying) return;
         long framesLeft = (long)drawVideoPlayerComponent.frameCount - drawVideoPlayerComponent.frame;
+
+        if (progressBar.isActiveAndEnabled)
+        {
+            progressBar.BarValue = Mathf.Lerp(0.8f, 100.0f, drawVideoPlayerComponent.frame / (float)drawVideoPlayerComponent.frameCount);
+        }
+
         if (framesLeft < 5)
         {
             videoDonePlaying = true;
@@ -78,6 +85,7 @@ public class DrawQuestionController : MonoBehaviour, IQuestionController
 
     public void ShowSolution()
     {
+        progressBar.gameObject.SetActive(false);
         solutionText.text = drawQuestionData.pokemonName;
         drawerTitle.enabled = true;
         drawerText.text = drawQuestionData.drawerName;

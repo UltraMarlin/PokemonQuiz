@@ -918,7 +918,7 @@ MonoBehaviour:
   shinyQuestionPrefab: {fileID: 4449596377381968513, guid: cf7ef809a08cdf14082da2d5791f1c2e, type: 3}
   blurQuestionPrefab: {fileID: 3600208903142011537, guid: a083d9d95cf1e9c479358ad6e2b2451d, type: 3}
   anagramQuestionPrefab: {fileID: 4764469847867372113, guid: 4f45980f00c380948b9d6b0505a0c6fd, type: 3}
-  drawQuestionPrefab: {fileID: 8945836192560077418, guid: 63d76128b8d78214b96c945f35b6ae92, type: 3}
+  drawQuestionPrefab: {fileID: 2597821295829005080, guid: 63d76128b8d78214b96c945f35b6ae92, type: 3}
   footprintQuestionPrefab: {fileID: 3529269227914904280, guid: 3cfc06c744e394d4d958123469d581ea, type: 3}
   teamQuestionPrefab: {fileID: 3529269227914904280, guid: 21bb4062c1a8b9746a8ee8f164ee0407, type: 3}
   explainScreenPrefab: {fileID: 1258333250690348433, guid: 81a6fda0939f5a94a98314c849f33aea, type: 3}

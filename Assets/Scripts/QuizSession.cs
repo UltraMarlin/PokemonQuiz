@@ -68,6 +68,8 @@ public interface IQuestionController {
 public class RoomUpdateResponse
 {
     public string room;
+    public bool pressed;
+    public string pressed_by;
     public List<RoomUser> users;
 }
 
@@ -216,7 +218,7 @@ public class QuizSession : MonoBehaviour
 
     public string GenerateRoomCode(int length)
     {
-        string chars = "ABCDEFGHIJKLMNPQRSTUVWXYZ01234565656565656565656565656565656565656565656565656565656565656789";
+        string chars = "ABCDEFGHIJKLMNPQRSTUVWXYZ0123456565656565656565656565656565656789";
         char[] stringChars = new char[length];
         for (int i = 0; i < length; i++)
         {
@@ -367,6 +369,10 @@ public IEnumerator StatusUpdateLoop(float delayBetweenUpdates)
         {
             RoomUpdateResponse roomUpdate = response.GetValue<RoomUpdateResponse>();
             playerNamesBuzzerRoom = roomUpdate.users.Select(user => user.name).ToList();
+            if (roomUpdate.pressed)
+            {
+                BuzzerFromPlayerWithName(roomUpdate.pressed_by);
+            }
         });
         socket.OnUnityThread("buzzer_was_pressed", response =>
         {
