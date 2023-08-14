@@ -64,7 +64,7 @@ Material:
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _DistortionAmount: 0.9807751
+    - _DistortionAmount: 0.9759253
     - _DstBlend: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5

@@ -45,14 +45,15 @@ public class Quiz
 
     public List<QuestionTypeSettings> questionTypeSettingsList;
 
-    // TODO: category order if not shuffle
-
     public bool shuffleCategories;
     public bool infiniteMode;
     public bool explainRules;
+    public bool enableBuzzerServer;
+    public string buzzerRoomCode;
 
     public Quiz() {
         presetName = "";
+        buzzerRoomCode = "";
         players = new List<Player>();
         questionTypeSettingsList = new List<QuestionTypeSettings>();
         foreach (QuestionType questionType in Enum.GetValues(typeof(QuestionType)))

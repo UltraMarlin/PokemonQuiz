@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Sockets;
 using TMPro;
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class AdminPanelController : MonoBehaviour
@@ -42,6 +44,8 @@ public class AdminPanelController : MonoBehaviour
     void Start()
     {
         Screen.SetResolution(1920, 300, FullScreenMode.Windowed);
+
+        SceneManager.sceneUnloaded += OnSceneUnloaded;
 
         fileDataHandler = new FileDataHandler();
         FileDataHandler.QuizSettingsData settingsData = fileDataHandler.Load();
@@ -147,5 +151,12 @@ public class AdminPanelController : MonoBehaviour
         Debug.Log("AdminControlPanel: " + currentQuestionType);
         featureBackgroundButton.interactable = currentQuestionType == QuestionType.Feature;
         featureBackgroundButtonText.text = currentQuestionType == QuestionType.Feature ? featureBackgroundButtonOriginalText : "";
+    }
+
+    private void OnSceneUnloaded(Scene currentScene)
+    {
+        Debug.Log("Scene " + currentScene.name + " has been unloaded.");
+        SceneManager.sceneUnloaded -= OnSceneUnloaded;
+        NetworkManager.Singleton.Shutdown();
     }
 }

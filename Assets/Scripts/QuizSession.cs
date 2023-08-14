@@ -7,6 +7,7 @@ using System.Linq;
 using TMPro;
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 [System.Serializable]
@@ -146,6 +147,7 @@ public class QuizSession : MonoBehaviour
 
     private SocketIOUnity socket;
     private bool socketConnected = false;
+    private string buzzerRoomCode;
 
     private string quizSocketIOUsername = "pokemonquizprogramm";
 
@@ -156,6 +158,8 @@ public class QuizSession : MonoBehaviour
 
     void Start()
     {
+        SceneManager.sceneUnloaded += OnSceneUnloaded;
+
         fileDataHandler = new FileDataHandler();
         FileDataHandler.QuizSettingsData settingsData = fileDataHandler.Load();
         if (settingsData != null)
@@ -199,14 +203,29 @@ public class QuizSession : MonoBehaviour
         }
         playerPanels.GetComponent<HorizontalLayoutGroup>().spacing = SpacingFromPlayerCount(settings.quiz.players.Count);
 
-        SetUpSocketIOConnection();
+        if (settings.quiz.enableBuzzerServer)
+        {
+            SetUpSocketIOConnection();
+        }
 
         StartCoroutine(StatusUpdateLoop(0.2f));
 
         PrepareQuiz();
     }
 
-    public IEnumerator StatusUpdateLoop(float delayBetweenUpdates)
+
+    public string GenerateRoomCode(int length)
+    {
+        string chars = "ABCDEFGHIJKLMNPQRSTUVWXYZ01234565656565656565656565656565656565656565656565656565656565656789";
+        char[] stringChars = new char[length];
+        for (int i = 0; i < length; i++)
+        {
+            stringChars[i] = chars[UnityEngine.Random.Range(0, chars.Length)];
+        }
+        return new string(stringChars);
+    }
+
+public IEnumerator StatusUpdateLoop(float delayBetweenUpdates)
     {
         UpdateStatus();
         yield return new WaitForSeconds(delayBetweenUpdates);
@@ -239,8 +258,7 @@ public class QuizSession : MonoBehaviour
         }
         if (Input.GetButtonDown("NextQuestionStep"))
         {
-            FreeBuzzer();
-            //NextQuestionStep();
+            NextQuestionStep();
         }
         if (Input.GetButtonDown("ShowSolution"))
         {
@@ -252,7 +270,7 @@ public class QuizSession : MonoBehaviour
     {
         if (!socketConnected)
         {
-            statusText.text = "Connecting to Buzzer Server...";
+            statusText.text = "Connecting to buzzer server...";
             return;
         } else
         {
@@ -261,7 +279,7 @@ public class QuizSession : MonoBehaviour
 
         if (!AllPlayersConnected())
         {
-            statusText.text = $"Waiting for all Players to join the Buzzer Room...\nConnected Players: {ConnectedPlayerStrings()}";
+            statusText.text = $"Waiting for players to join buzzer room ({buzzerRoomCode}) \nConnected players: {ConnectedPlayerStrings()}";
             return;
         } else
         {
@@ -270,11 +288,11 @@ public class QuizSession : MonoBehaviour
 
         if (!adminPanelConnected)
         {
-            statusText.text = "Waiting for Admin Panel to connect...";
+            statusText.text = "Waiting for admin panel to connect...";
             return;
         } else
         {
-            statusText.text = "Admin Panel connceted.";
+            statusText.text = "Admin panel connceted.";
         }
 
         statusText.text = "Quiz ready";
@@ -305,10 +323,16 @@ public class QuizSession : MonoBehaviour
 
     private void SetUpSocketIOConnection()
     {
+        buzzerRoomCode = settings.quiz.buzzerRoomCode.ToUpper();
+        if (buzzerRoomCode.Length == 0)
+        {
+            buzzerRoomCode = GenerateRoomCode(4);
+        }
+
         var uri = new Uri("http://localhost:3001");
         socket = new SocketIOUnity(uri, new SocketIOOptions
         {
-            Query = new Dictionary<string, string> { {"token", "UNITY" } },
+            Query = new Dictionary<string, string> { {"token", "UNITY"} },
             EIO = 4,
             Transport = SocketIOClient.Transport.TransportProtocol.WebSocket
         });
@@ -318,7 +342,7 @@ public class QuizSession : MonoBehaviour
         socket.OnConnected += (sender, e) =>
         {
             socketConnected = true;
-            socket.Emit("connect_to_room", new { room = "1234", username = quizSocketIOUsername, secret = "oLL8CUQsr6zMrs9T4ZH8dbNyXPziH9PX" });
+            socket.Emit("connect_to_room", new { room = buzzerRoomCode, username = quizSocketIOUsername, secret = "oLL8CUQsr6zMrs9T4ZH8dbNyXPziH9PX" });
             Debug.Log("Connected.");
         };
         /*socket.OnPing += (sender, e) =>
@@ -401,7 +425,10 @@ public class QuizSession : MonoBehaviour
 
     public void UpdateTextfield(TextfieldUpdateResponse response)
     {
-        Debug.Log($"{response.name}: {response.text}");
+        int playerIndex = quizPlayerNames.IndexOf(response.name);
+        if (playerIndex != -1) {
+            playerPanelControllers[playerIndex].SetTextFieldText(response.text);
+        }
     }
 
     public void PrepareQuiz()
@@ -489,9 +516,9 @@ public class QuizSession : MonoBehaviour
             question = questionsDict[selectedCategory][index];
         }
 
-        if (!explainedAlready[(int)selectedCategory])
+        QuestionType type = GetTypeFromIQuestion(question);
+        if (!explainedAlready[(int)type])
         {
-            QuestionType type = GetTypeFromIQuestion(question);
             ExplainCategory(type);
             ResetCurrentQuestionIndexToPrevious();
             return -2;
@@ -785,5 +812,13 @@ public class QuizSession : MonoBehaviour
         {
             adminPanelUser.SetNextStepButtonTextClientRpc((int)state);
         }
+    }
+
+    private void OnSceneUnloaded(Scene currentScene)
+    {
+        Debug.Log("Scene " + currentScene.name + " has been unloaded.");
+        SceneManager.sceneUnloaded -= OnSceneUnloaded;
+        socket.Disconnect();
+        NetworkManager.Singleton.Shutdown();
     }
 }

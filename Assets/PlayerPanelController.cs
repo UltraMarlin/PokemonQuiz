@@ -10,8 +10,10 @@ public class PlayerPanelController : MonoBehaviour
     [SerializeField] private Image highlightImage;
     [SerializeField] private TextMeshProUGUI playerNameText;
     [SerializeField] private TextMeshProUGUI pointsText;
+    [SerializeField] private TextMeshProUGUI textFieldText;
     [SerializeField] private List<Sprite> playerPanelSprites = new List<Sprite>();
     [SerializeField] private List<Color> playerTextColors = new List<Color>();
+    private int MAX_TEXT_LENGTH = 8;
     private float minDelay = 0.8f;
     private float maxDelay = 8.0f;
     private int spriteIndex1, spriteIndex2;
@@ -29,6 +31,7 @@ public class PlayerPanelController : MonoBehaviour
         backgroundImage.sprite = playerPanelSprites[spriteIndex1];
         playerNameText.color = playerTextColors[(int)playerColor];
         pointsText.color = playerTextColors[(int)playerColor];
+        textFieldText.color = playerTextColors[(int)playerColor];
         StartCoroutine(PlayAnimationWithRandomDelay(minDelay, maxDelay));
     }
 
@@ -65,6 +68,11 @@ public class PlayerPanelController : MonoBehaviour
         if (!blockRandomAnimation)
             backgroundImage.sprite = playerPanelSprites[spriteIndex2];
         StartCoroutine(SwitchToNormalSpriteAfterSeconds(duration));
+    }
+
+    public void SetTextFieldText(string text)
+    {
+        textFieldText.text = text.Substring(0, Mathf.Min(text.Length, MAX_TEXT_LENGTH));
     }
 
     public void SetBuzzerHighlight()
