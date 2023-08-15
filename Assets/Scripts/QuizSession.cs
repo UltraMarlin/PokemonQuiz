@@ -150,6 +150,7 @@ public class QuizSession : MonoBehaviour
     private SocketIOUnity socket;
     private bool socketConnected = false;
     private string buzzerRoomCode;
+    private string buzzerRoomAdminPassword;
 
     private string quizSocketIOUsername = "pokemonquizprogramm";
 
@@ -215,10 +216,9 @@ public class QuizSession : MonoBehaviour
         PrepareQuiz();
     }
 
-
     public string GenerateRoomCode(int length)
     {
-        string chars = "ABCDEFGHIJKLMNPQRSTUVWXYZ0123456565656565656565656565656565656789";
+        string chars = "ABCDEFGHIJKLMNPQRSTUVWXYZ0123456565656565656565656565656565656565656656789";
         char[] stringChars = new char[length];
         for (int i = 0; i < length; i++)
         {
@@ -227,7 +227,7 @@ public class QuizSession : MonoBehaviour
         return new string(stringChars);
     }
 
-public IEnumerator StatusUpdateLoop(float delayBetweenUpdates)
+    public IEnumerator StatusUpdateLoop(float delayBetweenUpdates)
     {
         UpdateStatus();
         yield return new WaitForSeconds(delayBetweenUpdates);
@@ -329,6 +329,8 @@ public IEnumerator StatusUpdateLoop(float delayBetweenUpdates)
         if (buzzerRoomCode.Length == 0)
         {
             buzzerRoomCode = GenerateRoomCode(4);
+            buzzerRoomAdminPassword = GenerateRoomCode(8);
+            Debug.Log("Admin Password: " + buzzerRoomAdminPassword);
         }
 
         var uri = new Uri("http://localhost:3001");
@@ -344,7 +346,7 @@ public IEnumerator StatusUpdateLoop(float delayBetweenUpdates)
         socket.OnConnected += (sender, e) =>
         {
             socketConnected = true;
-            socket.Emit("connect_to_room", new { room = buzzerRoomCode, username = quizSocketIOUsername, secret = "oLL8CUQsr6zMrs9T4ZH8dbNyXPziH9PX" });
+            socket.Emit("connect_to_room", new { room = buzzerRoomCode, password = buzzerRoomAdminPassword, username = quizSocketIOUsername });
             Debug.Log("Connected.");
         };
         /*socket.OnPing += (sender, e) =>
@@ -384,6 +386,10 @@ public IEnumerator StatusUpdateLoop(float delayBetweenUpdates)
             TextfieldUpdateResponse textfieldUpdate = response.GetValue<TextfieldUpdateResponse>();
             UpdateTextfield(textfieldUpdate);
         });
+        socket.OnUnityThread("buzzer_was_freed", response =>
+        {
+            OnBuzzerFreed();
+        });
         Debug.Log("Connecting...");
         socket.Connect();
     }
@@ -393,14 +399,20 @@ public IEnumerator StatusUpdateLoop(float delayBetweenUpdates)
         if (socketConnected) {
             socket.Emit("free_buzzer");
         }
-        foreach (PlayerPanelController playerPanelController in playerPanelControllers) {
+    }
+
+    public void OnBuzzerFreed()
+    {
+        foreach (PlayerPanelController playerPanelController in playerPanelControllers)
+        {
             playerPanelController.ResetBuzzerHighlight();
         }
         Type controllerType = currentQuestionController?.GetType();
         if (controllerType == typeof(DrawQuestionController))
         {
             (currentQuestionController as DrawQuestionController).Play();
-        } else if (controllerType == typeof(BlurQuestionController))
+        }
+        else if (controllerType == typeof(BlurQuestionController))
         {
             (currentQuestionController as BlurQuestionController).Play();
         }
