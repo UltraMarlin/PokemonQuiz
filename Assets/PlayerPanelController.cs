@@ -3,21 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using Coffee.UIEffects;
 
 public class PlayerPanelController : MonoBehaviour
 {
-    [SerializeField] private Image backgroundImage;
     [SerializeField] private Image highlightImage;
+    [SerializeField] private UIShadow highlightShadow1, highlightShadow2;
+    [SerializeField] private Image backgroundImage;
     [SerializeField] private TextMeshProUGUI playerNameText;
     [SerializeField] private TextMeshProUGUI pointsText;
     [SerializeField] private TextMeshProUGUI textFieldText;
     [SerializeField] private List<Sprite> playerPanelSprites = new List<Sprite>();
     [SerializeField] private List<Color> playerTextColors = new List<Color>();
+    [SerializeField] private List<Color> playerGlowColors = new List<Color>();
     private int MAX_TEXT_LENGTH = 8;
     private float minDelay = 0.8f;
     private float maxDelay = 8.0f;
     private int spriteIndex1, spriteIndex2;
+    private int currentIndex;
     private bool blockRandomAnimation = false;
+    private string currentText = "";
 
     public void Start()
     {
@@ -28,10 +33,19 @@ public class PlayerPanelController : MonoBehaviour
     {
         spriteIndex1 = (int)playerColor * 2;
         spriteIndex2 = spriteIndex1 + 1;
-        backgroundImage.sprite = playerPanelSprites[spriteIndex1];
+        currentIndex = spriteIndex1;
         playerNameText.color = playerTextColors[(int)playerColor];
         pointsText.color = playerTextColors[(int)playerColor];
         textFieldText.color = playerTextColors[(int)playerColor];
+        bool previousHighlightImageEnabled = highlightImage.enabled;
+        highlightImage.enabled = true;
+
+        UpdateSprite();
+        highlightImage.color = playerGlowColors[(int)playerColor];
+        highlightShadow1.effectColor = playerGlowColors[(int)playerColor];
+        highlightShadow2.effectColor = playerGlowColors[(int)playerColor];
+
+        highlightImage.enabled = previousHighlightImageEnabled;
         StartCoroutine(PlayAnimationWithRandomDelay(minDelay, maxDelay));
     }
 
@@ -65,14 +79,28 @@ public class PlayerPanelController : MonoBehaviour
 
     public void PlayAnimation(float duration)
     {
+        currentIndex = spriteIndex2;
         if (!blockRandomAnimation)
-            backgroundImage.sprite = playerPanelSprites[spriteIndex2];
+            UpdateSprite();
         StartCoroutine(SwitchToNormalSpriteAfterSeconds(duration));
     }
 
-    public void SetTextFieldText(string text)
+    public void SetTextFieldText(string text, bool update)
     {
-        textFieldText.text = text.Substring(0, Mathf.Min(text.Length, MAX_TEXT_LENGTH));
+        currentText = text.Substring(0, Mathf.Min(text.Length, MAX_TEXT_LENGTH));
+        if (update) ReloadTextFieldTexts();
+    }
+
+    public void ShowTextField(bool show)
+    {
+        textFieldText.enabled = show;
+        ReloadTextFieldTexts();
+    }
+
+    public void ReloadTextFieldTexts()
+    {
+        if (textFieldText.isActiveAndEnabled)
+            textFieldText.text = currentText;
     }
 
     public void SetBuzzerHighlight()
@@ -92,8 +120,9 @@ public class PlayerPanelController : MonoBehaviour
     private IEnumerator SwitchToNormalSpriteAfterSeconds(float duration)
     {
         yield return new WaitForSeconds(duration);
+        currentIndex = spriteIndex1;
         if (!blockRandomAnimation)
-            backgroundImage.sprite = playerPanelSprites[spriteIndex1];
+            UpdateSprite();
     }
 
     public IEnumerator PlayWinAnimation()
@@ -101,11 +130,20 @@ public class PlayerPanelController : MonoBehaviour
         blockRandomAnimation = true;
         for (int i = 0; i < 4; i++)
         {
-            backgroundImage.sprite = playerPanelSprites[spriteIndex2];
+            currentIndex = spriteIndex2;
+            UpdateSprite();
             yield return new WaitForSeconds(0.15f);
-            backgroundImage.sprite = playerPanelSprites[spriteIndex1];
+            currentIndex = spriteIndex1;
+            UpdateSprite();
             yield return new WaitForSeconds(0.15f);
         }
         blockRandomAnimation = false;
+    }
+
+    public void UpdateSprite()
+    {
+        backgroundImage.sprite = playerPanelSprites[currentIndex];
+        if (highlightImage.isActiveAndEnabled)
+            highlightImage.sprite = playerPanelSprites[currentIndex];
     }
 }

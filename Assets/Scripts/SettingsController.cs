@@ -20,7 +20,6 @@ public class Settings : MonoBehaviour
     [SerializeField] private Toggle infiniteModeToggle;
     [SerializeField] private Toggle explainRulesToggle;
     [SerializeField] private Toggle enableBuzzerServerToggle;
-    [SerializeField] private TMP_InputField roomCodeInput;
 
     [SerializeField] private List<PlayerSettingsCard> playerSettingsCards;
     [SerializeField] private List<CategorySettingsCard> categorySettingsCards;
@@ -105,7 +104,6 @@ public class Settings : MonoBehaviour
         infiniteModeToggle.isOn = quiz.infiniteMode;
         explainRulesToggle.isOn = quiz.explainRules;
         enableBuzzerServerToggle.isOn = quiz.enableBuzzerServer;
-        roomCodeInput.text = quiz.buzzerRoomCode;
     }
 
     public void DeleteCurrentAndReturn()
@@ -172,7 +170,6 @@ public class Settings : MonoBehaviour
         quiz.infiniteMode = infiniteModeToggle.isOn;
         quiz.explainRules = explainRulesToggle.isOn;
         quiz.enableBuzzerServer = enableBuzzerServerToggle.isOn;
-        quiz.buzzerRoomCode = roomCodeInput.text;
         return quiz;
     }
 

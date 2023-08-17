@@ -49,11 +49,9 @@ public class Quiz
     public bool infiniteMode;
     public bool explainRules;
     public bool enableBuzzerServer;
-    public string buzzerRoomCode;
 
     public Quiz() {
         presetName = "";
-        buzzerRoomCode = "";
         players = new List<Player>();
         questionTypeSettingsList = new List<QuestionTypeSettings>();
         foreach (QuestionType questionType in Enum.GetValues(typeof(QuestionType)))

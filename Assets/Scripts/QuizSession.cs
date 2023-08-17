@@ -79,6 +79,7 @@ public class RoomUser
     public string id;
     public string name;
     public string room;
+    public bool isAdmin;
 }
 
 [System.Serializable]
@@ -108,7 +109,10 @@ public class QuizSession : MonoBehaviour
     [SerializeField] private GameObject playerPanelPrefab;
 
     [SerializeField] private GameObject questionContainer;
-    [SerializeField] private TMP_Text statusText;
+    [SerializeField] private GameObject buzzerServerSetupPromptPrefab;
+    [SerializeField] private GameObject statusPrefab;
+    private TMP_Text statusText;
+    private bool statusLoopActive;
 
     [SerializeField] private GameObject featureQuestionPrefab;
     [SerializeField] private GameObject shinyQuestionPrefab;
@@ -149,10 +153,12 @@ public class QuizSession : MonoBehaviour
 
     private SocketIOUnity socket;
     private bool socketConnected = false;
-    private string buzzerRoomCode;
-    private string buzzerRoomAdminPassword;
+    public string buzzerRoomCode;
+    public string buzzerRoomAdminPassword;
 
     private string quizSocketIOUsername = "pokemonquizprogramm";
+
+    private bool lockTextFields = false;
 
     private void Awake()
     {
@@ -208,30 +214,36 @@ public class QuizSession : MonoBehaviour
 
         if (settings.quiz.enableBuzzerServer)
         {
-            SetUpSocketIOConnection();
+            DisplayBuzzerServerSetupPrompt();
+        } else
+        {
+            DisplayStatus();
         }
-
-        StartCoroutine(StatusUpdateLoop(0.2f));
 
         PrepareQuiz();
     }
 
-    public string GenerateRoomCode(int length)
+    public void DisplayBuzzerServerSetupPrompt(string errorMessage = null)
     {
-        string chars = "ABCDEFGHIJKLMNPQRSTUVWXYZ0123456565656565656565656565656565656565656656789";
-        char[] stringChars = new char[length];
-        for (int i = 0; i < length; i++)
-        {
-            stringChars[i] = chars[UnityEngine.Random.Range(0, chars.Length)];
-        }
-        return new string(stringChars);
+        ClearQuestionContainer();
+        GameObject buzzerSetupPrompt = Instantiate(buzzerServerSetupPromptPrefab, questionContainer.transform);
+        if (errorMessage != null)
+            buzzerSetupPrompt.GetComponent<BuzzerServerSetupPrompt>().DisplayInfoMessage(errorMessage);
+    }
+
+    public void DisplayStatus()
+    {
+        GameObject statusObject = Instantiate(statusPrefab, questionContainer.transform);
+        statusText = statusObject.transform.GetChild(0).GetComponent<TMP_Text>();
+        statusLoopActive = true;
+        StartCoroutine(StatusUpdateLoop(0.2f));
     }
 
     public IEnumerator StatusUpdateLoop(float delayBetweenUpdates)
     {
         UpdateStatus();
         yield return new WaitForSeconds(delayBetweenUpdates);
-        if (!quizReady)
+        if (statusLoopActive && !quizReady)
         {
             StartCoroutine(StatusUpdateLoop(delayBetweenUpdates));
         }
@@ -239,8 +251,11 @@ public class QuizSession : MonoBehaviour
 
     void OnApplicationQuit()
     {
-        socket.Options.Reconnection = false;
-        socket.Disconnect();
+        if (socket != null)
+        {
+            socket.Options.Reconnection = false;
+            socket.Disconnect();
+        }
     }
 
     private List<IQuestion> PrepareQuestionList(QuestionType questionType, QuestionDB questionDB)
@@ -270,31 +285,22 @@ public class QuizSession : MonoBehaviour
 
     public void UpdateStatus()
     {
-        if (!socketConnected)
+        if (settings.quiz.enableBuzzerServer && !socketConnected)
         {
             statusText.text = "Connecting to buzzer server...";
             return;
-        } else
-        {
-            statusText.text = "Connected.";
         }
 
-        if (!AllPlayersConnected())
+        if (settings.quiz.enableBuzzerServer && !AllPlayersConnected())
         {
             statusText.text = $"Waiting for players to join buzzer room ({buzzerRoomCode}) \nConnected players: {ConnectedPlayerStrings()}";
             return;
-        } else
-        {
-            statusText.text = "All players joined.";
-        }
+        } 
 
         if (!adminPanelConnected)
         {
             statusText.text = "Waiting for admin panel to connect...";
             return;
-        } else
-        {
-            statusText.text = "Admin panel connceted.";
         }
 
         statusText.text = "Quiz ready";
@@ -323,17 +329,12 @@ public class QuizSession : MonoBehaviour
         adminPanelConnected = true;
     }
 
-    private void SetUpSocketIOConnection()
+    public void SetUpSocketIOConnection(string roomCode, string password)
     {
-        buzzerRoomCode = settings.quiz.buzzerRoomCode.ToUpper();
-        if (buzzerRoomCode.Length == 0)
-        {
-            buzzerRoomCode = GenerateRoomCode(4);
-            buzzerRoomAdminPassword = GenerateRoomCode(8);
-            Debug.Log("Admin Password: " + buzzerRoomAdminPassword);
-        }
+        buzzerRoomCode = roomCode.ToUpper();
+        buzzerRoomAdminPassword = password;
 
-        var uri = new Uri("http://localhost:3001");
+        var uri = new Uri("https://buzzter-server.weekofcharity.de");
         socket = new SocketIOUnity(uri, new SocketIOOptions
         {
             Query = new Dictionary<string, string> { {"token", "UNITY"} },
@@ -370,6 +371,13 @@ public class QuizSession : MonoBehaviour
         socket.OnUnityThread("room_update", response =>
         {
             RoomUpdateResponse roomUpdate = response.GetValue<RoomUpdateResponse>();
+            if (!roomUpdate.users.Find(user => user.name == quizSocketIOUsername).isAdmin)
+            {
+                statusLoopActive = false;
+                socket.Disconnect();
+                DisplayBuzzerServerSetupPrompt("Authenticating as admin in buzzer room failed. Change room number or admin password.");
+                return;
+            }
             playerNamesBuzzerRoom = roomUpdate.users.Select(user => user.name).ToList();
             if (roomUpdate.pressed)
             {
@@ -392,6 +400,7 @@ public class QuizSession : MonoBehaviour
         });
         Debug.Log("Connecting...");
         socket.Connect();
+        DisplayStatus();
     }
 
     public void FreeBuzzer()
@@ -428,7 +437,7 @@ public class QuizSession : MonoBehaviour
             FreeBuzzer();
         } else
         {
-            playerPanelControllers[index].SetBuzzerHighlight();
+            playerPanelControllers[index]?.SetBuzzerHighlight();
             Type controllerType = currentQuestionController?.GetType();
             if (controllerType == typeof(DrawQuestionController))
             {
@@ -441,11 +450,22 @@ public class QuizSession : MonoBehaviour
         }
     }
 
+    public void LockTextFields(bool enableLock)
+    {
+        lockTextFields = enableLock;
+        if (!enableLock) {
+            foreach (PlayerPanelController ppc in playerPanelControllers)
+            {
+                ppc.ReloadTextFieldTexts();
+            }
+        }
+    }
+
     public void UpdateTextfield(TextfieldUpdateResponse response)
     {
         int playerIndex = quizPlayerNames.IndexOf(response.name);
         if (playerIndex != -1) {
-            playerPanelControllers[playerIndex].SetTextFieldText(response.text);
+            playerPanelControllers[playerIndex].SetTextFieldText(response.text, !lockTextFields);
         }
     }
 
@@ -502,6 +522,7 @@ public class QuizSession : MonoBehaviour
 
     public int NextQuestion()
     {
+        if (!quizReady) return -3;
         IQuestion question = null;
 
         if (singleQuestionList)
@@ -542,9 +563,18 @@ public class QuizSession : MonoBehaviour
             return -2;
         } else
         {
+            LockTextFields(false);
             DisplayQuestion(question);
             DisplayAdminSolution(question);
             return (int)currentQuestionType;
+        }
+    }
+
+    public void ShowTextFields(bool show)
+    {
+        foreach (PlayerPanelController ppc in playerPanelControllers)
+        {
+            ppc.ShowTextField(show);
         }
     }
 
@@ -639,30 +669,37 @@ public class QuizSession : MonoBehaviour
         if (question.GetType() == typeof(FeatureQuestion))
         {
             DisplayFeatureQuestion(question as FeatureQuestion);
+            ShowTextFields(false);
         }
         else if (question.GetType() == typeof(ShinyQuestion))
         {
             DisplayShinyQuestion(question as ShinyQuestion);
+            ShowTextFields(true);
         }
         else if (question.GetType() == typeof(BlurQuestion))
         {
             DisplayBlurQuestion(question as BlurQuestion);
+            ShowTextFields(false);
         }
         else if (question.GetType() == typeof(AnagramQuestion))
         {
             DisplayAnagramQuestion(question as AnagramQuestion);
+            ShowTextFields(false);
         }
         else if (question.GetType() == typeof(DrawQuestion))
         {
             DisplayDrawQuestion(question as DrawQuestion);
+            ShowTextFields(false);
         }
         else if (question.GetType() == typeof(FootprintQuestion))
         {
             DisplayFootprintQuestion(question as FootprintQuestion);
+            ShowTextFields(true);
         }
         else if (question.GetType() == typeof(TeamQuestion))
         {
             DisplayTeamQuestion(question as TeamQuestion);
+            ShowTextFields(false);
         }
     }
 
@@ -731,6 +768,7 @@ public class QuizSession : MonoBehaviour
     public void ShowSolution()
     {
         if (currentQuestionController == null || currentQuestionController.ToString() == "null") return;
+        LockTextFields(true);
         currentQuestionController.ResetDisplay();
         currentQuestionController.ShowSolution();
     }
@@ -836,7 +874,8 @@ public class QuizSession : MonoBehaviour
     {
         Debug.Log("Scene " + currentScene.name + " has been unloaded.");
         SceneManager.sceneUnloaded -= OnSceneUnloaded;
-        socket.Disconnect();
+        if (socket != null)
+            socket.Disconnect();
         NetworkManager.Singleton.Shutdown();
     }
 }
