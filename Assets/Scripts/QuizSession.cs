@@ -160,6 +160,8 @@ public class QuizSession : MonoBehaviour
 
     private bool lockTextFields = false;
 
+    [SerializeField] private AudioEffectsController audioEffects;
+
     private void Awake()
     {
         if (instance == null) instance = this;
@@ -381,13 +383,13 @@ public class QuizSession : MonoBehaviour
             playerNamesBuzzerRoom = roomUpdate.users.Select(user => user.name).ToList();
             if (roomUpdate.pressed)
             {
-                BuzzerFromPlayerWithName(roomUpdate.pressed_by);
+                BuzzerFromPlayerWithName(roomUpdate.pressed_by, false);
             }
         });
         socket.OnUnityThread("buzzer_was_pressed", response =>
         {
             string name = response.GetValue<string>();
-            BuzzerFromPlayerWithName(name);
+            BuzzerFromPlayerWithName(name, true);
         });
         socket.OnUnityThread("textfield_update_from", response =>
         {
@@ -427,7 +429,7 @@ public class QuizSession : MonoBehaviour
         }
     }
 
-    public void BuzzerFromPlayerWithName(string name)
+    public void BuzzerFromPlayerWithName(string name, bool playSound)
     {
         Debug.Log($"The buzzer was hit by {name}.");
         int index = quizPlayerNames.IndexOf(name);
@@ -438,6 +440,7 @@ public class QuizSession : MonoBehaviour
         } else
         {
             playerPanelControllers[index]?.SetBuzzerHighlight();
+            if (playSound) audioEffects.PlayBuzzerSound();
             Type controllerType = currentQuestionController?.GetType();
             if (controllerType == typeof(DrawQuestionController))
             {
@@ -806,7 +809,7 @@ public class QuizSession : MonoBehaviour
         AddPointsToPlayer(playerID, questionTypeSettings.correctPoints);
         AddPointsToEveryoneExcept(playerID, questionTypeSettings.correctPointsOther);
         StartCoroutine(playerPanelControllers[playerID].PlayWinAnimation());
-        Debug.Log("Correct Answer From " + playerID);
+        audioEffects.PlayCorrectSound();
         ShowSolution();
     }
 
@@ -815,6 +818,7 @@ public class QuizSession : MonoBehaviour
         QuestionTypeSettings questionTypeSettings = settings.quiz.questionTypeSettingsList.Find(x => x.type == currentQuestionType);
         AddPointsToPlayer(playerID, questionTypeSettings.wrongPoints);
         AddPointsToEveryoneExcept(playerID, questionTypeSettings.wrongPointsOther);
+        audioEffects.PlayWrongSound();
         FreeBuzzer();
     }
 
@@ -841,7 +845,7 @@ public class QuizSession : MonoBehaviour
             if (currentQuestionType == QuestionType.Shiny)
             {
                 int shinySolutionIndex = (currentQuestionController as ShinyQuestionController).solutionIndex;
-                string[] shinySolutionStrings = new string[] { "Left,", "Middle,", "Right," };
+                string[] shinySolutionStrings = new string[] { "A,", "B,", "C," };
                 solutionString = shinySolutionStrings[shinySolutionIndex];
             }
             else if (currentQuestionType == QuestionType.Footprint)

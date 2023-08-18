@@ -44,6 +44,7 @@ public class AdminPanelController : MonoBehaviour
     void Start()
     {
         Screen.SetResolution(1920, 300, FullScreenMode.Windowed);
+        Application.targetFrameRate = 30;
 
         SceneManager.sceneUnloaded += OnSceneUnloaded;
 
