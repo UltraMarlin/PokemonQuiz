@@ -108,8 +108,9 @@ public class Settings : MonoBehaviour
 
     public void DeleteCurrentAndReturn()
     {
-        settings.DeleteSelectedQuiz();
+        Debug.Log(settings.DeleteSelectedQuiz());
         settings.selectedQuiz = 0;
+        fileDataHandler.Save(settings);
         SceneManager.LoadScene("QuizSelection");
     }
 

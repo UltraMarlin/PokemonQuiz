@@ -121,14 +121,12 @@ public class QuizSettings : ScriptableObject
 
     public string DeleteSelectedQuiz()
     {
-        string deletedQuizName = quizzes[selectedQuiz].presetName;
-        quizzes.RemoveAt(selectedQuiz);
-        return $"Quiz '{deletedQuizName}' gelöscht!";
+        return DeleteQuiz(selectedQuiz);
     }
 
     public string DeleteQuiz(int index)
     {
-        if (0 <= selectedQuiz && selectedQuiz < quizzes.Count)
+        if (0 <= index && index < quizzes.Count)
         {
             string deletedQuizName = quizzes[index].presetName;
             quizzes.RemoveAt(index);
