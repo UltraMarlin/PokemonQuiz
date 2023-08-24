@@ -13,6 +13,7 @@ public class PlayerControlPanel : MonoBehaviour
     {
         if (AdminPanelController.instance.adminPanelUser == null) return;
         AdminPanelController.instance.adminPanelUser.CorrectAnswerServerRpc(playerID);
+        AdminPanelController.instance.ExpectNextQuestionPress();
     }
 
     public void WrongAnswer()

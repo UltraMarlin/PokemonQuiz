@@ -76,6 +76,8 @@ public class AdminPanelController : MonoBehaviour
         featureBackgroundButtonOriginalText = featureBackgroundButtonText.text;
 
         playerControlPanels.GetComponent<HorizontalLayoutGroup>().spacing = QuizSession.SpacingFromPlayerCount(settings.quiz.players.Count);
+
+        ExpectNextQuestionPress();
     }
 
     public void RegisterAdminPanelUser(AdminPanelUser user)
@@ -105,10 +107,14 @@ public class AdminPanelController : MonoBehaviour
     public void NextQuestion()
     {
         if (quizOver) return;
-        showSolutionButton.interactable = true;
-        nextStepButton.interactable = true;
-        showSolutionButtonText.text = showSolutionButtonOriginalText;
         adminPanelUser.NextQuestionServerRpc();
+    }
+
+    public void ExpectNextQuestionPress()
+    {
+        showSolutionButton.interactable = false;
+        showSolutionButtonText.text = "";
+        SetNextStepButtonText((int)NextStepButtonState.Empty);
     }
 
     public void NextQuestionStep()
@@ -121,15 +127,19 @@ public class AdminPanelController : MonoBehaviour
     {
         if (quizOver) return;
         adminPanelUser.ShowSolutionServerRpc();
-        showSolutionButton.interactable = false;
-        SetNextStepButtonText((int)NextStepButtonState.Empty);
-        showSolutionButtonText.text = "";
+        ExpectNextQuestionPress();
     }
 
     public void ToggleFeatureBackground()
     {
         if (quizOver) return;
         adminPanelUser.ToggleFeatureBackgroundServerRpc();
+    }
+
+    public void ToggleShowTextFields()
+    {
+        if (quizOver) return;
+        adminPanelUser.ToggleShowTextFieldsServerRpc();
     }
 
     public void EndQuiz()
@@ -144,8 +154,16 @@ public class AdminPanelController : MonoBehaviour
         if (questionType == -1)
         {
             quizOver = true;
-        } else
+        }
+        else if (questionType == -2)
         {
+            ExpectNextQuestionPress();
+        }
+        else
+        {
+            showSolutionButton.interactable = true;
+            nextStepButton.interactable = true;
+            showSolutionButtonText.text = showSolutionButtonOriginalText;
             currentQuestionType = (QuestionType)questionType;
         }
         categorySelector.SetActiveCategoryLabel(questionType);

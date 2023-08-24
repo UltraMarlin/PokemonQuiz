@@ -100,7 +100,7 @@ public class PlayerPanelController : MonoBehaviour
     public void ReloadTextFieldTexts()
     {
         if (textFieldText.isActiveAndEnabled)
-            textFieldText.text = currentText;
+            textFieldText.text = currentText.ToUpper();
     }
 
     public void SetBuzzerHighlight()

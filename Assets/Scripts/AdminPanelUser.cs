@@ -29,7 +29,7 @@ public class AdminPanelUser : NetworkBehaviour
     [ServerRpc]
     public void NextQuestionServerRpc()
     {
-        nwv_CurrentQuestionType.Value = -2;
+        nwv_CurrentQuestionType.Value = -999;
         nwv_CurrentQuestionType.Value = QuizSession.instance.NextQuestion();
     }
 
@@ -82,6 +82,12 @@ public class AdminPanelUser : NetworkBehaviour
     }
 
     [ServerRpc]
+    public void ToggleShowTextFieldsServerRpc()
+    {
+        QuizSession.instance.ToggleShowTextFields();
+    }
+
+    [ServerRpc]
     public void EndQuizServerRpc()
     {
         QuizSession.instance.EndQuiz();
@@ -103,7 +109,7 @@ public class AdminPanelUser : NetworkBehaviour
     {
         if (IsClient)
         {
-            if (current > -2)
+            if (current > -3)
                 AdminPanelController.instance.SetCurrentQuestionType(current);
         }
     }

@@ -18,15 +18,15 @@ public class AudioEffectsController : MonoBehaviour
     {
         if (effect == SoundEffect.Buzzer)
         {
-            if (!buzzerHitAudioSource.isPlaying) buzzerHitAudioSource.Play();
+            buzzerHitAudioSource.Play();
         }
         else if (effect == SoundEffect.Correct)
         {
-            if (!correctAnswerAudioSource.isPlaying) correctAnswerAudioSource.Play();
+            correctAnswerAudioSource.Play();
         }
         else if (effect == SoundEffect.Wrong)
         {
-            if (!wrongAnswerAudioSource.isPlaying) wrongAnswerAudioSource.Play();
+            wrongAnswerAudioSource.Play();
         }
     }
 

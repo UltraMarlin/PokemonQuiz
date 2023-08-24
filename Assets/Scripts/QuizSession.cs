@@ -158,6 +158,7 @@ public class QuizSession : MonoBehaviour
 
     private string quizSocketIOUsername = "pokemonquizprogramm";
 
+    private bool showTextFields = false;
     private bool lockTextFields = false;
 
     [SerializeField] private AudioEffectsController audioEffects;
@@ -213,6 +214,7 @@ public class QuizSession : MonoBehaviour
             quizPlayerNames.Add(player.name.ToLower());
         }
         playerPanels.GetComponent<HorizontalLayoutGroup>().spacing = SpacingFromPlayerCount(settings.quiz.players.Count);
+        ShowTextFields(showTextFields);
 
         if (settings.quiz.enableBuzzerServer)
         {
@@ -437,11 +439,21 @@ public class QuizSession : MonoBehaviour
         {
             Debug.Log($"{name} is not part of the quiz. Freeing buzzer.");
             FreeBuzzer();
-        } else
+            return;
+        }
+
+        Type controllerType = currentQuestionController?.GetType();
+
+        if (controllerType == typeof(ShinyQuestionController) || controllerType == typeof(FootprintQuestionController))
+        {
+            Debug.Log("Buzzer currently not enabled. Freeing buzzer.");
+            FreeBuzzer();
+            return;
+        }
+        else
         {
             playerPanelControllers[index]?.SetBuzzerHighlight();
             if (playSound) audioEffects.PlayBuzzerSound();
-            Type controllerType = currentQuestionController?.GetType();
             if (controllerType == typeof(DrawQuestionController))
             {
                 (currentQuestionController as DrawQuestionController).Pause();
@@ -566,7 +578,6 @@ public class QuizSession : MonoBehaviour
             return -2;
         } else
         {
-            LockTextFields(false);
             DisplayQuestion(question);
             DisplayAdminSolution(question);
             return (int)currentQuestionType;
@@ -575,10 +586,18 @@ public class QuizSession : MonoBehaviour
 
     public void ShowTextFields(bool show)
     {
+        showTextFields = show;
+        LockTextFields(show);
         foreach (PlayerPanelController ppc in playerPanelControllers)
         {
             ppc.ShowTextField(show);
         }
+    }
+
+    public void ToggleShowTextFields()
+    {
+        showTextFields = !showTextFields;
+        ShowTextFields(showTextFields);
     }
 
     public void ExplainCategory(QuestionType type)
@@ -668,41 +687,35 @@ public class QuizSession : MonoBehaviour
     {
         FreeBuzzer();
         ClearQuestionContainer();
+        ShowTextFields(false);
         currentQuestionType = GetTypeFromIQuestion(question);
         if (question.GetType() == typeof(FeatureQuestion))
         {
             DisplayFeatureQuestion(question as FeatureQuestion);
-            ShowTextFields(false);
         }
         else if (question.GetType() == typeof(ShinyQuestion))
         {
             DisplayShinyQuestion(question as ShinyQuestion);
-            ShowTextFields(true);
         }
         else if (question.GetType() == typeof(BlurQuestion))
         {
             DisplayBlurQuestion(question as BlurQuestion);
-            ShowTextFields(false);
         }
         else if (question.GetType() == typeof(AnagramQuestion))
         {
             DisplayAnagramQuestion(question as AnagramQuestion);
-            ShowTextFields(false);
         }
         else if (question.GetType() == typeof(DrawQuestion))
         {
             DisplayDrawQuestion(question as DrawQuestion);
-            ShowTextFields(false);
         }
         else if (question.GetType() == typeof(FootprintQuestion))
         {
             DisplayFootprintQuestion(question as FootprintQuestion);
-            ShowTextFields(true);
         }
         else if (question.GetType() == typeof(TeamQuestion))
         {
             DisplayTeamQuestion(question as TeamQuestion);
-            ShowTextFields(false);
         }
     }
 
@@ -771,7 +784,6 @@ public class QuizSession : MonoBehaviour
     public void ShowSolution()
     {
         if (currentQuestionController == null || currentQuestionController.ToString() == "null") return;
-        LockTextFields(true);
         currentQuestionController.ResetDisplay();
         currentQuestionController.ShowSolution();
     }
