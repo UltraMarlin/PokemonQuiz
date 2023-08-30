@@ -46,7 +46,7 @@ public enum NextStepButtonState
 
 public class QuizUtils
 {
-    public static bool validateQuestionObjects = true;
+    public static bool validateQuestionObjects = false;
     public static int[] pokemonGenCutoffs = new int[] { 151, 251, 386, 493, 649, 721, 809, 905, 1018 };
 }
 
@@ -93,6 +93,9 @@ public class TextfieldUpdateResponse
 public class QuizSession : MonoBehaviour
 {
     public static QuizSession instance;
+
+    [SerializeField] private List<Image> backgroundImages;
+    [SerializeField] private Sprite winningBackgroundSprite;
 
     private FileDataHandler fileDataHandler;
 
@@ -659,21 +662,29 @@ public class QuizSession : MonoBehaviour
     {
         Debug.Log("Quiz is over!");
         ClearQuestionContainer();
-        StartCoroutine(ShowRankingAfterDelay(0.05f));
-    }
-
-    public IEnumerator ShowRankingAfterDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
+        if (winningBackgroundSprite != null)
+        {
+            foreach (Image bgImage in backgroundImages)
+            {
+                bgImage.sprite = winningBackgroundSprite;
+            }
+        }
         GameObject endScreenObject = Instantiate(endScreenPrefab, questionContainer.transform);
         List<Result> results = new List<Result>();
         for (int i = 0; i < playerPoints.Count; i++)
         {
-            Result result = new Result();
-            result.playerName = playerPanelControllers[i].GetPlayerName();
-            result.playerPoints = playerPoints[i];
+            Result result = new()
+            {
+                playerId = i,
+                playerName = settings.quiz.players[i].name,
+                playerPoints = playerPoints[i],
+                color = playerPanelControllers[i].GetPlayerPanelColor(),
+            };
             results.Add(result);
         }
+        results = results.OrderByDescending(result => result.playerPoints).ToList();
+        playerPanelControllers[results[0].playerId].SetBuzzerHighlight();
+        StartCoroutine(playerPanelControllers[results[0].playerId].PlayWinAnimation());
         endScreenObject.GetComponent<EndScreenController>().DisplayPlayerRankings(results);
     }
 
@@ -820,7 +831,7 @@ public class QuizSession : MonoBehaviour
         QuestionTypeSettings questionTypeSettings = settings.quiz.questionTypeSettingsList.Find(x => x.type == currentQuestionType);
         AddPointsToPlayer(playerID, questionTypeSettings.correctPoints);
         AddPointsToEveryoneExcept(playerID, questionTypeSettings.correctPointsOther);
-        StartCoroutine(playerPanelControllers[playerID].PlayWinAnimation());
+        StartCoroutine(playerPanelControllers[playerID].PlayCorrectAnimation());
         audioEffects.PlayCorrectSound();
         ShowSolution();
     }

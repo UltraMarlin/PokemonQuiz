@@ -16,6 +16,17 @@ public class RankingEntryController : MonoBehaviour
         playerPointsText.fontSize = fontSize;
     }
 
+    public void HighlightWinner(Color color)
+    {
+        SetFontsize(62);
+        rankText.color = color;
+        playerNameText.color = color;
+        playerPointsText.color = color;
+        rankText.fontStyle = FontStyles.Bold;
+        playerNameText.fontStyle = FontStyles.Bold;
+        playerPointsText.fontStyle = FontStyles.Bold;
+    }
+
     public void SetRankText(string text)
     {
         rankText.text = text;

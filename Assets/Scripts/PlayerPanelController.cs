@@ -15,6 +15,7 @@ public class PlayerPanelController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textFieldText;
     [SerializeField] private List<Sprite> playerPanelSprites = new List<Sprite>();
     [SerializeField] private List<Color> playerTextColors = new List<Color>();
+    [SerializeField] private List<Color> playerPanelColors = new List<Color>();
     [SerializeField] private List<Color> playerGlowColors = new List<Color>();
     private int MAX_TEXT_LENGTH = 8;
     private float minDelay = 0.8f;
@@ -22,7 +23,9 @@ public class PlayerPanelController : MonoBehaviour
     private int spriteIndex1, spriteIndex2;
     private int currentIndex;
     private bool blockRandomAnimation = false;
+    private bool winningAnimation = false;
     private string currentText = "";
+    private PlayerColor color;
 
     public void Start()
     {
@@ -31,6 +34,7 @@ public class PlayerPanelController : MonoBehaviour
 
     public void SetPlayerColor(PlayerColor playerColor)
     {
+        color = playerColor;
         spriteIndex1 = (int)playerColor * 2;
         spriteIndex2 = spriteIndex1 + 1;
         currentIndex = spriteIndex1;
@@ -47,6 +51,16 @@ public class PlayerPanelController : MonoBehaviour
 
         highlightImage.enabled = previousHighlightImageEnabled;
         StartCoroutine(PlayAnimationWithRandomDelay(minDelay, maxDelay));
+    }
+
+    public Color GetPlayerTextColor()
+    {
+        return playerTextColors[(int)color];
+    }
+
+    public Color GetPlayerPanelColor()
+    {
+        return playerPanelColors[(int)color];
     }
 
     public void SetPlayerNameText(string text)
@@ -125,7 +139,7 @@ public class PlayerPanelController : MonoBehaviour
             UpdateSprite();
     }
 
-    public IEnumerator PlayWinAnimation()
+    public IEnumerator PlayCorrectAnimation()
     {
         blockRandomAnimation = true;
         for (int i = 0; i < 4; i++)
@@ -138,6 +152,27 @@ public class PlayerPanelController : MonoBehaviour
             yield return new WaitForSeconds(0.15f);
         }
         blockRandomAnimation = false;
+    }
+
+    public IEnumerator PlayWinAnimation()
+    {
+        blockRandomAnimation = true;
+        winningAnimation = true;
+        while (winningAnimation)
+        {
+            currentIndex = spriteIndex2;
+            UpdateSprite();
+            yield return new WaitForSeconds(0.15f);
+            currentIndex = spriteIndex1;
+            UpdateSprite();
+            yield return new WaitForSeconds(0.15f);
+        }
+        blockRandomAnimation = false;
+    }
+
+    public void StopWinningAnimation()
+    {
+        winningAnimation = false;
     }
 
     public void UpdateSprite()

@@ -372,6 +372,50 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3759136887324042717, guid: 713f9ca2ae1bc4a4b9eb8407cfae6e76, type: 3}
   m_PrefabInstance: {fileID: 505893728}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &505893730 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8035117087560132403, guid: 713f9ca2ae1bc4a4b9eb8407cfae6e76, type: 3}
+  m_PrefabInstance: {fileID: 505893728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &505893731 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7210524527212618236, guid: 713f9ca2ae1bc4a4b9eb8407cfae6e76, type: 3}
+  m_PrefabInstance: {fileID: 505893728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &505893732 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3183138538447157115, guid: 713f9ca2ae1bc4a4b9eb8407cfae6e76, type: 3}
+  m_PrefabInstance: {fileID: 505893728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &505893733 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7221744228786358750, guid: 713f9ca2ae1bc4a4b9eb8407cfae6e76, type: 3}
+  m_PrefabInstance: {fileID: 505893728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &687863457
 GameObject:
   m_ObjectHideFlags: 0
@@ -807,6 +851,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba71435a59eeee64f8a868ea72397aff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backgroundImages:
+  - {fileID: 505893733}
+  - {fileID: 505893732}
+  - {fileID: 505893731}
+  - {fileID: 505893730}
+  winningBackgroundSprite: {fileID: 0}
   settings: {fileID: 11400000, guid: 97c193481b71fca4bb57243035b43842, type: 2}
   playerPanels: {fileID: 290511236}
   playerPanelPrefab: {fileID: 5498556348011122183, guid: 70e82f5fdbfe20144a1a169672ab226d, type: 3}
