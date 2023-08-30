@@ -104,6 +104,11 @@ public class AdminPanelController : MonoBehaviour
         adminPanelUser.FreeBuzzerServerRpc();
     }
 
+    public void StartTimer()
+    {
+        adminPanelUser.StartTimerServerRpc();
+    }
+
     public void NextQuestion()
     {
         if (quizOver) return;

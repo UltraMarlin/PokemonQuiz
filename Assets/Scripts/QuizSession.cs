@@ -136,6 +136,10 @@ public class QuizSession : MonoBehaviour
     [SerializeField] private QuestionDB footprintQuestionDB;
     [SerializeField] private QuestionDB teamQuestionDB;
 
+    [SerializeField] private GameObject canvas;
+    [SerializeField] private GameObject countdownTimerPrefab;
+    private bool countdownTimerActive;
+
     private int numberOfQuestionTypes;
 
     private List<PlayerPanelController> playerPanelControllers = new();
@@ -278,7 +282,8 @@ public class QuizSession : MonoBehaviour
     {
         if (Input.GetButtonDown("NextQuestion"))
         {
-            NextQuestion();   
+            //NextQuestion();
+            StartCountdownTimer();
         }
         if (Input.GetButtonDown("NextQuestionStep"))
         {
@@ -485,6 +490,27 @@ public class QuizSession : MonoBehaviour
         if (playerIndex != -1) {
             playerPanelControllers[playerIndex].SetTextFieldText(response.text, !lockTextFields);
         }
+    }
+
+    public void StartCountdownTimer(float time=5f)
+    {
+        if (countdownTimerActive) return;
+        countdownTimerActive = true;
+        audioEffects.Play(SoundEffect.Ticking);
+        GameObject countdownTimerObject = Instantiate(countdownTimerPrefab, canvas.transform);
+        countdownTimerObject.GetComponent<CountdownTimerController>().StartCountdown(time);
+    }
+
+    public void CountdownTimerOver()
+    {
+        countdownTimerActive = false;
+        PlayTimerOverSound();
+    }
+
+    public void PlayTimerOverSound()
+    {
+        audioEffects.StopTicking();
+        audioEffects.Play(SoundEffect.TimerOver);
     }
 
     public void PrepareQuiz()

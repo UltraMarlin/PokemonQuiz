@@ -27,6 +27,12 @@ public class AdminPanelUser : NetworkBehaviour
     }
 
     [ServerRpc]
+    public void StartTimerServerRpc()
+    {
+        QuizSession.instance.StartCountdownTimer();
+    }
+
+    [ServerRpc]
     public void NextQuestionServerRpc()
     {
         nwv_CurrentQuestionType.Value = -999;
