@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1cf78d64fd493743a38041a2d57215d, type: 3}
+  m_Name: Bubungus
+  m_EditorClassIdentifier: 
+  pokemonName: Bubungus
+  pokemonGen: 6
+  solutionSprite: {fileID: 21300000, guid: cbdd4a45520cbc54687dff1bf6d38d1e, type: 3}
+  fakeSprites:
+  - {fileID: 21300000, guid: 5c9ca756a69bf704abe40ff7043c19e4, type: 3}
+  - {fileID: 21300000, guid: 5d5d392d1e8a0704cbc03d208b9c3ad7, type: 3}
+  originalSprite: {fileID: 21300000, guid: dd3ece4e9e2cee245af8fa4016d5c672, type: 3}

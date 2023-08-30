@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1cf78d64fd493743a38041a2d57215d, type: 3}
+  m_Name: Amarino
+  m_EditorClassIdentifier: 
+  pokemonName: Amarino
+  pokemonGen: 5
+  solutionSprite: {fileID: 21300000, guid: 2301a5c506d63ba4f884a8c727a8d775, type: 3}
+  fakeSprites:
+  - {fileID: 21300000, guid: 5e00cf0a003ba1040a5345a5a0245215, type: 3}
+  - {fileID: 21300000, guid: 1d0ad102ea028cc4baed73db31018a4d, type: 3}
+  originalSprite: {fileID: 21300000, guid: 78cd320b01ebf4149b6cea8daa847a86, type: 3}

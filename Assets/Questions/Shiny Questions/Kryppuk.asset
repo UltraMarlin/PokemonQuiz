@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1cf78d64fd493743a38041a2d57215d, type: 3}
+  m_Name: Kryppuk
+  m_EditorClassIdentifier: 
+  pokemonName: Kryppuk
+  pokemonGen: 3
+  solutionSprite: {fileID: 21300000, guid: 2cb448aa37304804b951fbc11e4b0d4d, type: 3}
+  fakeSprites:
+  - {fileID: 21300000, guid: 8854e1513a7ae3d47904ebf0ad8019ed, type: 3}
+  - {fileID: 21300000, guid: f147514e13596894c95d900a5599ab39, type: 3}
+  originalSprite: {fileID: 21300000, guid: de5753c0e8f9d4a46ae8565d3944f803, type: 3}

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1cf78d64fd493743a38041a2d57215d, type: 3}
+  m_Name: Rotom
+  m_EditorClassIdentifier: 
+  pokemonName: Rotom
+  pokemonGen: 3
+  solutionSprite: {fileID: 21300000, guid: fd6fa207e3f049841afdd82d343edb24, type: 3}
+  fakeSprites:
+  - {fileID: 21300000, guid: ed0a39e5e691c0347ab7e1f0b836af5d, type: 3}
+  - {fileID: 21300000, guid: cea5ba64719e7054c855b065e83e6dc4, type: 3}
+  originalSprite: {fileID: 21300000, guid: d45e8467ee27ba741879c57feef72cc7, type: 3}

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1cf78d64fd493743a38041a2d57215d, type: 3}
+  m_Name: Draschel
+  m_EditorClassIdentifier: 
+  pokemonName: Draschel
+  pokemonGen: 2
+  solutionSprite: {fileID: 21300000, guid: ddac2b1b909e2b845b01d758d7511a23, type: 3}
+  fakeSprites:
+  - {fileID: 21300000, guid: dc430279e862ff441a50b05af002ad6a, type: 3}
+  - {fileID: 21300000, guid: f79e0459c9da49e4eb941f836cd05e5f, type: 3}
+  originalSprite: {fileID: 21300000, guid: 16e7641edd96d594b8fb7e0470dc4e74, type: 3}

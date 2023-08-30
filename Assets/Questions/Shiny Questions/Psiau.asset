@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1cf78d64fd493743a38041a2d57215d, type: 3}
+  m_Name: Psiau
+  m_EditorClassIdentifier: 
+  pokemonName: Psiau
+  pokemonGen: 5
+  solutionSprite: {fileID: 21300000, guid: f68f54f68237acf478e2d93465a070c7, type: 3}
+  fakeSprites:
+  - {fileID: 21300000, guid: 20dd5dad9e6dce74faeabdee850febae, type: 3}
+  - {fileID: 21300000, guid: 891bdd19669b5dc47b972698b60e6247, type: 3}
+  originalSprite: {fileID: 21300000, guid: deac19877ff22774da5f2c2c67ab1da3, type: 3}

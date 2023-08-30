@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1cf78d64fd493743a38041a2d57215d, type: 3}
+  m_Name: Purmel
+  m_EditorClassIdentifier: 
+  pokemonName: Purmel
+  pokemonGen: 5
+  solutionSprite: {fileID: 21300000, guid: 1744453dedb9deb40948ed3f34198394, type: 3}
+  fakeSprites:
+  - {fileID: 21300000, guid: f84758a1708ce31478776510fc980325, type: 3}
+  - {fileID: 21300000, guid: 9d687cffea8fc0b48b8d6db46394a5e9, type: 3}
+  originalSprite: {fileID: 21300000, guid: d0eb7f1d2944a7c4eb6cfbd4bc2fb045, type: 3}
