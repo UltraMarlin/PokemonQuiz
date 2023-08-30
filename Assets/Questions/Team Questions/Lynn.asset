@@ -15,4 +15,4 @@ MonoBehaviour:
   pokemonName: Lynn
   pokemonGen: 0
   teamImage: {fileID: 21300000, guid: 37593e56c87afc94e94fa841a2663722, type: 3}
-  profileImage: {fileID: 0}
+  profileImage: {fileID: 21300000, guid: 79729e4d31e320d43a2c59b68a039584, type: 3}

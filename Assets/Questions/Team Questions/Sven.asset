@@ -15,4 +15,4 @@ MonoBehaviour:
   pokemonName: Sven
   pokemonGen: 0
   teamImage: {fileID: 21300000, guid: eb98c6f8a34396a43909dfa30afa4cc1, type: 3}
-  profileImage: {fileID: 0}
+  profileImage: {fileID: 21300000, guid: 2f397a814c4e92b4f90e302c876d50fc, type: 3}
