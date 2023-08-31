@@ -61,7 +61,7 @@ public class Settings : MonoBehaviour
 
     public void LoadQuizSelection()
     {
-        if (settings.quiz.presetName.Length <= 0)
+        if (settings.quiz != null && settings.quiz.presetName.Length <= 0)
         {
             settings.DeleteSelectedQuiz();
             settings.selectedQuiz = 0;
