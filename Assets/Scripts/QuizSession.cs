@@ -167,6 +167,7 @@ public class QuizSession : MonoBehaviour
 
     private bool showTextFields = false;
     private bool lockTextFields = false;
+    private bool quizOver = false;
 
     [SerializeField] private AudioEffectsController audioEffects;
 
@@ -422,12 +423,18 @@ public class QuizSession : MonoBehaviour
         }
     }
 
-    public void OnBuzzerFreed()
+    public void ResetAllBuzzerHighlights()
     {
         foreach (PlayerPanelController playerPanelController in playerPanelControllers)
         {
             playerPanelController.ResetBuzzerHighlight();
         }
+    }
+
+    public void OnBuzzerFreed()
+    {
+        if (quizOver) return;
+        ResetAllBuzzerHighlights();
         Type controllerType = currentQuestionController?.GetType();
         if (controllerType == typeof(DrawQuestionController))
         {
@@ -452,7 +459,7 @@ public class QuizSession : MonoBehaviour
 
         Type controllerType = currentQuestionController?.GetType();
 
-        if (controllerType == typeof(ShinyQuestionController) || controllerType == typeof(FootprintQuestionController))
+        if (quizOver || controllerType == typeof(ShinyQuestionController) || controllerType == typeof(FootprintQuestionController))
         {
             Debug.Log("Buzzer currently not enabled. Freeing buzzer.");
             FreeBuzzer();
@@ -687,6 +694,7 @@ public class QuizSession : MonoBehaviour
     public void EndQuiz()
     {
         Debug.Log("Quiz is over!");
+        quizOver = true;
         ClearQuestionContainer();
         if (winningBackgroundSprite != null)
         {
@@ -709,6 +717,7 @@ public class QuizSession : MonoBehaviour
             results.Add(result);
         }
         results = results.OrderByDescending(result => result.playerPoints).ToList();
+        ResetAllBuzzerHighlights();
         playerPanelControllers[results[0].playerId].SetBuzzerHighlight();
         StartCoroutine(playerPanelControllers[results[0].playerId].PlayWinAnimation());
         endScreenObject.GetComponent<EndScreenController>().DisplayPlayerRankings(results);
