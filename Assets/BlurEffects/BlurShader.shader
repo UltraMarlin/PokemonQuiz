@@ -43,10 +43,10 @@ Shader "Custom/BlurShader"
                 // Initialize final color as black
                 fixed4 col = fixed4(0, 0, 0, 1);
                 // Radius of sample points
-                float sqrtDistortion = sqrt(_DistortionAmount);
-                float radius = sqrtDistortion * 0.09;
+                float sqrtDistortion = sqrt(_DistortionAmount) * sqrt(_DistortionAmount);
+                float radius = sqrtDistortion * 0.10;
                 // Number of sample points
-                int samples = 120;
+                int samples = 35;
 
                 // Loop over sample points
                 for (int s = 0; s < samples; s++)
@@ -103,10 +103,10 @@ Shader "Custom/BlurShader"
                 // Initialize final color as black
                 fixed4 col = fixed4(0, 0, 0, 1);
                 // Radius of sample points
-                float sqrtDistortion = sqrt(_DistortionAmount);
-                float radius = sqrtDistortion * 0.06;
+                float sqrtDistortion = sqrt(_DistortionAmount) * sqrt(_DistortionAmount);
+                float radius = sqrtDistortion * 0.05;
                 // Number of sample points
-                int samples = 30;
+                int samples = 20;
 
                 // Loop over sample points
                 for (int s = 0; s < samples; s++)
@@ -169,7 +169,7 @@ Shader "Custom/BlurShader"
                 float sqrtDistortion = sqrt(_DistortionAmount);
                 float radius = sqrtDistortion * 0.05;
                 // Number of sample points
-                int samples = 30;
+                int samples = 25;
 
                 // Loop over sample points
                 for (int s = 0; s < samples; s++)
@@ -230,9 +230,9 @@ Shader "Custom/BlurShader"
                 fixed4 col = fixed4(0, 0, 0, 1);
                 // Radius of sample points
                 float sqrtDistortion = sqrt(_DistortionAmount);
-                float radius = sqrtDistortion * 0.02;
+                float radius = sqrtDistortion * 0.03;
                 // Number of sample points
-                int samples = 30;
+                int samples = 20;
 
                 // Loop over sample points
                 for (int s = 0; s < samples; s++)
@@ -296,7 +296,7 @@ Shader "Custom/BlurShader"
                 float sqrtDistortion = sqrt(_DistortionAmount);
                 float radius = sqrtDistortion * 0.04;
                 // Number of sample points
-                int samples = 20;
+                int samples = 35;
 
                 // Loop over sample points
                 for (int s = 0; s < samples; s++)

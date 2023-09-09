@@ -45,7 +45,7 @@ Shader "Custom/ZoomShader"
             fixed4 frag(v2f i) : SV_Target
             {
                 // Calculate the zoom based on the _DistortionAmount with quadratic deceleration
-                float adjustedDistortion = 1.0 - pow(1.0 - _DistortionAmount, 2.3); // This will make it start slow and accelerate as _DistortionAmount decreases
+                float adjustedDistortion = 1.0 - pow(1.0 - _DistortionAmount, 1.75); // This will make it start slow and accelerate as _DistortionAmount decreases
                 float zoomFactor = lerp(1.0, 0.05, adjustedDistortion);
                 float2 centeredUV = i.uv - 0.5; // Translate UVs to [-0.5, 0.5] range
                 centeredUV *= zoomFactor; // Zoom in/out based on the zoomFactor

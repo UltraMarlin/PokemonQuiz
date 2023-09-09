@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 83193379f4f10744f94664b65e51ec97, type: 2}
+  m_Material: {fileID: 2100000, guid: 4bc05efc5f16f124e8f20f508071322d, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 9d8d8f5c411b80b47a650f7b8182a758, type: 3}
+  m_Texture: {fileID: 2800000, guid: b2efd04f7e15094489d6943170a17c96, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0

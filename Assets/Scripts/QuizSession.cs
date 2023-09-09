@@ -279,22 +279,21 @@ public class QuizSession : MonoBehaviour
             .OrderBy(x => UnityEngine.Random.value).ToList();
     }
 
-    private void Update()
-    {
-        if (Input.GetButtonDown("NextQuestion"))
-        {
-            //NextQuestion();
-            StartCountdownTimer();
-        }
-        if (Input.GetButtonDown("NextQuestionStep"))
-        {
-            NextQuestionStep();
-        }
-        if (Input.GetButtonDown("ShowSolution"))
-        {
-            ShowSolution();
-        }
-    }
+    //private void Update()
+    //{
+    //    if (Input.GetButtonDown("NextQuestion"))
+    //    {
+    //        NextQuestion();
+    //    }
+    //    if (Input.GetButtonDown("NextQuestionStep"))
+    //    {
+    //        NextQuestionStep();
+    //    }
+    //    if (Input.GetButtonDown("ShowSolution"))
+    //    {
+    //        ShowSolution();
+    //    }
+    //}
 
     public void UpdateStatus()
     {
