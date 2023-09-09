@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe5e4d2aed74a645969d75d271b3805, type: 3}
+  m_Name: eF-eM
+  m_EditorClassIdentifier: 
+  pokemonName: eF-eM
+  pokemonGen: 5
+  solutionSprite: {fileID: 21300000, guid: 576afb9621df82d40ba548fbf1c00d08, type: 3}
+  featureSprites:
+  - {fileID: 21300000, guid: 01e35af2cd8e78c489c165f726342881, type: 3}
+  - {fileID: 21300000, guid: 61ab47d04959e0d4ab485a1d965f1118, type: 3}
+  - {fileID: 21300000, guid: bf5518f5f7f7aff44a3abcf62597057b, type: 3}
+  - {fileID: 21300000, guid: eb9faf912fd79a84fb4073ba3f28bb23, type: 3}

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe5e4d2aed74a645969d75d271b3805, type: 3}
+  m_Name: Jungglut
+  m_EditorClassIdentifier: 
+  pokemonName: Jungglut
+  pokemonGen: 2
+  solutionSprite: {fileID: 21300000, guid: 69669c8f110f9e54881405ab4581abd4, type: 3}
+  featureSprites:
+  - {fileID: 21300000, guid: 1f4e833155d2eef43ad3e5ca8d272f9d, type: 3}
+  - {fileID: 21300000, guid: 708085fd7b4ec65439a6c69b5ea92790, type: 3}
+  - {fileID: 21300000, guid: 66e9b7ecdbb92e74aae798aeb5ab5f91, type: 3}
+  - {fileID: 21300000, guid: 6fefa28261c3fd7448a6cef4331d5263, type: 3}

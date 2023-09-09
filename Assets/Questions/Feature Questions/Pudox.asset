@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe5e4d2aed74a645969d75d271b3805, type: 3}
+  m_Name: Pudox
+  m_EditorClassIdentifier: 
+  pokemonName: Pudox
+  pokemonGen: 2
+  solutionSprite: {fileID: 21300000, guid: b18f7911894a41d41a78e49e07721a0c, type: 3}
+  featureSprites:
+  - {fileID: 21300000, guid: 0a0d6f7e28a63a04883c764eb5630918, type: 3}
+  - {fileID: 21300000, guid: e216949577c39c64e82933a966779c98, type: 3}
+  - {fileID: 21300000, guid: e1052b217f034fe48a212500e2208551, type: 3}
+  - {fileID: 21300000, guid: cdb6bf95f26ab594494af2be5af495c5, type: 3}

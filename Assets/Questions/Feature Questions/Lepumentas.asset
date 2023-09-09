@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe5e4d2aed74a645969d75d271b3805, type: 3}
+  m_Name: Lepumentas
+  m_EditorClassIdentifier: 
+  pokemonName: Lepumentas
+  pokemonGen: 2
+  solutionSprite: {fileID: 21300000, guid: 479dfda6c2aab5b4b84be038c119abda, type: 3}
+  featureSprites:
+  - {fileID: 21300000, guid: 9a51eb87c5b59b14ca7e64ca910bd2e4, type: 3}
+  - {fileID: 21300000, guid: 0fc9cabcfdb92f14f80bc42ee03a1510, type: 3}
+  - {fileID: 21300000, guid: 61c06b385e1c36b4586764cdec3e9971, type: 3}
+  - {fileID: 21300000, guid: 363afcb7a96475a46907c47ece5b2c18, type: 3}

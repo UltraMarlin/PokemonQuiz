@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe5e4d2aed74a645969d75d271b3805, type: 3}
+  m_Name: Pelipper
+  m_EditorClassIdentifier: 
+  pokemonName: Pelipper
+  pokemonGen: 2
+  solutionSprite: {fileID: 21300000, guid: 6b918fd1b462d584399cb1bcdc6e6149, type: 3}
+  featureSprites:
+  - {fileID: 21300000, guid: 3f0097bf2c65fdf4fbdc7e812d2377a3, type: 3}
+  - {fileID: 21300000, guid: 0d9c0e66ce853ae4c9e02f3bdfc99ec8, type: 3}
+  - {fileID: 21300000, guid: 593d12772ed2ed541b0a592ba23eed8c, type: 3}
+  - {fileID: 21300000, guid: 878f64be1c8d6cf48b73efb68ded29ab, type: 3}

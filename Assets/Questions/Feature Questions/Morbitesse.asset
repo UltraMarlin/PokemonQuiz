@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe5e4d2aed74a645969d75d271b3805, type: 3}
+  m_Name: Morbitesse
+  m_EditorClassIdentifier: 
+  pokemonName: Morbitesse
+  pokemonGen: 4
+  solutionSprite: {fileID: 21300000, guid: 71b6e9445a338af47b7f2d5021517f9e, type: 3}
+  featureSprites:
+  - {fileID: 21300000, guid: 9f10eb3c5890daf488a461a1ee2319d6, type: 3}
+  - {fileID: 21300000, guid: e48d0c790656905459cdfb88929bcdeb, type: 3}
+  - {fileID: 21300000, guid: 02ba139870cb41349bdf428ab9c67f38, type: 3}
+  - {fileID: 21300000, guid: 002e62cfcfe2bbe4286b266933b3c106, type: 3}

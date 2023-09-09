@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe5e4d2aed74a645969d75d271b3805, type: 3}
+  m_Name: Bronzel
+  m_EditorClassIdentifier: 
+  pokemonName: Bronzel
+  pokemonGen: 3
+  solutionSprite: {fileID: 21300000, guid: 245405beb3b4edd42bf46c64ec2fa05e, type: 3}
+  featureSprites:
+  - {fileID: 21300000, guid: f49b19ed4d0ac16458d13ff0bd7e0228, type: 3}
+  - {fileID: 21300000, guid: d2121ee0366afc5408b82abab7f56156, type: 3}
+  - {fileID: 21300000, guid: 7e74c02161bb1b048b27ec8eb5c64a6c, type: 3}
+  - {fileID: 21300000, guid: d5a7be94fe422b84389c093c61734118, type: 3}

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe5e4d2aed74a645969d75d271b3805, type: 3}
+  m_Name: Viscogon
+  m_EditorClassIdentifier: 
+  pokemonName: Viscogon
+  pokemonGen: 5
+  solutionSprite: {fileID: 21300000, guid: 0c39f815ebdb6e941ac085bf460329ac, type: 3}
+  featureSprites:
+  - {fileID: 21300000, guid: 3d9bb3ac30acebb46906819a5a3a9831, type: 3}
+  - {fileID: 21300000, guid: 7c58bf6a6c38ff34f9485474d6b58741, type: 3}
+  - {fileID: 21300000, guid: 6e481664f7f9d114588e769f8cff8b90, type: 3}
+  - {fileID: 21300000, guid: 26a4a0a6c7d6f4a419201032e8128458, type: 3}

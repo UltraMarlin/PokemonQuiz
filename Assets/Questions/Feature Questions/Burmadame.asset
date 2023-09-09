@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe5e4d2aed74a645969d75d271b3805, type: 3}
+  m_Name: Burmadame
+  m_EditorClassIdentifier: 
+  pokemonName: Burmadame
+  pokemonGen: 3
+  solutionSprite: {fileID: 21300000, guid: ae79788e4be6b3f45ba1a8f786a59b39, type: 3}
+  featureSprites:
+  - {fileID: 21300000, guid: eef41bbd45eb7774b949ed663462eb78, type: 3}
+  - {fileID: 21300000, guid: 9a3319775d5cc8c49af9b24282389869, type: 3}
+  - {fileID: 21300000, guid: 3b17a287b7537314eb0104d93bf18948, type: 3}
+  - {fileID: 21300000, guid: 37a9bd7037588054098253818e0a559a, type: 3}

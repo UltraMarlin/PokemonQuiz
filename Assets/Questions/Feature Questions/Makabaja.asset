@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe5e4d2aed74a645969d75d271b3805, type: 3}
+  m_Name: Makabaja
+  m_EditorClassIdentifier: 
+  pokemonName: Makabaja
+  pokemonGen: 4
+  solutionSprite: {fileID: 21300000, guid: e66e797d5c8efdd489e408e8ae786701, type: 3}
+  featureSprites:
+  - {fileID: 21300000, guid: c51664919fe56df479c2a5812e13fdb0, type: 3}
+  - {fileID: 21300000, guid: b04e3208567ef5047937430b13b5783f, type: 3}
+  - {fileID: 21300000, guid: 99ee307c3abf8bc449d6d4276cfebd8a, type: 3}
+  - {fileID: 21300000, guid: 40d9b587b4ff4d349b3ead71d0a67a47, type: 3}

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe5e4d2aed74a645969d75d271b3805, type: 3}
+  m_Name: Miltank
+  m_EditorClassIdentifier: 
+  pokemonName: Miltank
+  pokemonGen: 1
+  solutionSprite: {fileID: 21300000, guid: 8b915acfe987c6b4ab4dcce84555c0e5, type: 3}
+  featureSprites:
+  - {fileID: 21300000, guid: c73aa8440819592499148725138fc470, type: 3}
+  - {fileID: 21300000, guid: d9038b00dbe27aa47a133e404b558bc1, type: 3}
+  - {fileID: 21300000, guid: 71abe0375db11834aaf8d4b55597f5e9, type: 3}
+  - {fileID: 21300000, guid: 5706aa91528a6b04fb9b6001e8420653, type: 3}

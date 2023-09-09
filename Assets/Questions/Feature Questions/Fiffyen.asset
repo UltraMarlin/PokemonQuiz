@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe5e4d2aed74a645969d75d271b3805, type: 3}
+  m_Name: Fiffyen
+  m_EditorClassIdentifier: 
+  pokemonName: Fiffyen
+  pokemonGen: 2
+  solutionSprite: {fileID: 21300000, guid: 577a974a001cf094e8910813c461d3fa, type: 3}
+  featureSprites:
+  - {fileID: 21300000, guid: 0240c40c419fcd949a06a6215b726b3f, type: 3}
+  - {fileID: 21300000, guid: 5900de77c11e38d4cb0c8d96fe2e5080, type: 3}
+  - {fileID: 21300000, guid: def9d45b3818c914bac0cc56c20099ae, type: 3}
+  - {fileID: 21300000, guid: 7d949385d6dd4fa4091c9c9837eb1eb3, type: 3}

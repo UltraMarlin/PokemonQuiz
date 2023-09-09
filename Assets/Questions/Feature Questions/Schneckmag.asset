@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe5e4d2aed74a645969d75d271b3805, type: 3}
+  m_Name: Schneckmag
+  m_EditorClassIdentifier: 
+  pokemonName: Schneckmag
+  pokemonGen: 1
+  solutionSprite: {fileID: 21300000, guid: 792c3d3e75756234f8add99f156a5328, type: 3}
+  featureSprites:
+  - {fileID: 21300000, guid: 1cbd6cbf31682d84eb1ef4ab439339b0, type: 3}
+  - {fileID: 21300000, guid: 95ce380496c389245823330299d8231c, type: 3}
+  - {fileID: 21300000, guid: 43d2c12d506ebcf48ba3dee01037069a, type: 3}
+  - {fileID: 21300000, guid: 73d4d19b5388b0a439ebc5926253f3be, type: 3}

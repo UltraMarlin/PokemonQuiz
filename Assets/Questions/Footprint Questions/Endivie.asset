@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1cdf8be6a090c344a1381e2db64752a, type: 3}
+  m_Name: Endivie
+  m_EditorClassIdentifier: 
+  pokemonName: Endivie
+  pokemonGen: 1
+  sprites:
+  - {fileID: 21300000, guid: 4035625ad4dd45c4cb7aaf47eefd2a02, type: 3}
+  - {fileID: 21300000, guid: 7ebcfa3ad6eb6434bb14aa84e5220c77, type: 3}
+  - {fileID: 21300000, guid: f2f477938ac73454d84c66afb82efe6b, type: 3}
+  solutionSprite: {fileID: 21300000, guid: 4035625ad4dd45c4cb7aaf47eefd2a02, type: 3}
+  footprintSprite: {fileID: 21300000, guid: 7ebcfa3ad6eb6434bb14aa84e5220c77, type: 3}
+  portraitSprite: {fileID: 21300000, guid: f2f477938ac73454d84c66afb82efe6b, type: 3}
+  footprintGroups: 060000001a000000

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe5e4d2aed74a645969d75d271b3805, type: 3}
+  m_Name: Geckarbor
+  m_EditorClassIdentifier: 
+  pokemonName: Geckarbor
+  pokemonGen: 2
+  solutionSprite: {fileID: 21300000, guid: 397fd3e0d1fd24147b765993b1c8944d, type: 3}
+  featureSprites:
+  - {fileID: 21300000, guid: 34fbad9d3890bb0468571a1aa4489248, type: 3}
+  - {fileID: 21300000, guid: 1e33c586fa16b034f89b293ca3011171, type: 3}
+  - {fileID: 21300000, guid: 301473222649acd4180f553c4755b035, type: 3}
+  - {fileID: 21300000, guid: d6e85ec68db7b6f47bb448567a1e169f, type: 3}

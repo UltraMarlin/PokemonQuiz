@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe5e4d2aed74a645969d75d271b3805, type: 3}
+  m_Name: Sodachita
+  m_EditorClassIdentifier: 
+  pokemonName: Sodachita
+  pokemonGen: 4
+  solutionSprite: {fileID: 21300000, guid: e927dcdc507dc054ab10a68efe4d51ef, type: 3}
+  featureSprites:
+  - {fileID: 21300000, guid: 34502c18affa45e4497ff36cb65441cd, type: 3}
+  - {fileID: 21300000, guid: 235100d2548936c4097e102fdc3d7063, type: 3}
+  - {fileID: 21300000, guid: 5c9a2002f78a2ab41bd57401cd3e475d, type: 3}
+  - {fileID: 21300000, guid: e48db367f3a178943a59a65f34cacf4f, type: 3}
